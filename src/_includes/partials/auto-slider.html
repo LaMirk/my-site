@@ -1,0 +1,171 @@
+<div class="carousel-container">
+    <div class="carousel-wrapper">
+        <div class="carousel-track" id="carouselTrack">
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mountain landscape" class="slide-image">
+                <div class="slide-content">
+                    <div class="slide-title">Mountain Peaks</div>
+                    <div class="slide-subtitle">Discover breathtaking mountain landscapes</div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lake sunset" class="slide-image">
+                <div class="slide-content">
+                    <div class="slide-title">Serene Waters</div>
+                    <div class="slide-subtitle">Experience tranquil lake reflections</div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Forest path" class="slide-image">
+                <div class="slide-content">
+                    <div class="slide-title">Forest Trails</div>
+                    <div class="slide-subtitle">Wander through enchanted woodland paths</div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ocean waves" class="slide-image">
+                <div class="slide-content">
+                    <div class="slide-title">Ocean Waves</div>
+                    <div class="slide-subtitle">Feel the power of endless blue horizons</div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Desert dunes" class="slide-image">
+                <div class="slide-content">
+                    <div class="slide-title">Desert Sands</div>
+                    <div class="slide-subtitle">Explore vast golden desert landscapes</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <button class="carousel-nav prev" onclick="prevSlide()">‹</button>
+    <button class="carousel-nav next" onclick="nextSlide()">›</button>
+    
+    <button class="play-pause" onclick="toggleAutoplay()" id="playPauseBtn">⏸</button>
+    
+    <div class="carousel-indicators" id="indicators"></div>
+</div>
+<script>
+    let currentSlide = 0;
+    let isAutoplay = true;
+    let autoplayInterval;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const totalSlides = slides.length;
+    const track = document.getElementById('carouselTrack');
+    const indicatorsContainer = document.getElementById('indicators');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+
+    // Create indicators
+    function createIndicators() {
+        for (let i = 0; i < totalSlides; i++) {
+            const indicator = document.createElement('div');
+            indicator.className = 'indicator';
+            indicator.onclick = () => goToSlide(i);
+            indicatorsContainer.appendChild(indicator);
+        }
+        updateIndicators();
+    }
+
+    // Update indicators
+    function updateIndicators() {
+        const indicators = document.querySelectorAll('.indicator');
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentSlide);
+        });
+    }
+
+    // Go to specific slide
+    function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        updateCarousel();
+        resetAutoplay();
+    }
+
+    // Update carousel position
+    function updateCarousel() {
+        const translateX = -currentSlide * 100;
+        track.style.transform = `translateX(${translateX}%)`;
+        updateIndicators();
+        
+        // Reset and restart slide content animation
+        const currentSlideContent = slides[currentSlide].querySelector('.slide-content');
+        currentSlideContent.style.animation = 'none';
+        currentSlideContent.offsetHeight; // Trigger reflow
+        currentSlideContent.style.animation = 'slideUp 0.8s ease forwards';
+    }
+
+    // Next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+        resetAutoplay();
+    }
+
+    // Previous slide
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+        resetAutoplay();
+    }
+
+    // Toggle autoplay
+    function toggleAutoplay() {
+        isAutoplay = !isAutoplay;
+        playPauseBtn.textContent = isAutoplay ? '⏸' : '▶';
+        
+        if (isAutoplay) {
+            startAutoplay();
+        } else {
+            clearInterval(autoplayInterval);
+        }
+    }
+
+    // Start autoplay
+    function startAutoplay() {
+        if (isAutoplay) {
+            autoplayInterval = setInterval(nextSlide, 4000);
+        }
+    }
+
+    // Reset autoplay
+    function resetAutoplay() {
+        if (isAutoplay) {
+            clearInterval(autoplayInterval);
+            startAutoplay();
+        }
+    }
+
+    // Pause autoplay on hover
+    track.addEventListener('mouseenter', () => {
+        if (isAutoplay) {
+            clearInterval(autoplayInterval);
+        }
+    });
+
+    track.addEventListener('mouseleave', () => {
+        if (isAutoplay) {
+            startAutoplay();
+        }
+    });
+
+    // Initialize
+    createIndicators();
+    startAutoplay();
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            prevSlide();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+        } else if (e.key === ' ') {
+            e.preventDefault();
+            toggleAutoplay();
+        }
+    });
+</script>

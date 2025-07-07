@@ -6,35 +6,479 @@
     <title>IRFS – Institute for Reporters&#39; Freedom and Safety&amp;ZeroWidthSpace;</title>
     <link rel="icon" type="image/png" href="images/cropped-Untitled-design5-192x192.png" sizes="192x192">
     <link rel="icon" type="image/png" href="images/cropped-Untitled-design5-32x32.png" sizes="32x32">
+    <style>
+/* body css */
+    * { 
+        margin: 0; 
+        padding: 0;
+    }
+/* site header css */
+    .brand { width: 17rem; }
+    header { 
+        background-color: #062963; 
+    }
+    #site-header { padding: 0 9%; }
+    #site-header > nav > ul { 
+        list-style-type: none; 
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline-start: 0px;
+    }
+    
+    #site-header > nav > ul > li { 
+        /* display: inline-block;  
+        margin: 2rem;*/
+    }
+    #site-header > nav > ul > li > a {
+        display: block;
+        color: white;
+        text-decoration: none;
+    }
+    #site-header > nav > ul > li > a:hover { color: cornsilk; }
+    #site-header > nav > ul > li + li > a { 
+        font-weight: bold;
+        font-family: sans-serif;
+    }
+
+    #site-header > nav > ul .submenu {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        z-index: 1000;
+    }
+    #site-header > nav > ul .submenu li a { text-decoration: none; }
+    #site-header > nav > ul .submenu li a:hover { background-color: #ddd; }
+    #site-header > nav > ul li.dropdown:hover .submenu { display: block; }
+
+
+/* searc scc */
+    @font-face {
+        font-family: 'Material Symbols Outlined';
+        font-style: normal;
+        font-weight: 400;
+        src: url(https://fonts.gstatic.com/icon/font?kit=kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1v-p_4MrImHCIJIZrDCvHOejbd5zrDAt69N5_NGV7d27Z8wyV_VY&skey=b8dc2088854b122f&v=v257) format('woff2');
+    }
+    .search { 
+        background-color: red; 
+        display: flex;
+        align-items: center;
+    }
+    .search > a { margin-left: 0.5rem; }
+    .search__icon {
+        font-family: 'Material Symbols Outlined';
+        font-weight: bold;
+        font-style: normal;
+        font-size: 2rem;
+        line-height: 1;
+        color: white;
+        letter-spacing: normal;
+        text-transform: none;
+        float: left;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
+    }
+/* main css */
+    .main {
+        padding: 10%;
+        background-color: #f4f4f4;
+    }
+</style>
+    <style>
+  .carousel-container {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+        max-width: 800px;
+        width: 50%;
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .carousel-wrapper {
+        overflow: hidden;
+        position: relative;
+        height: 500px;
+    }
+
+    .carousel-track {
+        display: flex;
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        height: 100%;
+    }
+
+    .carousel-slide {
+        min-width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .slide-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s ease;
+    }
+
+    .slide-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        padding: 60px 40px 40px;
+        color: white;
+        transform: translateY(20px);
+        opacity: 0;
+        animation: slideUp 0.8s ease forwards;
+    }
+
+    .slide-title {
+        font-size: 2.5em;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        letter-spacing: -0.5px;
+    }
+
+    .slide-subtitle {
+        font-size: 1.2em;
+        opacity: 0.9;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    @keyframes slideUp {
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .carousel-indicators {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 12px;
+        z-index: 10;
+    }
+
+    .indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.4);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+    }
+
+    .indicator.active {
+        background: white;
+        transform: scale(1.2);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .carousel-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 18px;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        z-index: 10;
+    }
+
+    .carousel-nav:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    .carousel-nav.prev {
+        left: 20px;
+    }
+
+    .carousel-nav.next {
+        right: 20px;
+    }
+
+    .play-pause {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        z-index: 10;
+    }
+
+    .play-pause:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+        .slide-title {
+            font-size: 2em;
+        }
+        
+        .slide-content {
+            padding: 40px 20px 20px;
+        }
+        
+        .carousel-container {
+            margin: 10px;
+        }
+    }
+</style>
 </head>
 <body>
-    <nav>
-    <ul>
-    <li><a href="/"><img src="images/IRFS-LOGO-WHITE.png" alt="IRFS Brand" class="brand"></a></li>
-    <li><a href="/">Home</a></li>
-    <li><ul>
-        <li>Who We Are</li>
-        <li><a href="">VISION &#124; MISSION &#124; STRATEGY &#124;</a></li>
-        <li><a href="">IRFS MEMBERS</a></li>
-    </ul></li>
-    <li><ul>
-        <li>What We Do</li>
-        <li><a href="">Promoting press freedom and journalist safety</a></li>
-        <li><a href="">Promotion of youth media and ICTPromotion of youth media and ICT</a></li>
-        <li><a href="">Protection of freedom of expression</a></li>
-        <li><a href="">Safeguarding freedom of information</a></li>
-        <li><a href="">Objective TV</a></li>
-    </ul></li>
-    <li><a href="">News</a></li>
-    <li><a href="">Contact Us</a></li>
-</ul></nav>
-    
-<article>
-	<h1>IRFS – Institute for Reporters&#39; Freedom and Safety&amp;ZeroWidthSpace;</h1>
-	
-</article>
+    <header id="site-header">
+  <nav>
+    <ul class="nav clearfix">
+      <li>
+        <a href="/"><img src="images/IRFS-LOGO-WHITE.png" alt="IRFS Brand" class="brand"></a>
+      </li>
+      <li><a href="/">Home</a></li>
 
-    <li><a href="/"><img src="images/IRFS-LOGO-WHITE.png" alt="IRFS Brand" class="brand"></a></li>
+      <li class="dropdown">
+        <a href="#" class="drop">Who We Are</a>
+        <ul class="submenu">
+          <li><a href="">VISION &#124; MISSION &#124; STRATEGY &#124;</a></li>
+          <li><a href="">IRFS MEMBERS</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="drop">What We Do</a>
+        <ul class="submenu">
+          <li><a href="">Promoting press freedom and journalist safety</a></li>
+          <li><a href="">Promotion of youth media and ICT</a></li>
+          <li><a href="">Protection of freedom of expression</a></li>
+          <li><a href="">Safeguarding freedom of information</a></li>
+          <li><a href="">Objective TV</a></li>
+        </ul>
+      </li>
+
+      <li><a href="">News</a></li>
+      <li> <a href="">Contact Us</a></li>
+      <li class="search">
+        <span class="search__icon">search</span>
+        <a>search</a>
+    </li>
+    </ul>
+  </nav>
+</header>
+
+
+    
+	<div class="carousel-container">
+    <div class="carousel-wrapper">
+        <div class="carousel-track" id="carouselTrack">
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mountain landscape" class="slide-image">
+                <div class="slide-content">
+                    <div class="slide-title">Mountain Peaks</div>
+                    <div class="slide-subtitle">Discover breathtaking mountain landscapes</div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lake sunset" class="slide-image">
+                <div class="slide-content">
+                    <div class="slide-title">Serene Waters</div>
+                    <div class="slide-subtitle">Experience tranquil lake reflections</div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Forest path" class="slide-image">
+                <div class="slide-content">
+                    <div class="slide-title">Forest Trails</div>
+                    <div class="slide-subtitle">Wander through enchanted woodland paths</div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ocean waves" class="slide-image">
+                <div class="slide-content">
+                    <div class="slide-title">Ocean Waves</div>
+                    <div class="slide-subtitle">Feel the power of endless blue horizons</div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Desert dunes" class="slide-image">
+                <div class="slide-content">
+                    <div class="slide-title">Desert Sands</div>
+                    <div class="slide-subtitle">Explore vast golden desert landscapes</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <button class="carousel-nav prev" onclick="prevSlide()">‹</button>
+    <button class="carousel-nav next" onclick="nextSlide()">›</button>
+    
+    <button class="play-pause" onclick="toggleAutoplay()" id="playPauseBtn">⏸</button>
+    
+    <div class="carousel-indicators" id="indicators"></div>
+</div>
+<script>
+    let currentSlide = 0;
+    let isAutoplay = true;
+    let autoplayInterval;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const totalSlides = slides.length;
+    const track = document.getElementById('carouselTrack');
+    const indicatorsContainer = document.getElementById('indicators');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+
+    // Create indicators
+    function createIndicators() {
+        for (let i = 0; i < totalSlides; i++) {
+            const indicator = document.createElement('div');
+            indicator.className = 'indicator';
+            indicator.onclick = () => goToSlide(i);
+            indicatorsContainer.appendChild(indicator);
+        }
+        updateIndicators();
+    }
+
+    // Update indicators
+    function updateIndicators() {
+        const indicators = document.querySelectorAll('.indicator');
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentSlide);
+        });
+    }
+
+    // Go to specific slide
+    function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        updateCarousel();
+        resetAutoplay();
+    }
+
+    // Update carousel position
+    function updateCarousel() {
+        const translateX = -currentSlide * 100;
+        track.style.transform = `translateX(${translateX}%)`;
+        updateIndicators();
+        
+        // Reset and restart slide content animation
+        const currentSlideContent = slides[currentSlide].querySelector('.slide-content');
+        currentSlideContent.style.animation = 'none';
+        currentSlideContent.offsetHeight; // Trigger reflow
+        currentSlideContent.style.animation = 'slideUp 0.8s ease forwards';
+    }
+
+    // Next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+        resetAutoplay();
+    }
+
+    // Previous slide
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+        resetAutoplay();
+    }
+
+    // Toggle autoplay
+    function toggleAutoplay() {
+        isAutoplay = !isAutoplay;
+        playPauseBtn.textContent = isAutoplay ? '⏸' : '▶';
+        
+        if (isAutoplay) {
+            startAutoplay();
+        } else {
+            clearInterval(autoplayInterval);
+        }
+    }
+
+    // Start autoplay
+    function startAutoplay() {
+        if (isAutoplay) {
+            autoplayInterval = setInterval(nextSlide, 4000);
+        }
+    }
+
+    // Reset autoplay
+    function resetAutoplay() {
+        if (isAutoplay) {
+            clearInterval(autoplayInterval);
+            startAutoplay();
+        }
+    }
+
+    // Pause autoplay on hover
+    track.addEventListener('mouseenter', () => {
+        if (isAutoplay) {
+            clearInterval(autoplayInterval);
+        }
+    });
+
+    track.addEventListener('mouseleave', () => {
+        if (isAutoplay) {
+            startAutoplay();
+        }
+    });
+
+    // Initialize
+    createIndicators();
+    startAutoplay();
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            prevSlide();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+        } else if (e.key === ' ') {
+            e.preventDefault();
+            toggleAutoplay();
+        }
+    });
+</script>
+
+    <footer id="site-footer"><li><a href="/"><img src="images/IRFS-LOGO-WHITE.png" alt="IRFS Brand" class="brand"></a></li>
 <ul>
     <li><p>Latest</p></li>
     <li><a href="">News</a></li>
@@ -54,6 +498,6 @@
     <li><a href="">Protection of freedom of expression</a></li>
     <li><a href="">Objective TV</a></li>
 </ul>
-<p>&#169; 2025 &#8226; IRFS</p>
+<p>&#169; 2025 &#8226; IRFS</p></footer>
 </body>
 </html>
