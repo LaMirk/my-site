@@ -60,7 +60,6 @@
         src: url(https://fonts.gstatic.com/icon/font?kit=kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1v-p_4MrImHCIJIZrDCvHOejbd5zrDAt69N5_NGV7d27Z8wyV_VY&skey=b8dc2088854b122f&v=v257) format('woff2');
     }
     .search { 
-        background-color: red; 
         display: flex;
         align-items: center;
     }
@@ -268,8 +267,8 @@
 </head>
 <body>
     <header id="site-header">
-  <nav>
-    <ul class="nav clearfix">
+  <nav class="[ nav ] [site-header__nav]">
+    <ul class="nav__list">
       <li>
         <a href="/"><img src="images/IRFS-LOGO-WHITE.png" alt="IRFS Brand" class="brand"></a>
       </li>
@@ -278,7 +277,7 @@
       <li class="dropdown">
         <a href="#" class="drop">Who We Are</a>
         <ul class="submenu">
-          <li><a href="">VISION &#124; MISSION &#124; STRATEGY &#124;</a></li>
+          <li><a href="">VISION &#124; MISSION &#124; STRATEGY</a></li>
           <li><a href="">IRFS MEMBERS</a></li>
         </ul>
       </li>
