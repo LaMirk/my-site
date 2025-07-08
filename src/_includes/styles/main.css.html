@@ -5,40 +5,42 @@
         padding: 0;
     }
 /* site header css */
-    .brand { width: 17rem; }
-    #site-header { padding: 0 9%; }
-    #site-header > nav > ul { 
-        list-style-type: none; 
+    #site-header__brand { width: 17em; }
+    #site-header { 
+        padding: 0 9%; 
+        height: 8.5em;
+    }
+    #site-header ul { list-style-type: none; }
+    .nav__list {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-inline-start: 0px;
+        padding-inline-start: 0;
     }
-    
-    #site-header > nav > ul > li { 
-        /* display: inline-block;  
-        margin: 2rem;*/
-    }
-    #site-header > nav > ul > li > a {
+    .nav__list li > a {
         display: block;
         color: white;
         text-decoration: none;
     }
-    #site-header > nav > ul > li > a:hover { color: cornsilk; }
-    #site-header > nav > ul > li + li > a { 
+    .nav__list > li > a:hover { color: cornsilk; }
+    .nav__list > li + li a { 
         font-weight: bold;
         font-family: sans-serif;
     }
-
-    #site-header > nav > ul .submenu {
+    .nav__sublist:hover .nav__droplist { display: block; }
+    .nav__droplist {
         display: none;
         position: absolute;
         background-color: #f9f9f9;
+        color: #062963;
+        margin: 0;
+        padding: 1em;
         z-index: 1000;
     }
-    #site-header > nav > ul .submenu li a { text-decoration: none; }
-    #site-header > nav > ul .submenu li a:hover { background-color: #ddd; }
-    #site-header > nav > ul li.dropdown:hover .submenu { display: block; }
+    .nav__droplist li + li { margin-top: 1em; }
+    .nav__droplist li a { color: #062963;}
+    .nav__droplist li a:hover { color: #5e5e5e; }
+    
 
 
 /* searc scc */
@@ -48,17 +50,18 @@
         font-weight: 400;
         src: url(https://fonts.gstatic.com/icon/font?kit=kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1v-p_4MrImHCIJIZrDCvHOejbd5zrDAt69N5_NGV7d27Z8wyV_VY&skey=b8dc2088854b122f&v=v257) format('woff2');
     }
-    .search { 
+    .searc {
         display: flex;
         align-items: center;
+        justify-content: space-between;
     }
-    .search > a { margin-left: 0.5rem; }
+    .search > a { margin-left: 5em; }
     .search__icon {
         font-family: 'Material Symbols Outlined';
-        font-weight: bold;
+        font-weight: normal;
         font-style: normal;
         font-size: 2rem;
-        line-height: 1;
+        line-height: 0;
         color: white;
         letter-spacing: normal;
         text-transform: none;

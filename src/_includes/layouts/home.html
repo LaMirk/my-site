@@ -1,4 +1,10 @@
 {% extends "layouts/base.html" %}
+
 {% block content %}
-	{% include "partials/auto-slider.html" %}
+	<main>
+		<section>{% include "partials/auto-slider.html" %}</section>
+		<section></section>
+		{% if condition %}<section></section>{% endif %}
+	</main>
+	
 {% endblock %}
