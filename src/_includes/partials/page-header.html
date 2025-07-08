@@ -1,36 +1,20 @@
 <header id="site-header">
   <nav class="[ nav ] [site-header__nav]">
     <ul class="nav__list">
-      <li>
-        <a href="/"><img src="images/IRFS-LOGO-WHITE.png" alt="IRFS Brand" class="brand"></a>
-      </li>
-      <li><a href="/">Home</a></li>
-
-      <li class="dropdown">
-        <a href="#" class="drop">Who We Are</a>
-        <ul class="submenu">
-          <li><a href="">VISION &#124; MISSION &#124; STRATEGY</a></li>
-          <li><a href="">IRFS MEMBERS</a></li>
-        </ul>
-      </li>
-
-      <li class="dropdown">
-        <a href="#" class="drop">What We Do</a>
-        <ul class="submenu">
-          <li><a href="">Promoting press freedom and journalist safety</a></li>
-          <li><a href="">Promotion of youth media and ICT</a></li>
-          <li><a href="">Protection of freedom of expression</a></li>
-          <li><a href="">Safeguarding freedom of information</a></li>
-          <li><a href="">Objective TV</a></li>
-        </ul>
-      </li>
-
-      <li><a href="">News</a></li>
-      <li> <a href="">Contact Us</a></li>
-      <li class="search">
-        <span class="search__icon">search</span>
-        <a>search</a>
-    </li>
+        <li>
+            <a href="/"><img src="images/IRFS-LOGO-WHITE.png" alt="IRFS Brand" class="brand"></a>
+        </li>
+        {% for item in navigation.items %}
+        <li {% if item.children %}class="dropdown"{% endif %}>
+            <a href="{{ item.url }}">{{ item.text }}</a>
+            {% if item.children %}
+            <ul class="submenu">
+                {% for childeItem in item.children %}
+                <li><a href="{{ childe-item.url }}">{{ childeItem.text }}</a></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        {% endfor %}
     </ul>
   </nav>
 </header>
