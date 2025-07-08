@@ -1,0 +1,59 @@
+{
+    "items": [
+        {
+            "text": "Home",
+            "url": "/",
+            "children": false
+        },
+        {
+            "text": "Who We Are",
+            "url": "",
+            "children": [
+                {
+                    "text": "VISION | MISSION | STRATEGY",
+                    "url": "/vision-mission-strategy/"
+                },
+                {
+                    "text": "IRFS MEMBERS",
+                    "url": "/irfsmembers/"
+                }
+            ]
+        },
+        {
+            "text": "What We Do",
+            "url": "#",
+            "children": [
+            {
+                "text": "Promoting press freedom and journalist safety",
+                "url": "/promoting-press-freedom/"
+            },
+            {
+                "text": "Promotion of youth media and ICT",
+                "url": "/youth-media-ict/"
+            },
+            {
+                "text": "Protection of freedom of expression",
+                "url": "/freedom-of-expression/"
+            },
+            {
+                "text": "Safeguarding freedom of information",
+                "url": "/freedom-of-information/"
+            },
+            {
+                "text": "Objective TV",
+                "url": "/objective-tv/"
+            }
+            ]
+        },
+        {
+            "text": "News",
+            "url": "/news/",
+            "children": false
+        },
+        {
+            "text": "Contact Us",
+            "url": "/contact-us/",
+            "children": false
+        }
+    ]
+}
