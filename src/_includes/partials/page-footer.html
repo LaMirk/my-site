@@ -1,25 +1,14 @@
 <footer id="footer">
-    <nav aria-label="Footer navigation" class="[ nav ] [ footer-nav ]">
+    <nav aria-label="Footer navigation" class="[ nav ] [ footer__nav ]">
         <a href="/"><img src="images/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="footer-brand" class="brand"></a>
-        <ul class="[ nav__list ] [ footer-nav-list ]">
-            <li><span>Latest</span></li>
-            <li><a href="">News</a></li>
-            <li><a href="">Statements</a></li>
-            <li><a href="">Publications</a></li>
+        {% for navList in navigation.footer %}
+        <ul class="[ nav__list ] [ footer__nav__list ]">
+            <li><span>{{ navList.title }}</span></li>
+            {% for navItem in navList.items %}
+                <li><a href="{{ navItem.href }}"> {{ navItem.label }}</a></li>
+            {% endfor %}
         </ul>
-        <ul class="[ nav__list ] [ footer-nav-list ]">
-            <li><span>About Us</span></li>
-            <li><a href="">IRFS Members</a></li>
-            <li><a href="">Vision | Mission | Strategy</a></li>
-            <li><a href="">Contact Us</a></li>
-        </ul>
-        <ul class="[ nav__list ] [ footer-nav-list ]">
-            <li><span>What We Do</span></li>
-            <li><a href="">Promoting press freedom and journalist safety</a></li>
-            <li><a href="">Promotion of youth media and ICT</a></li>
-            <li><a href="">Protection of freedom of expression</a></li>
-            <li><a href="">Objective TV</a></li>
-        </ul>
+        {% endfor %}
     </nav>
-    <p>&#169; 2025 &#8226; IRFS</p>
+    <p id="footer__copyright">&#169; 2025 &#8226; IRFS</p>
 </footer>
