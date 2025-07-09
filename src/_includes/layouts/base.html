@@ -8,10 +8,11 @@
     <link rel="icon" type="image/png" href="images/cropped-Untitled-design5-32x32.png" sizes="32x32">
     {% include "styles/main.css.html" %}
     {% include "styles/auto-slider-css.html" %}
+    {% block layout %}layout{% endblock %}
 </head>
 <body>
     {% include "partials/page-header.html" %}
-    {% block content %}{% endblock %}
+    {% block content %}content{% endblock %}
     {% include "partials/page-footer.html" %}
 </body>
 </html>

@@ -1,10 +1,14 @@
 {% extends "layouts/base.html" %}
-
+{% block layout %}
+	{% include "styles/home-layout.css.html" %}
+{% endblock %}
 {% block content %}
 	<main>
-		<section>{% include "partials/auto-slider.html" %}</section>
-		<section></section>
-		{% if condition %}<section></section>{% endif %}
+		<div class="grid-container">
+			<section id="news-banner" class="wrapper">{% include "partials/auto-slider.html" %}</section>
+			<section id="news" class="wrapper"><p>news</p></section>
+			<section id="events" class="wrapper"><p>events</p></section>
+			<section id="latest-news" class="wrapper"><p>Latest news</p></section>
+		</div>
 	</main>
-	
 {% endblock %}
