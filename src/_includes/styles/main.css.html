@@ -10,31 +10,27 @@
         padding: 0 9%; 
         height: 8.5em;
     }
-    #site-header ul { list-style-type: none; }
-    .nav__list {
+    .nav__list, .nav__droplist { list-style-type: none; }
+    .site-header__nav__list {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding-inline-start: 0;
     }
-    .nav__list li > a {
+    .nav__list li > a, .nav__list li > span {
         display: block;
-        color: white;
-        text-decoration: none;
     }
-    .nav__list > li > a:hover { color: cornsilk; }
-    .nav__list > li + li a { 
-        font-weight: bold;
-        font-family: sans-serif;
-    }
+    .nav__list * { text-decoration: none; }
+    .nav__list > li > a:hover { color: rgb(171, 171, 171); }
     .nav__sublist:hover .nav__droplist { display: block; }
     .nav__droplist {
         display: none;
         position: absolute;
         background-color: #f9f9f9;
         color: #062963;
-        margin: 0;
+        margin-top: 3.55em;
         padding: 1em;
+        border-radius: 2.5%;
         z-index: 1000;
     }
     .nav__droplist li + li { margin-top: 1em; }
@@ -74,21 +70,41 @@
         -webkit-font-smoothing: antialiased;
     }
 /* footer css */
+    #footer-brand { width: 12em;}
     footer { 
         padding: 2em 5%;
-        color: white;
         font-size: 0.9em;
     }
     footer a { color: #f0f0f0; text-decoration: none; }
-    footer a:hover { color: #dcdcdc; text-decoration: underline; }
+    footer a:hover { color: #dcdcdc; }
+    .footer__nav { 
+        display: flex; 
+        justify-content: space-around;
+        }
+    .footer__nav__list > li > a { 
+        color: rgb(105, 135, 157); 
+        font-weight: normal;
+        margin-top: 1em;
+    }
+    .footer__nav__list > li:hover > a { color: white; }
+    #footer__copyright { 
+        text-align: center; 
+        margin-top: 1em;
+        font-weight: lighter;
+    }
 /* main css */
     main { margin: 2% 5%; }
     header, footer { background-color: #062963; }
-    /* .wrapper { 
+    header *, footer * { 
+        color: white; 
+        font-family: sans-serif; 
+        font-weight: bold; 
+    }
+    .wrapper { 
         box-sizing: border-box;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        box-shadow: #5e5e5e 0px 0px 10px 0px;
         backdrop-filter: blur(10px);
         overflow: hidden;
         background: rgba(255, 255, 255, 0.1);
-    } */
+    }
 </style>
