@@ -99,22 +99,29 @@
         font-weight: lighter;
     }
 /* main css */
-    main { padding: 2em 10em; }
+    main { padding: 2% 10%; }
     header, footer { background-color: #062963; }
     header { padding: 0 0;}
     header *, footer * { 
         color: white; 
         font-weight: bold; 
     }
-    .wrapper { 
+    .shadow-wrapper { 
         box-sizing: border-box;
         box-shadow: #5e5e5e 0px 0px 10px 0px;
-        backdrop-filter: blur(3px);
-        overflow: hidden;
+        
+        
+    }
+    .window {
         background: rgba(255, 255, 255, 0.45);
+        backdrop-filter: blur(3px);
     }
     .radius {
         border-radius: 0.5em;
+    }
+    .flex-container {
+        display: flex;
+        gap: 10px;
     }
 </style>
     <style>
@@ -125,14 +132,12 @@
         justify-content: center;
         margin: 0;
         padding: 0;
-        min-width: 50vw;
         position: relative;
     }
 
     .carousel-wrapper {
         overflow: hidden;
         position: relative;
-        height: 500px;
     }
 
     .carousel-track {
@@ -300,7 +305,7 @@
             <li class="nav__sublist">
                 <a href="">Who We Are</a>
                 
-                    <ul class="[ nav__droplist ] [ wrapper radius ]">
+                    <ul class="[ nav__droplist ] [ shadow-wrapper radius ]">
                         
                             <li><a href="NaN">VISION | MISSION | STRATEGY</a></li>
                         
@@ -313,7 +318,7 @@
             <li class="nav__sublist">
                 <a href="#">What We Do</a>
                 
-                    <ul class="[ nav__droplist ] [ wrapper radius ]">
+                    <ul class="[ nav__droplist ] [ shadow-wrapper radius ]">
                         
                             <li><a href="NaN">Promoting press freedom and journalist safety</a></li>
                         
@@ -374,6 +379,7 @@
 				
 					<p>The trial of Bakhtiyar Hajiyev’s case continued today in the Baku Serious Crimes Court. During the session the activist made a number of petitions.</p>
 				
+				
 			</a>
 		</li>
 	
@@ -390,6 +396,7 @@
 				<h2>IRFS disappointed about Lionel Messi legitimizing the oppressive regime of Aliyev’s family</h2>
 				
 					<p>While global leaders express growing concern and criticism over the intensifying human rights crackdown in Azerbaijan, which has reached an unprecedented low with 331 political prisoners, Lionel Messi—a global football star and UNICEF Goodwill Ambassador—has chosen to pay tribute to Heydar Aliyev on the anniversary of his death, the former President of Azerbaijan and father of the incumbent leader, Ilham Aliyev. He also visited Heydar Aliyev Center and met with its Director, Assistant to the President of Azerbaijan, Anar Alakbarov. By doing so, Messi has contributed to the reinforcement of the Aliyev family’s cult of personality in Azerbaijan.</p>
+				
 				
 			</a>
 		</li>
@@ -408,6 +415,7 @@
 				
 					<p>At 13:15 Baku time, political emigrant Vidadi Iskenderli died in a hospital in the French city of Mulhouse. His brother Oktay Iskenderli told Turan about this.</p>
 				
+				
 			</a>
 		</li>
 	
@@ -424,6 +432,7 @@
 				<h2>The search at Farid Ismailov’s apartment has ended</h2>
 				
 					<p>On the evening of March 6, a search was completed at the apartment of Toplum Tv employee Farid Ismailov, after which the journalist was handcuffed and taken away in an unknown direction.</p>
+				
 				
 			</a>
 		</li>

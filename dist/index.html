@@ -99,22 +99,29 @@
         font-weight: lighter;
     }
 /* main css */
-    main { padding: 2em 10em; }
+    main { padding: 2% 10%; }
     header, footer { background-color: #062963; }
     header { padding: 0 0;}
     header *, footer * { 
         color: white; 
         font-weight: bold; 
     }
-    .wrapper { 
+    .shadow-wrapper { 
         box-sizing: border-box;
         box-shadow: #5e5e5e 0px 0px 10px 0px;
-        backdrop-filter: blur(3px);
-        overflow: hidden;
+        
+        
+    }
+    .window {
         background: rgba(255, 255, 255, 0.45);
+        backdrop-filter: blur(3px);
     }
     .radius {
         border-radius: 0.5em;
+    }
+    .flex-container {
+        display: flex;
+        gap: 10px;
     }
 </style>
     <style>
@@ -125,14 +132,12 @@
         justify-content: center;
         margin: 0;
         padding: 0;
-        min-width: 50vw;
         position: relative;
     }
 
     .carousel-wrapper {
         overflow: hidden;
         position: relative;
-        height: 500px;
     }
 
     .carousel-track {
@@ -284,27 +289,9 @@
 </style>
     
 	<style>
-    #news-banner { grid-area: news-banner; }
-    #news { grid-area: news; }
-    #events { grid-area: events; }
-    #last-news { grid-area: last-news; }
-    .grid-container {
-        display: grid;
-        grid-template-areas: "news-banner news-banner news-banner news news" 
-                             "events events events events events" 
-                             "latest latest latest latest latest";
-        grid-template-columns: repeat(5, 1fr);
-        gap: 10px;
-    }
-    .grid-container2 {
-        display: grid;
-        grid-template-areas: 
-        "news news news table table"
-        "boob boob boob boob boob"
-        "doob doob doob doob doob";
-        grid-template-columns: repeat(5, 1fr);
-        gap: 10px;
-    }
+    #daily-news { max-width: 60%;}
+    #last-news { overflow: scroll; }
+    
 </style>  
 
 
@@ -326,7 +313,7 @@
             <li class="nav__sublist">
                 <a href="">Who We Are</a>
                 
-                    <ul class="[ nav__droplist ] [ wrapper radius ]">
+                    <ul class="[ nav__droplist ] [ shadow-wrapper radius ]">
                         
                             <li><a href="NaN">VISION | MISSION | STRATEGY</a></li>
                         
@@ -339,7 +326,7 @@
             <li class="nav__sublist">
                 <a href="#">What We Do</a>
                 
-                    <ul class="[ nav__droplist ] [ wrapper radius ]">
+                    <ul class="[ nav__droplist ] [ shadow-wrapper radius ]">
                         
                             <li><a href="NaN">Promoting press freedom and journalist safety</a></li>
                         
@@ -376,8 +363,8 @@
 
     
 	<main>
-		<div class="grid-container">
-			<section id="news-banner" class="wrapper"> <div class="carousel-container">
+		<section class="[ flex-container ] []">
+			<section id="daily-news" class="[ shadow-wrapper ]"> <div class="carousel-container">
     <div class="carousel-wrapper">
         <div class="carousel-track" id="carouselTrack">
             
@@ -442,7 +429,6 @@
     <div class="carousel-indicators" id="indicators"></div>
 </div>
  
-
 <script>
     let currentSlide = 0;
     let isAutoplay = true;
@@ -562,21 +548,21 @@
         }
     });
 </script></section>
-			<section id="news" class="wrapper"> <ol class="post-list">
+			<section id="last-news" class="[ shadow-wrapper ]">
+ 
+ 
+
+<header><h2>News</h2></header>
+<ol class="post-list">
 	
 		
 		<li class="post-list__item">
 			<a href="/news-feed/azerbaijani-journalists-launch-hunger-strikes-amid-extended-detentions-and-harsh-sentences/">
 				
-					<img src="/images/cover/Meydan-TV.png" alt="
-			
-				Azerbaijani Journalists Launch Hunger Strikes Amid Extended Detentions and Harsh Sentences
-			
-		" class="post-list__item__image">
-				
 				<h2>Azerbaijani Journalists Launch Hunger Strikes Amid Extended Detentions and Harsh Sentences</h2>
 				
-					<p>Journalists affiliated with Meydan TV, currently held in custody, have initiated a hunger strike in solidarity with their colleagues from AbzasMedia, who recently received lengthy prison sentences. This act of protest underscores the escalating crackdown on independent media in Azerbaijan, where numerous journalists and civil society activists face charges widely condemned by international human rights organizations as politically motivated.</p>
+				
+					<time datetime="2025-07-04T00:00:00.000Z">13th of July 2025</time>
 				
 			</a>
 		</li>
@@ -585,15 +571,10 @@
 		<li class="post-list__item">
 			<a href="/news-feed/arrests-detentions-torture/">
 				
-					<img src="/images/cover/Nurlan-Libre-1024x683.jpg" alt="
-			
-				Arrests, Detentions, Torture…
-			
-		" class="post-list__item__image">
-				
 				<h2>Arrests, Detentions, Torture…</h2>
 				
-					<p>Nurlan Libre, arrested in the &#92;“Meydan TV case,&#92;” writes from pre-trial detention:&lt;br&gt;&lt;br&gt;&#92;“We must live this life a little courageously, a little dangerously, taking risks. Especially since we are condemned to lose this life (whether good or bad) in any case.&#92;” – Friedrich Nietzsche&lt;br&gt;&lt;br&gt;I was accepted to college at 16. At that time, in 2013, civil society institutions in the country, inspired by the international protests known as the “Arab Spring,” held demonstrations with democratic demands. Unfortunately, due to my young age, I could only watch the protests from afar.</p>
+				
+					<time datetime="2025-07-04T00:00:00.000Z">13th of July 2025</time>
 				
 			</a>
 		</li>
@@ -602,15 +583,10 @@
 		<li class="post-list__item">
 			<a href="/news-feed/imprisoned-azerbaijani-journalist-aynur-elgunesh-honored-with-international-award-amidst-widespread-crackdown-on-media/">
 				
-					<img src="/images/cover/Aynur-Ganbarova-Elgunesh.jpg" alt="
-			
-				Imprisoned Azerbaijani Journalist Aynur Elgunesh Honored with International Award Amidst Widespread Crackdown on Media
-			
-		" class="post-list__item__image">
-				
 				<h2>Imprisoned Azerbaijani Journalist Aynur Elgunesh Honored with International Award Amidst Widespread Crackdown on Media</h2>
 				
-					<p>**Aynur Elgunesh (Ganbarova)**, the arrested editor-in-chief of Meydan TV, has been awarded a prestigious international prize by the **International Women’s Media Foundation (IWMF)**. The recognition comes as Azerbaijan faces increasing international scrutiny over its crackdown on independent media and civil society.</p>
+				
+					<time datetime="2025-07-03T00:00:00.000Z">13th of July 2025</time>
 				
 			</a>
 		</li>
@@ -619,15 +595,10 @@
 		<li class="post-list__item">
 			<a href="/news-feed/azerbaijan-s-tax-ministry-demands-79-000-manats-in-politically-charged-toplum-tv-case-amidst-broader-crackdown-on-independent-media/">
 				
-					<img src="/images/cover/toplum_tv-1024x625.png" alt="
-			
-				Azerbaijan’s Tax Ministry Demands 79,000 Manats in Politically Charged ‘Toplum TV Case’ Amidst Broader Crackdown on Independent Media
-			
-		" class="post-list__item__image">
-				
 				<h2>Azerbaijan’s Tax Ministry Demands 79,000 Manats in Politically Charged ‘Toplum TV Case’ Amidst Broader Crackdown on Independent Media</h2>
 				
-					<p>The ongoing legal proceedings against independent Azerbaijani media outlet “Toplum TV” continued on June 30, 2025, at the Baku Court of Grave Crimes, where the Tax Ministry formally demanded 79,000 manats from the defendants. The hearing, primarily chaired by Judge Azer Taghiyev, saw the accused reiterate their claims of political motivation behind their arrests and the charges leveled against them.</p>
+				
+					<time datetime="2025-07-03T00:00:00.000Z">13th of July 2025</time>
 				
 			</a>
 		</li>
@@ -636,15 +607,10 @@
 		<li class="post-list__item">
 			<a href="/news-feed/abzasmedia-director-ulvi-hasanli-alleges-torture-continues-hunger-strike-in-prison-amidst-deteriorating-health/">
 				
-					<img src="/images/cover/Ulvi-Hasanli.avif" alt="
-			
-				AbzasMedia Director Ulvi Hasanli Alleges Torture, Continues Hunger Strike in Prison Amidst Deteriorating Health
-			
-		" class="post-list__item__image">
-				
 				<h2>AbzasMedia Director Ulvi Hasanli Alleges Torture, Continues Hunger Strike in Prison Amidst Deteriorating Health</h2>
 				
-					<p>Ulvi Hasanli, the imprisoned director of Azerbaijan’s independent news outlet “AbzasMedia,” is reportedly enduring torture and inhumane treatment in Umbakı prison, where he has been on a hunger strike since June 26. His health has significantly deteriorated, with his weight dropping from 77 kg to 71 kg. Hasanli’s actions are a protest against his allegedly illegal transfer to Umbakı prison before his sentence legally came into force, as well as the denial of family visits.</p>
+				
+					<time datetime="2025-07-03T00:00:00.000Z">13th of July 2025</time>
 				
 			</a>
 		</li>
@@ -653,15 +619,10 @@
 		<li class="post-list__item">
 			<a href="/news-feed/amnesty-international-condemns-azerbaijan-s-intimidation-campaign-against-journalists-following-harsh-sentences-for-abzas-media-staff/">
 				
-					<img src="/images/cover/Abzas-Media.jpg" alt="
-			
-				Amnesty International Condemns Azerbaijan’s “Intimidation Campaign” Against Journalists Following Harsh Sentences for Abzas Media Staff
-			
-		" class="post-list__item__image">
-				
 				<h2>Amnesty International Condemns Azerbaijan’s “Intimidation Campaign” Against Journalists Following Harsh Sentences for Abzas Media Staff</h2>
 				
-					<p>Seven journalists from Azerbaijan’s independent Abzas Media outlet have been sentenced to lengthy prison terms ranging from 7.5 to 9 years, prompting fierce condemnation from Amnesty International, which described the case as a textbook example of how Azerbaijan’s judicial system has been weaponized to silence critical journalism.</p>
+				
+					<time datetime="2025-06-24T00:00:00.000Z">13th of July 2025</time>
 				
 			</a>
 		</li>
@@ -670,15 +631,10 @@
 		<li class="post-list__item">
 			<a href="/news-feed/azerbaijan-delivers-harsh-sentences-to-abzas-media-journalists-and-farid-mehralizade-amidst-international-outcry/">
 				
-					<img src="/images/cover/AbzasMedia.avif" alt="
-			
-				Azerbaijan Delivers Harsh Sentences to “Abzas Media” Journalists and Farid Mehralizade Amidst International Outcry
-			
-		" class="post-list__item__image">
-				
 				<h2>Azerbaijan Delivers Harsh Sentences to “Abzas Media” Journalists and Farid Mehralizade Amidst International Outcry</h2>
 				
-					<p>**Baku, Azerbaijan** – In a move that has drawn sharp criticism from international human rights and media organizations, an Azerbaijani court on June 20 handed down severe prison sentences to journalists from “Abzas Media” and Radio Azadliq’s Farid Mehralizade. The verdicts, which the journalists vehemently deny, are widely seen as politically motivated reprisals for their investigations into high-level corruption.</p>
+				
+					<time datetime="2025-06-22T00:00:00.000Z">13th of July 2025</time>
 				
 			</a>
 		</li>
@@ -687,15 +643,10 @@
 		<li class="post-list__item">
 			<a href="/news-feed/human-rights-experts-address-crisis-of-political-imprisonment-and-civil-society-suppression-in-azerbaijan/">
 				
-					<img src="/images/cover/IMG_7218-1024x492.jpg" alt="
-			
-				Human Rights Experts Address Crisis of Political Imprisonment and Civil Society Suppression in Azerbaijan
-			
-		" class="post-list__item__image">
-				
 				<h2>Human Rights Experts Address Crisis of Political Imprisonment and Civil Society Suppression in Azerbaijan</h2>
 				
-					<p>GENEVA, Switzerland– June 20, 2025 – The Institute for Human Rights (IHR) and The Institute for Reporters’ Freedom and Safety (IRFS) hosted a critical dialogue on the escalating global crisis of political imprisonment and systematic suppression of civil society organizations during the 59th session of the UN Human Rights Council in Geneva.</p>
+				
+					<time datetime="2025-06-20T00:00:00.000Z">13th of July 2025</time>
 				
 			</a>
 		</li>
@@ -704,15 +655,10 @@
 		<li class="post-list__item">
 			<a href="/news-feed/stop-weaponizing-the-courts-irfs-calls-for-european-action-on-georgia-s-civil-society-repression/">
 				
-					<img src="/images/cover/100th-day-of-Georgia-protests-1-1024x683.jpeg" alt="
-			
-				Stop Weaponizing the Courts! IRFS Calls for European Action on Georgia’s Civil Society Repression
-			
-		" class="post-list__item__image">
-				
 				<h2>Stop Weaponizing the Courts! IRFS Calls for European Action on Georgia’s Civil Society Repression</h2>
 				
-					<p>The IRFS calls on the European Institutions and the Council of Europe to demand from the Georgian authorities a stop to use of the court powers in a bid to suppress activities by critical civil society organisations, including those supporting media.</p>
+				
+					<time datetime="2025-06-19T00:00:00.000Z">13th of July 2025</time>
 				
 			</a>
 		</li>
@@ -721,50 +667,19 @@
 		<li class="post-list__item">
 			<a href="/news-feed/my-spiritual-torture/">
 				
-					<img src="/images/cover/Aynur-Elgunəs.jpeg" alt="
-			
-				My Spiritual Torture
-			
-		" class="post-list__item__image">
-				
 				<h2>My Spiritual Torture</h2>
 				
-					<p>Azerbaijan is a strange country. Here, a child is a source of security, an heir, a being who will carry you on their shoulders tomorrow. The approach of ‘a son carries you to the grave on his shoulders,’ ‘a daughter cries more’ is a mental value that has come down through the centuries. A child must stand in the shadow of those who brought them into this world throughout their entire life. If they want to live their own life, they are ungrateful, someone who has trampled on family values. Yet they had no role, no order in coming into this world…</p>
+				
+					<time datetime="2025-06-19T00:00:00.000Z">13th of July 2025</time>
 				
 			</a>
 		</li>
 	
-</ol></section>
-			<section id="events" class="wrapper"><p>events</p></section>
-			<section id="latest-news" class="wrapper"><p>Latest news</p></section>
-		</div>
-		<div>
-			<ol>
-				
-					<li><a href="/news-feed/ashgabat-court-overturns-travel-ban-decision-for-journalist-nurgeldy-halykov-offering-hope-amidst-ongoing-legal-battle/"><img src="images/cover/Nurgeldi-Halykow.avif" alt=""></a></li>
-				
-					<li><a href="/news-feed/imprisoned-azerbaijani-journalists-end-hunger-strike-amid-concerns-over-conditions-and-sentences/"><img src="images/cover/1751637440795.jpeg" alt=""></a></li>
-				
-					<li><a href="/news-feed/tit-for-tat-azerbaijan-russia-relations-spiral-amidst-raids-and-deaths/"><img src="images/cover/trend_din_emeliyyat_7-1024x576.jpg" alt=""></a></li>
-				
-					<li><a href="/news-feed/escalation-of-pressure-on-imprisoned-abzasmedia-journalists-as-hunger-strikes-begin-amid-allegations-of-torture-and-unlawful-transfers/"><img src="images/cover/1751614083218.png" alt=""></a></li>
-				
-					<li><a href="/news-feed/azerbaijan-s-media-law-faces-further-restrictions-amidst-criticism/"><img src="images/cover/journalism-is-ot-a-crime.avif" alt=""></a></li>
-				
-					<li><a href="/news-feed/azerbaijani-journalists-launch-hunger-strikes-amid-extended-detentions-and-harsh-sentences/"><img src="images/cover/Meydan-TV.png" alt=""></a></li>
-				
-					<li><a href="/news-feed/arrests-detentions-torture/"><img src="images/cover/Nurlan-Libre-1024x683.jpg" alt=""></a></li>
-				
-					<li><a href="/news-feed/imprisoned-azerbaijani-journalist-aynur-elgunesh-honored-with-international-award-amidst-widespread-crackdown-on-media/"><img src="images/cover/Aynur-Ganbarova-Elgunesh.jpg" alt=""></a></li>
-				
-					<li><a href="/news-feed/azerbaijan-s-tax-ministry-demands-79-000-manats-in-politically-charged-toplum-tv-case-amidst-broader-crackdown-on-independent-media/"><img src="images/cover/toplum_tv-1024x625.png" alt=""></a></li>
-				
-					<li><a href="/news-feed/abzasmedia-director-ulvi-hasanli-alleges-torture-continues-hunger-strike-in-prison-amidst-deteriorating-health/"><img src="images/cover/Ulvi-Hasanli.avif" alt=""></a></li>
-						
-			</ol>
-			<span>[object Object],[object Object],[object Object],[object Object],[object Object]</span>
-			<div>[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]</div>
-		</div>
+</ol>
+</section>
+		</section>
+		<section id="events" class="[ shadow-wrapper ]"><p>events</p></section>
+		<section id="latest-news" class="[ shadow-wrapper ]"><p>Latest news</p></section>
 	</main>
 
     <footer id="footer">

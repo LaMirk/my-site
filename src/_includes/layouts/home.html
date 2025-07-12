@@ -4,20 +4,11 @@
 {% endblock %}
 {% block content %}
 	<main>
-		<div class="grid-container">
-			<section id="news-banner" class="wrapper">{% set postListItems = collections.blog.slice(0, 5) %} {% include "partials/auto-slider.html" %}</section>
-			<section id="news" class="wrapper">{% set postListItems = collections.blog.slice(5, 15) %} {% include "partials/post-list.html" %}</section>
-			<section id="events" class="wrapper"><p>events</p></section>
-			<section id="latest-news" class="wrapper"><p>Latest news</p></section>
-		</div>
-		<div>
-			<ol>
-				{% for item in collections.blog.slice(0, 10)%}
-					<li><a href="{{ item.url }}"><img src="{{ item.data.Photo }}" alt=""></a></li>
-				{% endfor %}		
-			</ol>
-			<span>{{ collections.blog.slice(0, 5) }}</span>
-			<div>{{ collections.blog }}</div>
-		</div>
+		<section class="[ flex-container ] []">
+			<section id="daily-news" class="[ shadow-wrapper ]">{% set postListItems = collections.blog.slice(0, 5) %} {% include "partials/auto-slider.html" %}</section>
+			<section id="last-news" class="[ shadow-wrapper ]">{% include "partials/news-section.html" %}</section>
+		</section>
+		<section id="events" class="[ shadow-wrapper ]"><p>events</p></section>
+		<section id="latest-news" class="[ shadow-wrapper ]"><p>Latest news</p></section>
 	</main>
 {% endblock %}

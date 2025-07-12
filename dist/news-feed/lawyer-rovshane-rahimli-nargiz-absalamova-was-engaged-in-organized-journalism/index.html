@@ -99,22 +99,29 @@
         font-weight: lighter;
     }
 /* main css */
-    main { padding: 2em 10em; }
+    main { padding: 2% 10%; }
     header, footer { background-color: #062963; }
     header { padding: 0 0;}
     header *, footer * { 
         color: white; 
         font-weight: bold; 
     }
-    .wrapper { 
+    .shadow-wrapper { 
         box-sizing: border-box;
         box-shadow: #5e5e5e 0px 0px 10px 0px;
-        backdrop-filter: blur(3px);
-        overflow: hidden;
+        
+        
+    }
+    .window {
         background: rgba(255, 255, 255, 0.45);
+        backdrop-filter: blur(3px);
     }
     .radius {
         border-radius: 0.5em;
+    }
+    .flex-container {
+        display: flex;
+        gap: 10px;
     }
 </style>
     <style>
@@ -125,14 +132,12 @@
         justify-content: center;
         margin: 0;
         padding: 0;
-        min-width: 50vw;
         position: relative;
     }
 
     .carousel-wrapper {
         overflow: hidden;
         position: relative;
-        height: 500px;
     }
 
     .carousel-track {
@@ -300,7 +305,7 @@
             <li class="nav__sublist">
                 <a href="">Who We Are</a>
                 
-                    <ul class="[ nav__droplist ] [ wrapper radius ]">
+                    <ul class="[ nav__droplist ] [ shadow-wrapper radius ]">
                         
                             <li><a href="NaN">VISION | MISSION | STRATEGY</a></li>
                         
@@ -313,7 +318,7 @@
             <li class="nav__sublist">
                 <a href="#">What We Do</a>
                 
-                    <ul class="[ nav__droplist ] [ wrapper radius ]">
+                    <ul class="[ nav__droplist ] [ shadow-wrapper radius ]">
                         
                             <li><a href="NaN">Promoting press freedom and journalist safety</a></li>
                         

@@ -1,24 +1,6 @@
 <style>
-    #news-banner { grid-area: news-banner; }
-    #news { grid-area: news; }
-    #events { grid-area: events; }
-    #last-news { grid-area: last-news; }
-    .grid-container {
-        display: grid;
-        grid-template-areas: "news-banner news-banner news-banner news news" 
-                             "events events events events events" 
-                             "latest latest latest latest latest";
-        grid-template-columns: repeat(5, 1fr);
-        gap: 10px;
-    }
-    .grid-container2 {
-        display: grid;
-        grid-template-areas: 
-        "news news news table table"
-        "boob boob boob boob boob"
-        "doob doob doob doob doob";
-        grid-template-columns: repeat(5, 1fr);
-        gap: 10px;
-    }
+    #daily-news { max-width: 60%;}
+    #last-news { overflow: scroll; }
+    
 </style>  
 
