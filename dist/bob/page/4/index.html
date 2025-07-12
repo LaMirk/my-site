@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for-auto-slider</title>
+    <link rel="icon" type="image/png" href="/images/cropped-Untitled-design5-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/images/cropped-Untitled-design5-32x32.png" sizes="32x32">
+    <style>
+/* body css */
+    * { 
+        margin: 0; 
+        padding: 0;
+    }
+/* site header css */
+    #site-header__brand { width: 17em; }
+    
+    .nav__list, .nav__droplist { list-style-type: none; }
+    .site-header__nav__list {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding-inline-start: 0;
+    }
+    .nav__list li > a, .nav__list li > span {
+        display: block;
+    }
+    .nav__list * { text-decoration: none; }
+    .nav__list > li > a:hover { color: rgb(171, 171, 171); }
+    .nav__sublist:hover .nav__droplist { display: block; }
+    .nav__droplist {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        color: #062963;
+        margin-top: 3.55em;
+        padding: 1em;
+        z-index: 1000;
+    }
+    .nav__droplist li + li { margin-top: 1em; }
+    .nav__droplist li a { color: #062963;}
+    .nav__droplist li a:hover { color: #5e5e5e; }
+    
+
+
+/* searc scc */
+    @font-face {
+        font-family: 'Material Symbols Outlined';
+        font-style: normal;
+        font-weight: 400;
+        src: url(https://fonts.gstatic.com/icon/font?kit=kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1v-p_4MrImHCIJIZrDCvHOejbd5zrDAt69N5_NGV7d27Z8wyV_VY&skey=b8dc2088854b122f&v=v257) format('woff2');
+    }
+    .searc {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .search > a { margin-left: 5em; }
+    .search__icon {
+        font-family: 'Material Symbols Outlined';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 2rem;
+        line-height: 0;
+        color: white;
+        letter-spacing: normal;
+        text-transform: none;
+        float: left;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: 'liga';
+        font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
+    }
+/* footer css */
+    #footer-brand { width: 12em;}
+    footer { 
+        padding: 2em 5%;
+        font-size: 0.9em;
+    }
+    footer a:hover { color: #dcdcdc; }
+    #footer__copyright { color: rgb(105, 135, 157); }
+    .footer__nav { 
+        display: flex; 
+        justify-content: space-around;
+        }
+    .footer__nav__list > li > a { 
+        text-decoration: none;
+        color: rgb(105, 135, 157); 
+        font-weight: normal;
+        margin-top: 1em;
+    }
+    .footer__nav__list > li:hover > a { color: white; }
+    #footer__copyright { 
+        text-align: center; 
+        margin-top: 1em;
+        font-weight: lighter;
+    }
+/* main css */
+    main { padding: 2em 10em; }
+    header, footer { background-color: #062963; }
+    header { padding: 0 0;}
+    header *, footer * { 
+        color: white; 
+        font-family: sans-serif; 
+        font-weight: bold; 
+    }
+    .wrapper { 
+        box-sizing: border-box;
+        box-shadow: #5e5e5e 0px 0px 10px 0px;
+        backdrop-filter: blur(3px);
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.45);
+    }
+    .radius {
+        border-radius: 0.5em;
+    }
+</style>
+    <style>
+  .carousel-container {
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        min-width: 50vw;
+        position: relative;
+    }
+
+    .carousel-wrapper {
+        overflow: hidden;
+        position: relative;
+        height: 500px;
+    }
+
+    .carousel-track {
+        display: flex;
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        height: 100%;
+    }
+
+    .carousel-slide {
+        min-width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .slide-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s ease;
+    }
+
+    .slide-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        padding: 60px 40px 40px;
+        color: white;
+        transform: translateY(20px);
+        opacity: 0;
+        animation: slideUp 0.8s ease forwards;
+    }
+
+    .slide-title {
+        font-size: 2.5em;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        letter-spacing: -0.5px;
+    }
+
+    .slide-subtitle {
+        font-size: 1.2em;
+        opacity: 0.9;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    @keyframes slideUp {
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .carousel-indicators {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 12px;
+        z-index: 10;
+    }
+
+    .indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.4);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+    }
+
+    .indicator.active {
+        background: white;
+        transform: scale(1.2);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .carousel-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 18px;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        z-index: 10;
+    }
+
+    .carousel-nav:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    .carousel-nav.prev {
+        left: 20px;
+    }
+
+    .carousel-nav.next {
+        right: 20px;
+    }
+
+    .play-pause {
+        position: absolute;
+        top: 2%;
+        right: 2%;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        width: 2.5em;
+        height: 2.5em;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1em;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        z-index: 10;
+    }
+
+    .play-pause:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+        .slide-title {
+            font-size: 2em;
+        }
+        
+        .slide-content {
+            padding: 40px 20px 20px;
+        }
+        
+        .carousel-container {
+            margin: 10px;
+        }
+    }
+</style>
+    
+	<style>
+    #news-banner { grid-area: news-banner; }
+    #news { grid-area: news; }
+    #events { grid-area: events; }
+    #last-news { grid-area: last-news; }
+    .grid-container {
+        display: grid;
+        grid-template-areas: "news-banner news-banner news-banner news news" 
+                             "events events events events events" 
+                             "latest latest latest latest latest";
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+    }
+    .grid-container2 {
+        display: grid;
+        grid-template-areas: 
+        "news news news table table"
+        "boob boob boob boob boob"
+        "doob doob doob doob doob";
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+    }
+</style>  
+
+
+
+</head>
+<body>
+    <header role="banner" id="site-header">
+  <nav class="[ nav ] [ site-header__nav ]">
+    <ul class="[ nav__list ] [ site-header__nav__list ]">
+        <li>
+            <a href="/"><img src="/images/brand/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="site-header__brand" class="brand"></a>
+        </li>
+        
+            <li >
+                <a href="/">Home</a>
+                
+            </li>
+        
+            <li class="nav__sublist">
+                <a href="">Who We Are</a>
+                
+                    <ul class="[ nav__droplist ] [ wrapper radius ]">
+                        
+                            <li><a href="NaN">VISION | MISSION | STRATEGY</a></li>
+                        
+                            <li><a href="NaN">IRFS MEMBERS</a></li>
+                        
+                    </ul>
+                
+            </li>
+        
+            <li class="nav__sublist">
+                <a href="#">What We Do</a>
+                
+                    <ul class="[ nav__droplist ] [ wrapper radius ]">
+                        
+                            <li><a href="NaN">Promoting press freedom and journalist safety</a></li>
+                        
+                            <li><a href="NaN">Promotion of youth media and ICT</a></li>
+                        
+                            <li><a href="NaN">Protection of freedom of expression</a></li>
+                        
+                            <li><a href="NaN">Safeguarding freedom of information</a></li>
+                        
+                            <li><a href="NaN">Objective TV</a></li>
+                        
+                    </ul>
+                
+            </li>
+        
+            <li >
+                <a href="/news-feed/">News</a>
+                
+            </li>
+        
+            <li >
+                <a href="/contact-us/">Contact Us</a>
+                
+            </li>
+        
+        <li class="searc">
+            <span class="search__icon">search</span>
+            <a href="">Search</a>
+        </li>
+    </ul>
+  </nav>
+</header>
+
+
+    
+	<main>
+		<div class="grid-container">
+			<section id="news-banner" class="wrapper"><div class="carousel-container">
+    <div class="carousel-wrapper">
+        <div class="carousel-track" id="carouselTrack">
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/ashgabat-court-overturns-travel-ban-decision-for-journalist-nurgeldy-halykov-offering-hope-amidst-ongoing-legal-battle/" class="slide-link">
+                        <img src="/images/cover/Nurgeldi-Halykow.avif" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">Ashgabat Court Overturns Travel Ban Decision for Journalist Nurgeldy Halykov, Offering Hope Amidst Ongoing Legal Battle</div>
+                            <div class="slide-subtitle" style="display: none;">**Ashgabat, Turkmenistan** – In a significant development for press freedom and human rights in Turkmenistan, the Ashgabat City Court on July 3 overturned a lower court’s decision that had upheld a travel ban against independent journalist Nurgeldy Halykov. The case has been sent back to the Kopetdag District Court for reconsideration, this time before a different judge.</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/imprisoned-azerbaijani-journalists-end-hunger-strike-amid-concerns-over-conditions-and-sentences/" class="slide-link">
+                        <img src="/images/cover/1751637440795.jpeg" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">Imprisoned Azerbaijani Journalists End Hunger Strike Amid Concerns Over Conditions and Sentences</div>
+                            <div class="slide-subtitle" style="display: none;">Imprisoned journalists from “Abzas Media,” including director Ulvi Hasanli, have ended a hunger strike initiated to protest their convictions and detention conditions. The decision to cease the protest was primarily driven by concerns for the health of fellow journalists who had joined the strike in solidarity.</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/tit-for-tat-azerbaijan-russia-relations-spiral-amidst-raids-and-deaths/" class="slide-link">
+                        <img src="/images/cover/trend_din_emeliyyat_7-1024x576.jpg" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">Tit-for-Tat: Azerbaijan-Russia Relations Spiral Amidst Raids and Deaths</div>
+                            <div class="slide-subtitle" style="display: none;">**A sudden and severe deterioration of relations between Russia and Azerbaijan has erupted following a series of reciprocal, violent law enforcement operations. What began with a Russian anti-crime raid in Yekaterinburg, leading to deaths and detentions, quickly escalated into a full-blown diplomatic crisis with significant human and economic implications.**</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/escalation-of-pressure-on-imprisoned-abzasmedia-journalists-as-hunger-strikes-begin-amid-allegations-of-torture-and-unlawful-transfers/" class="slide-link">
+                        <img src="/images/cover/1751614083218.png" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">Escalation of Pressure on Imprisoned AbzasMedia Journalists as Hunger Strikes Begin Amid Allegations of Torture and Unlawful Transfers</div>
+                            <div class="slide-subtitle" style="display: none;">**Baku, Azerbaijan** – In a significant escalation of the ongoing “AbzasMedia” case, three imprisoned female journalists – Sevinj Vagifgizi, Nargiz Absalamova, and Elnara Gasimova – have reportedly launched a hunger strike in solidarity with their director, Ulvi Hasanli, who has been on hunger strike for over a week. Their actions come amidst allegations of unlawful transfers, inhumane treatment, and torture within the penitentiary system, drawing renewed attention to the plight of independent media in Azerbaijan.</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/azerbaijan-s-media-law-faces-further-restrictions-amidst-criticism/" class="slide-link">
+                        <img src="/images/cover/journalism-is-ot-a-crime.avif" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">Azerbaijan&#92;’s &#92;‘Media Law&#92;’ Faces Further Restrictions Amidst Criticism</div>
+                            <div class="slide-subtitle" style="display: none;">The Azerbaijani parliament is moving to further tighten its controversial “Media Law,” which has already drawn significant local and international criticism. A new package of amendments, discussed in the Milli Majlis, was adopted in its first reading on July 4, 2025, signaling an expansion of requirements for media entities operating within the country.</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/azerbaijani-journalists-launch-hunger-strikes-amid-extended-detentions-and-harsh-sentences/" class="slide-link">
+                        <img src="/images/cover/Meydan-TV.png" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">Azerbaijani Journalists Launch Hunger Strikes Amid Extended Detentions and Harsh Sentences</div>
+                            <div class="slide-subtitle" style="display: none;">Journalists affiliated with Meydan TV, currently held in custody, have initiated a hunger strike in solidarity with their colleagues from AbzasMedia, who recently received lengthy prison sentences. This act of protest underscores the escalating crackdown on independent media in Azerbaijan, where numerous journalists and civil society activists face charges widely condemned by international human rights organizations as politically motivated.</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/arrests-detentions-torture/" class="slide-link">
+                        <img src="/images/cover/Nurlan-Libre-1024x683.jpg" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">Arrests, Detentions, Torture…</div>
+                            <div class="slide-subtitle" style="display: none;">Nurlan Libre, arrested in the &#92;“Meydan TV case,&#92;” writes from pre-trial detention:&lt;br&gt;&lt;br&gt;&#92;“We must live this life a little courageously, a little dangerously, taking risks. Especially since we are condemned to lose this life (whether good or bad) in any case.&#92;” – Friedrich Nietzsche&lt;br&gt;&lt;br&gt;I was accepted to college at 16. At that time, in 2013, civil society institutions in the country, inspired by the international protests known as the “Arab Spring,” held demonstrations with democratic demands. Unfortunately, due to my young age, I could only watch the protests from afar.</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/imprisoned-azerbaijani-journalist-aynur-elgunesh-honored-with-international-award-amidst-widespread-crackdown-on-media/" class="slide-link">
+                        <img src="/images/cover/Aynur-Ganbarova-Elgunesh.jpg" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">Imprisoned Azerbaijani Journalist Aynur Elgunesh Honored with International Award Amidst Widespread Crackdown on Media</div>
+                            <div class="slide-subtitle" style="display: none;">**Aynur Elgunesh (Ganbarova)**, the arrested editor-in-chief of Meydan TV, has been awarded a prestigious international prize by the **International Women’s Media Foundation (IWMF)**. The recognition comes as Azerbaijan faces increasing international scrutiny over its crackdown on independent media and civil society.</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/azerbaijan-s-tax-ministry-demands-79-000-manats-in-politically-charged-toplum-tv-case-amidst-broader-crackdown-on-independent-media/" class="slide-link">
+                        <img src="/images/cover/toplum_tv-1024x625.png" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">Azerbaijan’s Tax Ministry Demands 79,000 Manats in Politically Charged ‘Toplum TV Case’ Amidst Broader Crackdown on Independent Media</div>
+                            <div class="slide-subtitle" style="display: none;">The ongoing legal proceedings against independent Azerbaijani media outlet “Toplum TV” continued on June 30, 2025, at the Baku Court of Grave Crimes, where the Tax Ministry formally demanded 79,000 manats from the defendants. The hearing, primarily chaired by Judge Azer Taghiyev, saw the accused reiterate their claims of political motivation behind their arrests and the charges leveled against them.</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/abzasmedia-director-ulvi-hasanli-alleges-torture-continues-hunger-strike-in-prison-amidst-deteriorating-health/" class="slide-link">
+                        <img src="/images/cover/Ulvi-Hasanli.avif" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">AbzasMedia Director Ulvi Hasanli Alleges Torture, Continues Hunger Strike in Prison Amidst Deteriorating Health</div>
+                            <div class="slide-subtitle" style="display: none;">Ulvi Hasanli, the imprisoned director of Azerbaijan’s independent news outlet “AbzasMedia,” is reportedly enduring torture and inhumane treatment in Umbakı prison, where he has been on a hunger strike since June 26. His health has significantly deteriorated, with his weight dropping from 77 kg to 71 kg. Hasanli’s actions are a protest against his allegedly illegal transfer to Umbakı prison before his sentence legally came into force, as well as the denial of family visits.</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/amnesty-international-condemns-azerbaijan-s-intimidation-campaign-against-journalists-following-harsh-sentences-for-abzas-media-staff/" class="slide-link">
+                        <img src="/images/cover/Abzas-Media.jpg" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">Amnesty International Condemns Azerbaijan’s “Intimidation Campaign” Against Journalists Following Harsh Sentences for Abzas Media Staff</div>
+                            <div class="slide-subtitle" style="display: none;">Seven journalists from Azerbaijan’s independent Abzas Media outlet have been sentenced to lengthy prison terms ranging from 7.5 to 9 years, prompting fierce condemnation from Amnesty International, which described the case as a textbook example of how Azerbaijan’s judicial system has been weaponized to silence critical journalism.</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/azerbaijan-delivers-harsh-sentences-to-abzas-media-journalists-and-farid-mehralizade-amidst-international-outcry/" class="slide-link">
+                        <img src="/images/cover/AbzasMedia.avif" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">Azerbaijan Delivers Harsh Sentences to “Abzas Media” Journalists and Farid Mehralizade Amidst International Outcry</div>
+                            <div class="slide-subtitle" style="display: none;">**Baku, Azerbaijan** – In a move that has drawn sharp criticism from international human rights and media organizations, an Azerbaijani court on June 20 handed down severe prison sentences to journalists from “Abzas Media” and Radio Azadliq’s Farid Mehralizade. The verdicts, which the journalists vehemently deny, are widely seen as politically motivated reprisals for their investigations into high-level corruption.</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/human-rights-experts-address-crisis-of-political-imprisonment-and-civil-society-suppression-in-azerbaijan/" class="slide-link">
+                        <img src="/images/cover/IMG_7218-1024x492.jpg" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">Human Rights Experts Address Crisis of Political Imprisonment and Civil Society Suppression in Azerbaijan</div>
+                            <div class="slide-subtitle" style="display: none;">GENEVA, Switzerland– June 20, 2025 – The Institute for Human Rights (IHR) and The Institute for Reporters’ Freedom and Safety (IRFS) hosted a critical dialogue on the escalating global crisis of political imprisonment and systematic suppression of civil society organizations during the 59th session of the UN Human Rights Council in Geneva.</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/stop-weaponizing-the-courts-irfs-calls-for-european-action-on-georgia-s-civil-society-repression/" class="slide-link">
+                        <img src="/images/cover/100th-day-of-Georgia-protests-1-1024x683.jpeg" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">Stop Weaponizing the Courts! IRFS Calls for European Action on Georgia’s Civil Society Repression</div>
+                            <div class="slide-subtitle" style="display: none;">The IRFS calls on the European Institutions and the Council of Europe to demand from the Georgian authorities a stop to use of the court powers in a bid to suppress activities by critical civil society organisations, including those supporting media.</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/my-spiritual-torture/" class="slide-link">
+                        <img src="/images/cover/Aynur-Elgunəs.jpeg" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">My Spiritual Torture</div>
+                            <div class="slide-subtitle" style="display: none;">Azerbaijan is a strange country. Here, a child is a source of security, an heir, a being who will carry you on their shoulders tomorrow. The approach of ‘a son carries you to the grave on his shoulders,’ ‘a daughter cries more’ is a mental value that has come down through the centuries. A child must stand in the shadow of those who brought them into this world throughout their entire life. If they want to live their own life, they are ungrateful, someone who has trampled on family values. Yet they had no role, no order in coming into this world…</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/lawyer-rovshane-rahimli-nargiz-absalamova-was-engaged-in-organized-journalism/" class="slide-link">
+                        <img src="/images/cover/Nargiz_Absalamova.jpg" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">Lawyer Rovshane Rahimli: “Nargiz Absalamova was engaged in organized journalism”</div>
+                            <div class="slide-subtitle" style="display: none;">According to the lawyer, the majority of the presented evidence is based on statements given under pressure.</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/freedom-of-spech-under-threat-voices-of-exiled-jouralists-from-post-soviet-states/" class="slide-link">
+                        <img src="/images/cover/side-event-journalist-june2025-Презентация-1024x576.jpg" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">Freedom of Spech Under Threat: Voices of Exiled Jouralists from Post-Soviet States</div>
+                            <div class="slide-subtitle" style="display: none;">The Institute for Reporters’ Freedom and Safety, together with its partners, is organizing an official side event during the 59th session of the UN Human Rights Council: Freedom of Speech Under Threat: Voices of Exiled Journalists from Post-Soviet States</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/imprisoned-journalist-polad-aslanov-reveals-overcrowded-cells-and-medical-neglect-during-ombudsman-prison-visit/" class="slide-link">
+                        <img src="/images/cover/Polad-Aslanov-11-01-2022-1024x683-1.jpg" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">Imprisoned Journalist Polad Aslanov Reveals Overcrowded Cells and Medical Neglect During Ombudsman Prison Visit</div>
+                            <div class="slide-subtitle" style="display: none;">Imprisoned journalist Polad Aslanov has exposed shocking conditions at Azerbaijan’s Penitentiary Institution No. 15 during a recent visit by representatives from the Ombudsman’s Office, revealing overcrowded cells where prisoners sleep on floors and systematic denial of medical care.</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/toplum-tv-case-journalists-allege-political-motivation-amidst-heated-court-proceedings/" class="slide-link">
+                        <img src="/images/cover/toplum_tv-1024x625.png" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">Toplum TV Case: Journalists Allege Political Motivation Amidst Heated Court Proceedings</div>
+                            <div class="slide-subtitle" style="display: none;">**Baku, Azerbaijan** – The “Toplum TV case” saw another tense court hearing at the Baku Grave Crimes Court today, marked by a heated exchange between a defendant journalist and the presiding judge, and persistent allegations of political persecution. The proceedings, chaired by Judge Azer Taghiyev, continued with the testimony of a key defendant and the presentation of motions challenging the legality of the process.</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/bakhtiyar-hajiyev-s-lawyer-claims-that-his-right-to-defence-was-violated/" class="slide-link">
+                        <img src="/images/cover/baxtiyar-520x327.jpg" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">Bakhtiyar Hajiyev’s lawyer claims that his right to defence was violated</div>
+                            <div class="slide-subtitle" style="display: none;">On 23 December, at the trial of activist Bakhtiyar Hajiyev in the Court of Grave Crimes, the escorts violated the confidentiality of his communication with his lawyer. This was reported by his lawyer Agyl Laij.</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/bakhtiyar-hajiyev-demanded-to-exclude-falsified-documents-from-his-case/" class="slide-link">
+                        <img src="/images/cover/baxtiyar-520x327.jpg" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">Bakhtiyar Hajiyev demanded to exclude falsified documents from his case</div>
+                            <div class="slide-subtitle" style="display: none;">The trial of Bakhtiyar Hajiyev’s case continued today in the Baku Serious Crimes Court. During the session the activist made a number of petitions.</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/irfs-disappointed-about-lionel-messi-legitimizing-the-oppressive-regime-of-aliyev-s-family/" class="slide-link">
+                        <img src="/images/cover/5dc88d85-cdf6-4178-aa9b-69dc1c32cd4a-1024x577.jpeg" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">IRFS disappointed about Lionel Messi legitimizing the oppressive regime of Aliyev’s family</div>
+                            <div class="slide-subtitle" style="display: none;">While global leaders express growing concern and criticism over the intensifying human rights crackdown in Azerbaijan, which has reached an unprecedented low with 331 political prisoners, Lionel Messi—a global football star and UNICEF Goodwill Ambassador—has chosen to pay tribute to Heydar Aliyev on the anniversary of his death, the former President of Azerbaijan and father of the incumbent leader, Ilham Aliyev. He also visited Heydar Aliyev Center and met with its Director, Assistant to the President of Azerbaijan, Anar Alakbarov. By doing so, Messi has contributed to the reinforcement of the Aliyev family’s cult of personality in Azerbaijan.</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/vidadi-iskenderli-dies-without-regaining-consciousness-updated/" class="slide-link">
+                        <img src="/images/cover/vidadi-390x520.jpg" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">Vidadi Iskenderli Dies Without Regaining Consciousness (updated)</div>
+                            <div class="slide-subtitle" style="display: none;">At 13:15 Baku time, political emigrant Vidadi Iskenderli died in a hospital in the French city of Mulhouse. His brother Oktay Iskenderli told Turan about this.</div>
+                        </div>
+                    </a>
+                </div>
+            
+               <div class="carousel-slide">
+                    <a href="/news-feed/the-search-at-farid-ismailov-s-apartment-has-ended/" class="slide-link">
+                        <img src="/images/cover/farid.webp" alt="" class="slide-image">
+                        <div class="slide-content">
+                            <div class="slide-title">The search at Farid Ismailov’s apartment has ended</div>
+                            <div class="slide-subtitle" style="display: none;">On the evening of March 6, a search was completed at the apartment of Toplum Tv employee Farid Ismailov, after which the journalist was handcuffed and taken away in an unknown direction.</div>
+                        </div>
+                    </a>
+                </div>
+            
+        </div>
+    </div>
+    
+    <button class="carousel-nav prev" onclick="prevSlide()">‹</button>
+    <button class="carousel-nav next" onclick="nextSlide()">›</button>
+    
+    <button class="play-pause" onclick="toggleAutoplay()" id="playPauseBtn">⏸</button>
+    
+    <div class="carousel-indicators" id="indicators"></div>
+</div>
+<!-- <div class="carousel-container">
+    <div class="carousel-wrapper">
+        <div class="carousel-track" id="carouselTrack">
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mountain landscape" class="slide-image">
+                <div class="slide-content">
+                    <div class="slide-title">Mountain Peaks</div>
+                    <div class="slide-subtitle">Discover breathtaking mountain landscapes</div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lake sunset" class="slide-image">
+                <div class="slide-content">
+                    <div class="slide-title">Serene Waters</div>
+                    <div class="slide-subtitle">Experience tranquil lake reflections</div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Forest path" class="slide-image">
+                <div class="slide-content">
+                    <div class="slide-title">Forest Trails</div>
+                    <div class="slide-subtitle">Wander through enchanted woodland paths</div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ocean waves" class="slide-image">
+                <div class="slide-content">
+                    <div class="slide-title">Ocean Waves</div>
+                    <div class="slide-subtitle">Feel the power of endless blue horizons</div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Desert dunes" class="slide-image">
+                <div class="slide-content">
+                    <div class="slide-title">Desert Sands</div>
+                    <div class="slide-subtitle">Explore vast golden desert landscapes</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <button class="carousel-nav prev" onclick="prevSlide()">‹</button>
+    <button class="carousel-nav next" onclick="nextSlide()">›</button>
+    
+    <button class="play-pause" onclick="toggleAutoplay()" id="playPauseBtn">⏸</button>
+    
+    <div class="carousel-indicators" id="indicators"></div>
+</div> -->
+<script>
+    let currentSlide = 0;
+    let isAutoplay = true;
+    let autoplayInterval;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const totalSlides = slides.length;
+    const track = document.getElementById('carouselTrack');
+    const indicatorsContainer = document.getElementById('indicators');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+
+    // Create indicators
+    function createIndicators() {
+        for (let i = 0; i < totalSlides; i++) {
+            const indicator = document.createElement('div');
+            indicator.className = 'indicator';
+            indicator.onclick = () => goToSlide(i);
+            indicatorsContainer.appendChild(indicator);
+        }
+        updateIndicators();
+    }
+
+    // Update indicators
+    function updateIndicators() {
+        const indicators = document.querySelectorAll('.indicator');
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentSlide);
+        });
+    }
+
+    // Go to specific slide
+    function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        updateCarousel();
+        resetAutoplay();
+    }
+
+    // Update carousel position
+    function updateCarousel() {
+        const translateX = -currentSlide * 100;
+        track.style.transform = `translateX(${translateX}%)`;
+        updateIndicators();
+        
+        // Reset and restart slide content animation
+        const currentSlideContent = slides[currentSlide].querySelector('.slide-content');
+        currentSlideContent.style.animation = 'none';
+        currentSlideContent.offsetHeight; // Trigger reflow
+        currentSlideContent.style.animation = 'slideUp 0.8s ease forwards';
+    }
+
+    // Next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+        resetAutoplay();
+    }
+
+    // Previous slide
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+        resetAutoplay();
+    }
+
+    // Toggle autoplay
+    function toggleAutoplay() {
+        isAutoplay = !isAutoplay;
+        playPauseBtn.textContent = isAutoplay ? '⏸' : '▶';
+        
+        if (isAutoplay) {
+            startAutoplay();
+        } else {
+            clearInterval(autoplayInterval);
+        }
+    }
+
+    // Start autoplay
+    function startAutoplay() {
+        if (isAutoplay) {
+            autoplayInterval = setInterval(nextSlide, 4000);
+        }
+    }
+
+    // Reset autoplay
+    function resetAutoplay() {
+        if (isAutoplay) {
+            clearInterval(autoplayInterval);
+            startAutoplay();
+        }
+    }
+
+    // Pause autoplay on hover
+    track.addEventListener('mouseenter', () => {
+        if (isAutoplay) {
+            clearInterval(autoplayInterval);
+        }
+    });
+
+    track.addEventListener('mouseleave', () => {
+        if (isAutoplay) {
+            startAutoplay();
+        }
+    });
+
+    // Initialize
+    createIndicators();
+    startAutoplay();
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            prevSlide();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+        } else if (e.key === ' ') {
+            e.preventDefault();
+            toggleAutoplay();
+        }
+    });
+</script></section>
+			<section id="news" class="wrapper"> <ol class="post-list">
+	
+		
+		<li class="post-list__item">
+			<a href="/news-feed/bakhtiyar-hajiyev-demanded-to-exclude-falsified-documents-from-his-case/">
+				
+					<img src="/images/cover/baxtiyar-520x327.jpg" alt="
+			
+				Bakhtiyar Hajiyev demanded to exclude falsified documents from his case
+			
+		" class="post-list__item__image">
+				
+				<h2>Bakhtiyar Hajiyev demanded to exclude falsified documents from his case</h2>
+				
+					<p>The trial of Bakhtiyar Hajiyev’s case continued today in the Baku Serious Crimes Court. During the session the activist made a number of petitions.</p>
+				
+			</a>
+		</li>
+	
+		
+		<li class="post-list__item">
+			<a href="/news-feed/irfs-disappointed-about-lionel-messi-legitimizing-the-oppressive-regime-of-aliyev-s-family/">
+				
+					<img src="/images/cover/5dc88d85-cdf6-4178-aa9b-69dc1c32cd4a-1024x577.jpeg" alt="
+			
+				IRFS disappointed about Lionel Messi legitimizing the oppressive regime of Aliyev’s family
+			
+		" class="post-list__item__image">
+				
+				<h2>IRFS disappointed about Lionel Messi legitimizing the oppressive regime of Aliyev’s family</h2>
+				
+					<p>While global leaders express growing concern and criticism over the intensifying human rights crackdown in Azerbaijan, which has reached an unprecedented low with 331 political prisoners, Lionel Messi—a global football star and UNICEF Goodwill Ambassador—has chosen to pay tribute to Heydar Aliyev on the anniversary of his death, the former President of Azerbaijan and father of the incumbent leader, Ilham Aliyev. He also visited Heydar Aliyev Center and met with its Director, Assistant to the President of Azerbaijan, Anar Alakbarov. By doing so, Messi has contributed to the reinforcement of the Aliyev family’s cult of personality in Azerbaijan.</p>
+				
+			</a>
+		</li>
+	
+		
+		<li class="post-list__item">
+			<a href="/news-feed/vidadi-iskenderli-dies-without-regaining-consciousness-updated/">
+				
+					<img src="/images/cover/vidadi-390x520.jpg" alt="
+			
+				Vidadi Iskenderli Dies Without Regaining Consciousness (updated)
+			
+		" class="post-list__item__image">
+				
+				<h2>Vidadi Iskenderli Dies Without Regaining Consciousness (updated)</h2>
+				
+					<p>At 13:15 Baku time, political emigrant Vidadi Iskenderli died in a hospital in the French city of Mulhouse. His brother Oktay Iskenderli told Turan about this.</p>
+				
+			</a>
+		</li>
+	
+		
+		<li class="post-list__item">
+			<a href="/news-feed/the-search-at-farid-ismailov-s-apartment-has-ended/">
+				
+					<img src="/images/cover/farid.webp" alt="
+			
+				The search at Farid Ismailov’s apartment has ended
+			
+		" class="post-list__item__image">
+				
+				<h2>The search at Farid Ismailov’s apartment has ended</h2>
+				
+					<p>On the evening of March 6, a search was completed at the apartment of Toplum Tv employee Farid Ismailov, after which the journalist was handcuffed and taken away in an unknown direction.</p>
+				
+			</a>
+		</li>
+	
+</ol></section>
+			<section id="events" class="wrapper"><p>events</p></section>
+			<section id="latest-news" class="wrapper"><p>Latest news</p></section>
+		</div>
+	</main>
+
+    <footer id="footer">
+    <nav aria-label="Footer navigation" class="[ nav ] [ footer__nav ]">
+        <a href="/"><img src="/images/brand/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="footer-brand" class="brand"></a>
+        
+        <ul class="[ nav__list ] [ footer__nav__list ]">
+            <li><span>Latest</span></li>
+            
+                <li><a href="/news/"> News</a></li>
+            
+                <li><a href="/statements/"> Statements</a></li>
+            
+                <li><a href="/publications/"> Publications</a></li>
+            
+        </ul>
+        
+        <ul class="[ nav__list ] [ footer__nav__list ]">
+            <li><span>About Us</span></li>
+            
+                <li><a href="/members/"> IRFS Members</a></li>
+            
+                <li><a href="/vision-mission-strategy/"> Vision | Mission | Strategy</a></li>
+            
+                <li><a href="/contact/"> Contact Us</a></li>
+            
+        </ul>
+        
+        <ul class="[ nav__list ] [ footer__nav__list ]">
+            <li><span>What We Do</span></li>
+            
+                <li><a href="/press-freedom-safety/"> Promoting press freedom and journalist safety</a></li>
+            
+                <li><a href="/youth-media-ict/"> Promotion of youth media and ICT</a></li>
+            
+                <li><a href="/freedom-of-expression/"> Protection of freedom of expression</a></li>
+            
+                <li><a href="/objective-tv/"> Objective TV</a></li>
+            
+        </ul>
+        
+    </nav>
+    <p id="footer__copyright">&#169; 2025 &#8226; IRFS</p>
+</footer>
+</body>
+</html>
