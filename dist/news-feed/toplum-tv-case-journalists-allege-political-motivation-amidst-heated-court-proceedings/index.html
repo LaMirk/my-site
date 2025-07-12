@@ -14,15 +14,12 @@
     }
 /* site header css */
     #site-header__brand { width: 17em; }
-    #site-header { 
-        padding: 0 9%; 
-        height: 8.5em;
-    }
+    
     .nav__list, .nav__droplist { list-style-type: none; }
     .site-header__nav__list {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         padding-inline-start: 0;
     }
     .nav__list li > a, .nav__list li > span {
@@ -39,7 +36,6 @@
         margin-top: 3.55em;
         padding: 1em;
         z-index: 1000;
-        box-shadow: 0px 0px 10px rgba(94, 94, 94, 0.5);
     }
     .nav__droplist li + li { margin-top: 1em; }
     .nav__droplist li a { color: #062963;}
@@ -83,13 +79,14 @@
         padding: 2em 5%;
         font-size: 0.9em;
     }
-    footer a { color: #f0f0f0; text-decoration: none; }
     footer a:hover { color: #dcdcdc; }
+    #footer__copyright { color: rgb(105, 135, 157); }
     .footer__nav { 
         display: flex; 
         justify-content: space-around;
         }
     .footer__nav__list > li > a { 
+        text-decoration: none;
         color: rgb(105, 135, 157); 
         font-weight: normal;
         margin-top: 1em;
@@ -101,8 +98,9 @@
         font-weight: lighter;
     }
 /* main css */
-    main { margin: 2% 5%; }
+    main { padding: 2em 10em; }
     header, footer { background-color: #062963; }
+    header { padding: 0 0;}
     header *, footer * { 
         color: white; 
         font-family: sans-serif; 
@@ -111,9 +109,9 @@
     .wrapper { 
         box-sizing: border-box;
         box-shadow: #5e5e5e 0px 0px 10px 0px;
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(3px);
         overflow: hidden;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.45);
     }
     .radius {
         border-radius: 0.5em;
@@ -291,50 +289,55 @@
   <nav class="[ nav ] [ site-header__nav ]">
     <ul class="[ nav__list ] [ site-header__nav__list ]">
         <li>
-            <a href="/"><img src="/images/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="site-header__brand" class="brand"></a>
+            <a href="/"><img src="/images/brand/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="site-header__brand" class="brand"></a>
         </li>
         
-        <li >
-            <a href="/">Home</a>
-            
+            <li >
+                <a href="/">Home</a>
+                
+            </li>
         
-        <li class="nav__sublist">
-            <a href="">Who We Are</a>
-            
-            <ul class="nav__droplist">
+            <li class="nav__sublist">
+                <a href="">Who We Are</a>
                 
-                <li><a href="NaN">VISION | MISSION | STRATEGY</a></li>
+                    <ul class="[ nav__droplist ] [ wrapper radius ]">
+                        
+                            <li><a href="NaN">VISION | MISSION | STRATEGY</a></li>
+                        
+                            <li><a href="NaN">IRFS MEMBERS</a></li>
+                        
+                    </ul>
                 
-                <li><a href="NaN">IRFS MEMBERS</a></li>
-                
-            </ul>
-            
+            </li>
         
-        <li class="nav__sublist">
-            <a href="#">What We Do</a>
-            
-            <ul class="nav__droplist">
+            <li class="nav__sublist">
+                <a href="#">What We Do</a>
                 
-                <li><a href="NaN">Promoting press freedom and journalist safety</a></li>
+                    <ul class="[ nav__droplist ] [ wrapper radius ]">
+                        
+                            <li><a href="NaN">Promoting press freedom and journalist safety</a></li>
+                        
+                            <li><a href="NaN">Promotion of youth media and ICT</a></li>
+                        
+                            <li><a href="NaN">Protection of freedom of expression</a></li>
+                        
+                            <li><a href="NaN">Safeguarding freedom of information</a></li>
+                        
+                            <li><a href="NaN">Objective TV</a></li>
+                        
+                    </ul>
                 
-                <li><a href="NaN">Promotion of youth media and ICT</a></li>
-                
-                <li><a href="NaN">Protection of freedom of expression</a></li>
-                
-                <li><a href="NaN">Safeguarding freedom of information</a></li>
-                
-                <li><a href="NaN">Objective TV</a></li>
-                
-            </ul>
-            
+            </li>
         
-        <li >
-            <a href="/news-feed/">News</a>
-            
+            <li >
+                <a href="/news-feed/">News</a>
+                
+            </li>
         
-        <li >
-            <a href="/contact-us/">Contact Us</a>
-            
+            <li >
+                <a href="/contact-us/">Contact Us</a>
+                
+            </li>
         
         <li class="searc">
             <span class="search__icon">search</span>
@@ -346,18 +349,19 @@
 
 
     
-  <article>
-    <div class="[ page-header ] [ bg-light-glare ]">
-	<div class="[ wrapper ] [ flow ]">
-		<h1 class="[ page-header__heading ] [ headline ]" data-highlight="primary">
-			Toplum TV Case: Journalists Allege Political Motivation Amidst Heated Court Proceedings
-		</h1>
-		
+  <main>
+    <article>
+      <header class="[ page-header ] ">
+	
+	<h1 class="[ page-header__heading ] [ headline ]" data-highlight="primary">
+		Toplum TV Case: Journalists Allege Political Motivation Amidst Heated Court Proceedings
+	</h1>
+	
 		<div class="[ page-header__summary ] [ measure-long ]">
 			
+  <p>By &#183; <div class="author">IRFS</div></p>
   <time datetime="2025-06-08T00:00:00.000Z">8th of June 2025</time>
   
-    <p class="visually-hidden" id="tags-desc">Tags that this post has been filed under.</p>
     <ul class="tags-list" aria-describedby="tags-desc">
       
         <li>
@@ -368,26 +372,27 @@
   
 
 		</div>
-		
-	</div>
-</div>
-    
-    <div class="[ page-content ] [ flow wrapper ] [ flow-space-700 gap-top-700 ]">
-      <p><strong>Baku, Azerbaijan</strong> – The “Toplum TV case” saw another tense court hearing at the Baku Grave Crimes Court today, marked by a heated exchange between a defendant journalist and the presiding judge, and persistent allegations of political persecution. The proceedings, chaired by Judge Azer Taghiyev, continued with the testimony of a key defendant and the presentation of motions challenging the legality of the process.</p>
+	
+	<div class="page-header__image"><img src="/images/cover/toplum_tv-1024x625.png" alt="Toplum TV Case: Journalists Allege Political Motivation Amidst Heated Court Proceedings"></div>
+</header>
+      
+      <div class="[ page-content ] [ flow wrapper ] [ flow-space-700 gap-top-700 ]">
+        <p><strong>Baku, Azerbaijan</strong> – The “Toplum TV case” saw another tense court hearing at the Baku Grave Crimes Court today, marked by a heated exchange between a defendant journalist and the presiding judge, and persistent allegations of political persecution. The proceedings, chaired by Judge Azer Taghiyev, continued with the testimony of a key defendant and the presentation of motions challenging the legality of the process.</p>
 <p>The “Toplum TV case” began on March 6, 2024, when police searched and sealed the office of the independent online television channel in Baku. Since then, criminal cases have been opened against a total of 10 individuals connected to the media outlet and associated organizations. Initially charged under Article 206.3.2 of the Criminal Code (smuggling, committed by a group with prior conspiracy), new, aggravated charges were brought on January 17, 2025. These include legalizing large amounts of property obtained through crime, illegal entrepreneurship, tax evasion, and engaging employees without labor contracts, carrying potential sentences of up to 12 years. The defendants consistently deny all charges, asserting that their arrests are politically motivated due to their professional activities.</p>
 <p>During the July 7 hearing, Akif Gurbanov, head of the Institute of Democratic Initiatives (IDI) and speaker of the III Republic Platform, continued his testimony. Gurbanov spoke about the establishment and activities of IDI, emphasizing its mission to educate young people. He explained his decision to testify, stating that while he does not expect a fair trial, he felt it was crucial “at least to inform the public.” Gurbanov also clarified that he had refused to give statements during the investigation, alleging that the investigative body was “busy collecting fabricated evidence.” Judge Taghiyev, citing time constraints, interrupted Gurbanov’s testimony.</p>
 <p>Following Gurbanov, Toplum TV employee and journalist Farid Ismayilov presented several motions. Ismayilov requested an investigation into information published about him in pro-government media, which he claimed was an “investigative secret” and part of a “smear campaign,” violating their right to the presumption of innocence. The judge demanded that Ismayilov provide screenshots of the said articles at the next session. Ismayilov also challenged a civil lawsuit filed by the State Tax Service, which demanded 79,000 manats from the defendants, calling it a procedural violation. The judge, however, stated that questions to the aggrieved party could only be addressed after the defendants completed their statements, and consequently, the motions were not considered.</p>
 <p>A notable dispute arose when Ismayilov accused Judge Taghiyev directly: “You are acting not like a judge, but like a prosecutor, because we have not committed a crime; we were put here on Ilham Aliyev’s order. And you are executing that order.” Judge Taghiyev responded by emphasizing his record of issuing many acquittals. Ismayilov’s request to sit next to his lawyer in the courtroom, rather than being confined to a glass cabin with other defendants, was also denied.</p>
 <p>The next court hearing is scheduled for July 14 at 10:00 AM. This case unfolds against a backdrop of increasing pressure on independent media in Azerbaijan. Since November 2023, more than 30 journalists and public activists have been arrested in groups on smuggling charges. Local human rights organizations report approximately 370 political prisoners currently held in Azerbaijani prisons. Azerbaijani authorities, however, maintain that no one is persecuted for their professional or political activities, asserting that all rights and freedoms are ensured in the country and that individuals are held accountable solely for their actions.</p>
 
-    </div>
-  </article>
+      </div>
+    </article>
+  </main>
 
   
 
     <footer id="footer">
     <nav aria-label="Footer navigation" class="[ nav ] [ footer__nav ]">
-        <a href="/"><img src="/images/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="footer-brand" class="brand"></a>
+        <a href="/"><img src="/images/brand/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="footer-brand" class="brand"></a>
         
         <ul class="[ nav__list ] [ footer__nav__list ]">
             <li><span>Latest</span></li>

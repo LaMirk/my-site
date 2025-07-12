@@ -14,15 +14,12 @@
     }
 /* site header css */
     #site-header__brand { width: 17em; }
-    #site-header { 
-        padding: 0 9%; 
-        height: 8.5em;
-    }
+    
     .nav__list, .nav__droplist { list-style-type: none; }
     .site-header__nav__list {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         padding-inline-start: 0;
     }
     .nav__list li > a, .nav__list li > span {
@@ -39,7 +36,6 @@
         margin-top: 3.55em;
         padding: 1em;
         z-index: 1000;
-        box-shadow: 0px 0px 10px rgba(94, 94, 94, 0.5);
     }
     .nav__droplist li + li { margin-top: 1em; }
     .nav__droplist li a { color: #062963;}
@@ -83,13 +79,14 @@
         padding: 2em 5%;
         font-size: 0.9em;
     }
-    footer a { color: #f0f0f0; text-decoration: none; }
     footer a:hover { color: #dcdcdc; }
+    #footer__copyright { color: rgb(105, 135, 157); }
     .footer__nav { 
         display: flex; 
         justify-content: space-around;
         }
     .footer__nav__list > li > a { 
+        text-decoration: none;
         color: rgb(105, 135, 157); 
         font-weight: normal;
         margin-top: 1em;
@@ -101,8 +98,9 @@
         font-weight: lighter;
     }
 /* main css */
-    main { margin: 2% 5%; }
+    main { padding: 2em 10em; }
     header, footer { background-color: #062963; }
+    header { padding: 0 0;}
     header *, footer * { 
         color: white; 
         font-family: sans-serif; 
@@ -111,9 +109,9 @@
     .wrapper { 
         box-sizing: border-box;
         box-shadow: #5e5e5e 0px 0px 10px 0px;
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(3px);
         overflow: hidden;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.45);
     }
     .radius {
         border-radius: 0.5em;
@@ -291,50 +289,55 @@
   <nav class="[ nav ] [ site-header__nav ]">
     <ul class="[ nav__list ] [ site-header__nav__list ]">
         <li>
-            <a href="/"><img src="/images/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="site-header__brand" class="brand"></a>
+            <a href="/"><img src="/images/brand/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="site-header__brand" class="brand"></a>
         </li>
         
-        <li >
-            <a href="/">Home</a>
-            
+            <li >
+                <a href="/">Home</a>
+                
+            </li>
         
-        <li class="nav__sublist">
-            <a href="">Who We Are</a>
-            
-            <ul class="nav__droplist">
+            <li class="nav__sublist">
+                <a href="">Who We Are</a>
                 
-                <li><a href="NaN">VISION | MISSION | STRATEGY</a></li>
+                    <ul class="[ nav__droplist ] [ wrapper radius ]">
+                        
+                            <li><a href="NaN">VISION | MISSION | STRATEGY</a></li>
+                        
+                            <li><a href="NaN">IRFS MEMBERS</a></li>
+                        
+                    </ul>
                 
-                <li><a href="NaN">IRFS MEMBERS</a></li>
-                
-            </ul>
-            
+            </li>
         
-        <li class="nav__sublist">
-            <a href="#">What We Do</a>
-            
-            <ul class="nav__droplist">
+            <li class="nav__sublist">
+                <a href="#">What We Do</a>
                 
-                <li><a href="NaN">Promoting press freedom and journalist safety</a></li>
+                    <ul class="[ nav__droplist ] [ wrapper radius ]">
+                        
+                            <li><a href="NaN">Promoting press freedom and journalist safety</a></li>
+                        
+                            <li><a href="NaN">Promotion of youth media and ICT</a></li>
+                        
+                            <li><a href="NaN">Protection of freedom of expression</a></li>
+                        
+                            <li><a href="NaN">Safeguarding freedom of information</a></li>
+                        
+                            <li><a href="NaN">Objective TV</a></li>
+                        
+                    </ul>
                 
-                <li><a href="NaN">Promotion of youth media and ICT</a></li>
-                
-                <li><a href="NaN">Protection of freedom of expression</a></li>
-                
-                <li><a href="NaN">Safeguarding freedom of information</a></li>
-                
-                <li><a href="NaN">Objective TV</a></li>
-                
-            </ul>
-            
+            </li>
         
-        <li >
-            <a href="/news-feed/">News</a>
-            
+            <li >
+                <a href="/news-feed/">News</a>
+                
+            </li>
         
-        <li >
-            <a href="/contact-us/">Contact Us</a>
-            
+            <li >
+                <a href="/contact-us/">Contact Us</a>
+                
+            </li>
         
         <li class="searc">
             <span class="search__icon">search</span>
@@ -346,18 +349,19 @@
 
 
     
-  <article>
-    <div class="[ page-header ] [ bg-light-glare ]">
-	<div class="[ wrapper ] [ flow ]">
-		<h1 class="[ page-header__heading ] [ headline ]" data-highlight="primary">
-			Azerbaijan’s Tax Ministry Demands 79,000 Manats in Politically Charged ‘Toplum TV Case’ Amidst Broader Crackdown on Independent Media
-		</h1>
-		
+  <main>
+    <article>
+      <header class="[ page-header ] ">
+	
+	<h1 class="[ page-header__heading ] [ headline ]" data-highlight="primary">
+		Azerbaijan’s Tax Ministry Demands 79,000 Manats in Politically Charged ‘Toplum TV Case’ Amidst Broader Crackdown on Independent Media
+	</h1>
+	
 		<div class="[ page-header__summary ] [ measure-long ]">
 			
+  <p>By &#183; <div class="author">IRFS</div></p>
   <time datetime="2025-07-03T00:00:00.000Z">3rd of July 2025</time>
   
-    <p class="visually-hidden" id="tags-desc">Tags that this post has been filed under.</p>
     <ul class="tags-list" aria-describedby="tags-desc">
       
         <li>
@@ -368,12 +372,12 @@
   
 
 		</div>
-		
-	</div>
-</div>
-    
-    <div class="[ page-content ] [ flow wrapper ] [ flow-space-700 gap-top-700 ]">
-      <p>The ongoing legal proceedings against independent Azerbaijani media outlet “Toplum TV” continued on June 30, 2025, at the Baku Court of Grave Crimes, where the Tax Ministry formally demanded 79,000 manats from the defendants. The hearing, primarily chaired by Judge Azer Taghiyev, saw the accused reiterate their claims of political motivation behind their arrests and the charges leveled against them.</p>
+	
+	<div class="page-header__image"><img src="/images/cover/toplum_tv-1024x625.png" alt="Azerbaijan’s Tax Ministry Demands 79,000 Manats in Politically Charged ‘Toplum TV Case’ Amidst Broader Crackdown on Independent Media"></div>
+</header>
+      
+      <div class="[ page-content ] [ flow wrapper ] [ flow-space-700 gap-top-700 ]">
+        <p>The ongoing legal proceedings against independent Azerbaijani media outlet “Toplum TV” continued on June 30, 2025, at the Baku Court of Grave Crimes, where the Tax Ministry formally demanded 79,000 manats from the defendants. The hearing, primarily chaired by Judge Azer Taghiyev, saw the accused reiterate their claims of political motivation behind their arrests and the charges leveled against them.</p>
 <p>The “Toplum TV case” is part of a broader crackdown on independent media and civil society in Azerbaijan. On March 6, 2024, police raided and sealed the office of “Toplum TV” in Baku. The media outlet subsequently announced its decision to continue operations through journalists abroad starting from February 2024, citing the impossibility of functioning within the country.</p>
 <p>Initially, the 10 individuals arrested in connection with the case were charged with smuggling under Article 206.3.2 of the Criminal Code. However, on January 17, 2025, these charges were escalated to more severe offenses. The defendants consistently reject all accusations, asserting that their arrests are politically ordered and directly linked to their professional and civic activities. This case aligns with a concerning trend since November 2023, during which approximately 30 journalists and public activists in Azerbaijan have been arrested, predominantly on smuggling charges. Azerbaijani authorities, however, maintain that no one is persecuted for their professional or political activities, and that all rights and freedoms are ensured in the country.</p>
 <p><strong>Key Developments from the Latest Hearing</strong></p>
@@ -393,14 +397,15 @@
 <p>Currently, Alasgar Mammadli, Mushfiq Jabbar, Farid Ismayilov, Akif Gurbanov, Ruslan Izzatli, Ali Zeynal, Ramil Babayev, and Ilkin Amrahov remain in custody. Journalist Elmir Abbasov has been placed under police supervision, while “Toplum TV” editor Shahnaz Beylarqizi was initially under house arrest and later also placed under police supervision.</p>
 <p>The next court hearing in the “Toplum TV case” is scheduled for July 7 at 10:00 AM. The case continues to draw attention as a critical indicator of the state of independent media and freedom of expression in Azerbaijan.</p>
 
-    </div>
-  </article>
+      </div>
+    </article>
+  </main>
 
   
 
     <footer id="footer">
     <nav aria-label="Footer navigation" class="[ nav ] [ footer__nav ]">
-        <a href="/"><img src="/images/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="footer-brand" class="brand"></a>
+        <a href="/"><img src="/images/brand/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="footer-brand" class="brand"></a>
         
         <ul class="[ nav__list ] [ footer__nav__list ]">
             <li><span>Latest</span></li>

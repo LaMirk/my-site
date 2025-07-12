@@ -1,18 +1,24 @@
-<div class="[ dot-shadow panel ] [ bg-secondary-glare ]" id="post-list">
-	<div class="[ wrapper ] [ flow flow-space-700 ]">
-		{% if postListHeadline %}
-		<h2 class="[ headline ] [ measure-micro ]" data-highlight="primary">
-			{{ postListHeadline }}
-		</h2>
-		{% endif %}
-		<div>
-			<ol class="[ post-list ] [ flow ]">
-				{% for item in postListItems %}
-				<li class="[ post-list__item ] [ leading-tight measure-long ]">
-					<a href="{{ item.url }}" class="post-list__link">{{ item.data.title }}</a>
-				</li>
-				{% endfor %}
-			</ol>
-		</div>
-	</div>
-</div>
+<ol class="post-list">
+	{% for item in postListItems %}
+		{% set alt %}
+			{% if item.data.alt %}
+				{{ item.data.alt }}
+			{% else %}
+				{{ item.data.title }}
+			{% endif %}
+		{% endset %}
+		<li class="post-list__item">
+			<a href="{{ item.url }}">
+				{% if item.data.Photo %}
+					<img src="/{{ item.data.Photo }}" alt="{{ alt }}" class="post-list__item__image">
+				{% else %}
+					<span class="post-list__item__empty-image"><img src="" alt=""></span>
+				{% endif %}
+				<h2>{{ item.data.title}}</h2>
+				{% if item.data.seoDescription %}
+					<p>{{ item.data.seoDescription}}</p>
+				{% endif %}
+			</a>
+		</li>
+	{% endfor %}
+</ol>

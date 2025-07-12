@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Issue 33 Blog</title>
+    <title>News</title>
     <link rel="icon" type="image/png" href="/images/cropped-Untitled-design5-192x192.png" sizes="192x192">
     <link rel="icon" type="image/png" href="/images/cropped-Untitled-design5-32x32.png" sizes="32x32">
     <style>
@@ -14,15 +14,12 @@
     }
 /* site header css */
     #site-header__brand { width: 17em; }
-    #site-header { 
-        padding: 0 9%; 
-        height: 8.5em;
-    }
+    
     .nav__list, .nav__droplist { list-style-type: none; }
     .site-header__nav__list {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         padding-inline-start: 0;
     }
     .nav__list li > a, .nav__list li > span {
@@ -39,7 +36,6 @@
         margin-top: 3.55em;
         padding: 1em;
         z-index: 1000;
-        box-shadow: 0px 0px 10px rgba(94, 94, 94, 0.5);
     }
     .nav__droplist li + li { margin-top: 1em; }
     .nav__droplist li a { color: #062963;}
@@ -83,13 +79,14 @@
         padding: 2em 5%;
         font-size: 0.9em;
     }
-    footer a { color: #f0f0f0; text-decoration: none; }
     footer a:hover { color: #dcdcdc; }
+    #footer__copyright { color: rgb(105, 135, 157); }
     .footer__nav { 
         display: flex; 
         justify-content: space-around;
         }
     .footer__nav__list > li > a { 
+        text-decoration: none;
         color: rgb(105, 135, 157); 
         font-weight: normal;
         margin-top: 1em;
@@ -101,8 +98,9 @@
         font-weight: lighter;
     }
 /* main css */
-    main { margin: 2% 5%; }
+    main { padding: 2em 10em; }
     header, footer { background-color: #062963; }
+    header { padding: 0 0;}
     header *, footer * { 
         color: white; 
         font-family: sans-serif; 
@@ -111,9 +109,9 @@
     .wrapper { 
         box-sizing: border-box;
         box-shadow: #5e5e5e 0px 0px 10px 0px;
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(3px);
         overflow: hidden;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.45);
     }
     .radius {
         border-radius: 0.5em;
@@ -291,50 +289,55 @@
   <nav class="[ nav ] [ site-header__nav ]">
     <ul class="[ nav__list ] [ site-header__nav__list ]">
         <li>
-            <a href="/"><img src="/images/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="site-header__brand" class="brand"></a>
+            <a href="/"><img src="/images/brand/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="site-header__brand" class="brand"></a>
         </li>
         
-        <li >
-            <a href="/">Home</a>
-            
+            <li >
+                <a href="/">Home</a>
+                
+            </li>
         
-        <li class="nav__sublist">
-            <a href="">Who We Are</a>
-            
-            <ul class="nav__droplist">
+            <li class="nav__sublist">
+                <a href="">Who We Are</a>
                 
-                <li><a href="NaN">VISION | MISSION | STRATEGY</a></li>
+                    <ul class="[ nav__droplist ] [ wrapper radius ]">
+                        
+                            <li><a href="NaN">VISION | MISSION | STRATEGY</a></li>
+                        
+                            <li><a href="NaN">IRFS MEMBERS</a></li>
+                        
+                    </ul>
                 
-                <li><a href="NaN">IRFS MEMBERS</a></li>
-                
-            </ul>
-            
+            </li>
         
-        <li class="nav__sublist">
-            <a href="#">What We Do</a>
-            
-            <ul class="nav__droplist">
+            <li class="nav__sublist">
+                <a href="#">What We Do</a>
                 
-                <li><a href="NaN">Promoting press freedom and journalist safety</a></li>
+                    <ul class="[ nav__droplist ] [ wrapper radius ]">
+                        
+                            <li><a href="NaN">Promoting press freedom and journalist safety</a></li>
+                        
+                            <li><a href="NaN">Promotion of youth media and ICT</a></li>
+                        
+                            <li><a href="NaN">Protection of freedom of expression</a></li>
+                        
+                            <li><a href="NaN">Safeguarding freedom of information</a></li>
+                        
+                            <li><a href="NaN">Objective TV</a></li>
+                        
+                    </ul>
                 
-                <li><a href="NaN">Promotion of youth media and ICT</a></li>
-                
-                <li><a href="NaN">Protection of freedom of expression</a></li>
-                
-                <li><a href="NaN">Safeguarding freedom of information</a></li>
-                
-                <li><a href="NaN">Objective TV</a></li>
-                
-            </ul>
-            
+            </li>
         
-        <li >
-            <a href="/news-feed/">News</a>
-            
+            <li >
+                <a href="/news-feed/">News</a>
+                
+            </li>
         
-        <li >
-            <a href="/contact-us/">Contact Us</a>
-            
+            <li >
+                <a href="/contact-us/">Contact Us</a>
+                
+            </li>
         
         <li class="searc">
             <span class="search__icon">search</span>
@@ -346,71 +349,188 @@
 
 
     
-  <article>
-    <div class="[ page-header ] [ bg-light-glare ]">
-	<div class="[ wrapper ] [ flow ]">
-		<h1 class="[ page-header__heading ] [ headline ]" data-highlight="primary">
-			The Issue 33 Blog
-		</h1>
+  <main>
+    <header class="[ page-header ] ">
+	
+	<h1 class="[ page-header__heading ] [ headline ]" data-highlight="primary">
+		News
+	</h1>
+	
+	<div class=""><img src="/" alt=""></div>
+</header>
+    <ol class="post-list">
+	
 		
-		<div class="[ page-header__summary ] [ measure-long ]">
-			<p>The latest articles from around the studio, demonstrating our design
-thinking, strategy and expertise.</p>
-
-		</div>
+		<li class="post-list__item">
+			<a href="/news-feed/amnesty-international-condemns-azerbaijan-s-intimidation-campaign-against-journalists-following-harsh-sentences-for-abzas-media-staff/">
+				
+					<img src="/images/cover/Abzas-Media.jpg" alt="
+			
+				Amnesty International Condemns Azerbaijan’s “Intimidation Campaign” Against Journalists Following Harsh Sentences for Abzas Media Staff
+			
+		" class="post-list__item__image">
+				
+				<h2>Amnesty International Condemns Azerbaijan’s “Intimidation Campaign” Against Journalists Following Harsh Sentences for Abzas Media Staff</h2>
+				
+					<p>Seven journalists from Azerbaijan’s independent Abzas Media outlet have been sentenced to lengthy prison terms ranging from 7.5 to 9 years, prompting fierce condemnation from Amnesty International, which described the case as a textbook example of how Azerbaijan’s judicial system has been weaponized to silence critical journalism.</p>
+				
+			</a>
+		</li>
+	
 		
-	</div>
-</div>
-    <div class="[ dot-shadow panel ] [ bg-secondary-glare ]" id="post-list">
-	<div class="[ wrapper ] [ flow flow-space-700 ]">
+		<li class="post-list__item">
+			<a href="/news-feed/azerbaijan-delivers-harsh-sentences-to-abzas-media-journalists-and-farid-mehralizade-amidst-international-outcry/">
+				
+					<img src="/images/cover/AbzasMedia.avif" alt="
+			
+				Azerbaijan Delivers Harsh Sentences to “Abzas Media” Journalists and Farid Mehralizade Amidst International Outcry
+			
+		" class="post-list__item__image">
+				
+				<h2>Azerbaijan Delivers Harsh Sentences to “Abzas Media” Journalists and Farid Mehralizade Amidst International Outcry</h2>
+				
+					<p>**Baku, Azerbaijan** – In a move that has drawn sharp criticism from international human rights and media organizations, an Azerbaijani court on June 20 handed down severe prison sentences to journalists from “Abzas Media” and Radio Azadliq’s Farid Mehralizade. The verdicts, which the journalists vehemently deny, are widely seen as politically motivated reprisals for their investigations into high-level corruption.</p>
+				
+			</a>
+		</li>
+	
 		
-		<div>
-			<ol class="[ post-list ] [ flow ]">
+		<li class="post-list__item">
+			<a href="/news-feed/human-rights-experts-address-crisis-of-political-imprisonment-and-civil-society-suppression-in-azerbaijan/">
 				
-				<li class="[ post-list__item ] [ leading-tight measure-long ]">
-					<a href="/news-feed/amnesty-international-condemns-azerbaijan-s-intimidation-campaign-against-journalists-following-harsh-sentences-for-abzas-media-staff/" class="post-list__link">Amnesty International Condemns Azerbaijan’s “Intimidation Campaign” Against Journalists Following Harsh Sentences for Abzas Media Staff</a>
-				</li>
+					<img src="/images/cover/IMG_7218-1024x492.jpg" alt="
+			
+				Human Rights Experts Address Crisis of Political Imprisonment and Civil Society Suppression in Azerbaijan
+			
+		" class="post-list__item__image">
 				
-				<li class="[ post-list__item ] [ leading-tight measure-long ]">
-					<a href="/news-feed/azerbaijan-delivers-harsh-sentences-to-abzas-media-journalists-and-farid-mehralizade-amidst-international-outcry/" class="post-list__link">Azerbaijan Delivers Harsh Sentences to “Abzas Media” Journalists and Farid Mehralizade Amidst International Outcry</a>
-				</li>
+				<h2>Human Rights Experts Address Crisis of Political Imprisonment and Civil Society Suppression in Azerbaijan</h2>
 				
-				<li class="[ post-list__item ] [ leading-tight measure-long ]">
-					<a href="/news-feed/human-rights-experts-address-crisis-of-political-imprisonment-and-civil-society-suppression-in-azerbaijan/" class="post-list__link">Human Rights Experts Address Crisis of Political Imprisonment and Civil Society Suppression in Azerbaijan</a>
-				</li>
+					<p>GENEVA, Switzerland– June 20, 2025 – The Institute for Human Rights (IHR) and The Institute for Reporters’ Freedom and Safety (IRFS) hosted a critical dialogue on the escalating global crisis of political imprisonment and systematic suppression of civil society organizations during the 59th session of the UN Human Rights Council in Geneva.</p>
 				
-				<li class="[ post-list__item ] [ leading-tight measure-long ]">
-					<a href="/news-feed/stop-weaponizing-the-courts-irfs-calls-for-european-action-on-georgia-s-civil-society-repression/" class="post-list__link">Stop Weaponizing the Courts! IRFS Calls for European Action on Georgia’s Civil Society Repression</a>
-				</li>
+			</a>
+		</li>
+	
+		
+		<li class="post-list__item">
+			<a href="/news-feed/stop-weaponizing-the-courts-irfs-calls-for-european-action-on-georgia-s-civil-society-repression/">
 				
-				<li class="[ post-list__item ] [ leading-tight measure-long ]">
-					<a href="/news-feed/my-spiritual-torture/" class="post-list__link">My Spiritual Torture</a>
-				</li>
+					<img src="/images/cover/100th-day-of-Georgia-protests-1-1024x683.jpeg" alt="
+			
+				Stop Weaponizing the Courts! IRFS Calls for European Action on Georgia’s Civil Society Repression
+			
+		" class="post-list__item__image">
 				
-				<li class="[ post-list__item ] [ leading-tight measure-long ]">
-					<a href="/news-feed/lawyer-rovshane-rahimli-nargiz-absalamova-was-engaged-in-organized-journalism/" class="post-list__link">Lawyer Rovshane Rahimli: “Nargiz Absalamova was engaged in organized journalism”</a>
-				</li>
+				<h2>Stop Weaponizing the Courts! IRFS Calls for European Action on Georgia’s Civil Society Repression</h2>
 				
-				<li class="[ post-list__item ] [ leading-tight measure-long ]">
-					<a href="/news-feed/freedom-of-spech-under-threat-voices-of-exiled-jouralists-from-post-soviet-states/" class="post-list__link">Freedom of Spech Under Threat: Voices of Exiled Jouralists from Post-Soviet States</a>
-				</li>
+					<p>The IRFS calls on the European Institutions and the Council of Europe to demand from the Georgian authorities a stop to use of the court powers in a bid to suppress activities by critical civil society organisations, including those supporting media.</p>
 				
-				<li class="[ post-list__item ] [ leading-tight measure-long ]">
-					<a href="/news-feed/imprisoned-journalist-polad-aslanov-reveals-overcrowded-cells-and-medical-neglect-during-ombudsman-prison-visit/" class="post-list__link">Imprisoned Journalist Polad Aslanov Reveals Overcrowded Cells and Medical Neglect During Ombudsman Prison Visit</a>
-				</li>
+			</a>
+		</li>
+	
+		
+		<li class="post-list__item">
+			<a href="/news-feed/my-spiritual-torture/">
 				
-				<li class="[ post-list__item ] [ leading-tight measure-long ]">
-					<a href="/news-feed/toplum-tv-case-journalists-allege-political-motivation-amidst-heated-court-proceedings/" class="post-list__link">Toplum TV Case: Journalists Allege Political Motivation Amidst Heated Court Proceedings</a>
-				</li>
+					<img src="/images/cover/Aynur-Elgunəs.jpeg" alt="
+			
+				My Spiritual Torture
+			
+		" class="post-list__item__image">
 				
-				<li class="[ post-list__item ] [ leading-tight measure-long ]">
-					<a href="/news-feed/bakhtiyar-hajiyev-s-lawyer-claims-that-his-right-to-defence-was-violated/" class="post-list__link">Bakhtiyar Hajiyev’s lawyer claims that his right to defence was violated</a>
-				</li>
+				<h2>My Spiritual Torture</h2>
 				
-			</ol>
-		</div>
-	</div>
-</div>
+					<p>Azerbaijan is a strange country. Here, a child is a source of security, an heir, a being who will carry you on their shoulders tomorrow. The approach of ‘a son carries you to the grave on his shoulders,’ ‘a daughter cries more’ is a mental value that has come down through the centuries. A child must stand in the shadow of those who brought them into this world throughout their entire life. If they want to live their own life, they are ungrateful, someone who has trampled on family values. Yet they had no role, no order in coming into this world…</p>
+				
+			</a>
+		</li>
+	
+		
+		<li class="post-list__item">
+			<a href="/news-feed/lawyer-rovshane-rahimli-nargiz-absalamova-was-engaged-in-organized-journalism/">
+				
+					<img src="/images/cover/Nargiz_Absalamova.jpg" alt="
+			
+				Lawyer Rovshane Rahimli: “Nargiz Absalamova was engaged in organized journalism”
+			
+		" class="post-list__item__image">
+				
+				<h2>Lawyer Rovshane Rahimli: “Nargiz Absalamova was engaged in organized journalism”</h2>
+				
+					<p>According to the lawyer, the majority of the presented evidence is based on statements given under pressure.</p>
+				
+			</a>
+		</li>
+	
+		
+		<li class="post-list__item">
+			<a href="/news-feed/freedom-of-spech-under-threat-voices-of-exiled-jouralists-from-post-soviet-states/">
+				
+					<img src="/images/cover/side-event-journalist-june2025-Презентация-1024x576.jpg" alt="
+			
+				Freedom of Spech Under Threat: Voices of Exiled Jouralists from Post-Soviet States
+			
+		" class="post-list__item__image">
+				
+				<h2>Freedom of Spech Under Threat: Voices of Exiled Jouralists from Post-Soviet States</h2>
+				
+					<p>The Institute for Reporters’ Freedom and Safety, together with its partners, is organizing an official side event during the 59th session of the UN Human Rights Council: Freedom of Speech Under Threat: Voices of Exiled Journalists from Post-Soviet States</p>
+				
+			</a>
+		</li>
+	
+		
+		<li class="post-list__item">
+			<a href="/news-feed/imprisoned-journalist-polad-aslanov-reveals-overcrowded-cells-and-medical-neglect-during-ombudsman-prison-visit/">
+				
+					<img src="/images/cover/Polad-Aslanov-11-01-2022-1024x683-1.jpg" alt="
+			
+				Imprisoned Journalist Polad Aslanov Reveals Overcrowded Cells and Medical Neglect During Ombudsman Prison Visit
+			
+		" class="post-list__item__image">
+				
+				<h2>Imprisoned Journalist Polad Aslanov Reveals Overcrowded Cells and Medical Neglect During Ombudsman Prison Visit</h2>
+				
+					<p>Imprisoned journalist Polad Aslanov has exposed shocking conditions at Azerbaijan’s Penitentiary Institution No. 15 during a recent visit by representatives from the Ombudsman’s Office, revealing overcrowded cells where prisoners sleep on floors and systematic denial of medical care.</p>
+				
+			</a>
+		</li>
+	
+		
+		<li class="post-list__item">
+			<a href="/news-feed/toplum-tv-case-journalists-allege-political-motivation-amidst-heated-court-proceedings/">
+				
+					<img src="/images/cover/toplum_tv-1024x625.png" alt="
+			
+				Toplum TV Case: Journalists Allege Political Motivation Amidst Heated Court Proceedings
+			
+		" class="post-list__item__image">
+				
+				<h2>Toplum TV Case: Journalists Allege Political Motivation Amidst Heated Court Proceedings</h2>
+				
+					<p>**Baku, Azerbaijan** – The “Toplum TV case” saw another tense court hearing at the Baku Grave Crimes Court today, marked by a heated exchange between a defendant journalist and the presiding judge, and persistent allegations of political persecution. The proceedings, chaired by Judge Azer Taghiyev, continued with the testimony of a key defendant and the presentation of motions challenging the legality of the process.</p>
+				
+			</a>
+		</li>
+	
+		
+		<li class="post-list__item">
+			<a href="/news-feed/bakhtiyar-hajiyev-s-lawyer-claims-that-his-right-to-defence-was-violated/">
+				
+					<img src="/images/cover/baxtiyar-520x327.jpg" alt="
+			
+				Bakhtiyar Hajiyev’s lawyer claims that his right to defence was violated
+			
+		" class="post-list__item__image">
+				
+				<h2>Bakhtiyar Hajiyev’s lawyer claims that his right to defence was violated</h2>
+				
+					<p>On 23 December, at the trial of activist Bakhtiyar Hajiyev in the Court of Grave Crimes, the escorts violated the confidentiality of his communication with his lawyer. This was reported by his lawyer Agyl Laij.</p>
+				
+			</a>
+		</li>
+	
+</ol>
 
     
     
@@ -434,13 +554,11 @@ thinking, strategy and expertise.</p>
   </footer>
 
     
-  </article>
-
-  
+  </main>
 
     <footer id="footer">
     <nav aria-label="Footer navigation" class="[ nav ] [ footer__nav ]">
-        <a href="/"><img src="/images/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="footer-brand" class="brand"></a>
+        <a href="/"><img src="/images/brand/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="footer-brand" class="brand"></a>
         
         <ul class="[ nav__list ] [ footer__nav__list ]">
             <li><span>Latest</span></li>

@@ -2,11 +2,29 @@
 
 {% set pageHeaderTitle = title %}
 
+{% if Photo %}
+  {% set pageHeaderImage = Photo %}
+  {% set pageHeaderImageclass = "page-header__image" %}
+{% else %}
+  {% set pageHeaderImage = "/images/brand/IRFS-LOGO-WHITE.png" %}
+  {% set pageHeaderImageclass = "empty-image" %}
+{% endif %}
+
+{% if alt %}
+  {% set pageHeaderAltImage = alt %}
+{% else %}
+  {% set pageHeaderAltImage = title%}
+{% endif %}
+
+{% set img %}
+  <img src="{{ pageHeaderImage }}" alt="{{ pageHeaderAltImage }}" class="{{ pageHeaderImageclass }}">
+{% endset %}
+
 {# Render post date and any tags that this post has been filed under #}
 {% set pageHeaderSummary %}
+  <p>By &#183; <div class="author">{{ author }}</div></p>
   <time datetime="{{ date | w3DateFilter }}">{{ date | dateFilter }}</time>
   {% if tags %}
-    <p class="visually-hidden" id="tags-desc">Tags that this post has been filed under.</p>
     <ul class="tags-list" aria-describedby="tags-desc">
       {% for tag in tags %}
         <li>
@@ -18,13 +36,15 @@
 {% endset %}
 
 {% block content %}
-  <article>
-    {% include "partials/page-header.html" %}
-    
-    <div class="[ page-content ] [ flow wrapper ] [ flow-space-700 gap-top-700 ]">
-      {{ content | safe }}
-    </div>
-  </article>
+  <main>
+    <article>
+      {% include "partials/page-header.html" %}
+      
+      <div class="[ page-content ] [ flow wrapper ] [ flow-space-700 gap-top-700 ]">
+        {{ content | safe }}
+      </div>
+    </article>
+  </main>
 
   {% include "partials/cta.html" %}
 {% endblock %}

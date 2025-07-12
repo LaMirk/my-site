@@ -14,15 +14,12 @@
     }
 /* site header css */
     #site-header__brand { width: 17em; }
-    #site-header { 
-        padding: 0 9%; 
-        height: 8.5em;
-    }
+    
     .nav__list, .nav__droplist { list-style-type: none; }
     .site-header__nav__list {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         padding-inline-start: 0;
     }
     .nav__list li > a, .nav__list li > span {
@@ -39,7 +36,6 @@
         margin-top: 3.55em;
         padding: 1em;
         z-index: 1000;
-        box-shadow: 0px 0px 10px rgba(94, 94, 94, 0.5);
     }
     .nav__droplist li + li { margin-top: 1em; }
     .nav__droplist li a { color: #062963;}
@@ -83,13 +79,14 @@
         padding: 2em 5%;
         font-size: 0.9em;
     }
-    footer a { color: #f0f0f0; text-decoration: none; }
     footer a:hover { color: #dcdcdc; }
+    #footer__copyright { color: rgb(105, 135, 157); }
     .footer__nav { 
         display: flex; 
         justify-content: space-around;
         }
     .footer__nav__list > li > a { 
+        text-decoration: none;
         color: rgb(105, 135, 157); 
         font-weight: normal;
         margin-top: 1em;
@@ -101,8 +98,9 @@
         font-weight: lighter;
     }
 /* main css */
-    main { margin: 2% 5%; }
+    main { padding: 2em 10em; }
     header, footer { background-color: #062963; }
+    header { padding: 0 0;}
     header *, footer * { 
         color: white; 
         font-family: sans-serif; 
@@ -111,9 +109,9 @@
     .wrapper { 
         box-sizing: border-box;
         box-shadow: #5e5e5e 0px 0px 10px 0px;
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(3px);
         overflow: hidden;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.45);
     }
     .radius {
         border-radius: 0.5em;
@@ -291,50 +289,55 @@
   <nav class="[ nav ] [ site-header__nav ]">
     <ul class="[ nav__list ] [ site-header__nav__list ]">
         <li>
-            <a href="/"><img src="/images/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="site-header__brand" class="brand"></a>
+            <a href="/"><img src="/images/brand/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="site-header__brand" class="brand"></a>
         </li>
         
-        <li >
-            <a href="/">Home</a>
-            
+            <li >
+                <a href="/">Home</a>
+                
+            </li>
         
-        <li class="nav__sublist">
-            <a href="">Who We Are</a>
-            
-            <ul class="nav__droplist">
+            <li class="nav__sublist">
+                <a href="">Who We Are</a>
                 
-                <li><a href="NaN">VISION | MISSION | STRATEGY</a></li>
+                    <ul class="[ nav__droplist ] [ wrapper radius ]">
+                        
+                            <li><a href="NaN">VISION | MISSION | STRATEGY</a></li>
+                        
+                            <li><a href="NaN">IRFS MEMBERS</a></li>
+                        
+                    </ul>
                 
-                <li><a href="NaN">IRFS MEMBERS</a></li>
-                
-            </ul>
-            
+            </li>
         
-        <li class="nav__sublist">
-            <a href="#">What We Do</a>
-            
-            <ul class="nav__droplist">
+            <li class="nav__sublist">
+                <a href="#">What We Do</a>
                 
-                <li><a href="NaN">Promoting press freedom and journalist safety</a></li>
+                    <ul class="[ nav__droplist ] [ wrapper radius ]">
+                        
+                            <li><a href="NaN">Promoting press freedom and journalist safety</a></li>
+                        
+                            <li><a href="NaN">Promotion of youth media and ICT</a></li>
+                        
+                            <li><a href="NaN">Protection of freedom of expression</a></li>
+                        
+                            <li><a href="NaN">Safeguarding freedom of information</a></li>
+                        
+                            <li><a href="NaN">Objective TV</a></li>
+                        
+                    </ul>
                 
-                <li><a href="NaN">Promotion of youth media and ICT</a></li>
-                
-                <li><a href="NaN">Protection of freedom of expression</a></li>
-                
-                <li><a href="NaN">Safeguarding freedom of information</a></li>
-                
-                <li><a href="NaN">Objective TV</a></li>
-                
-            </ul>
-            
+            </li>
         
-        <li >
-            <a href="/news-feed/">News</a>
-            
+            <li >
+                <a href="/news-feed/">News</a>
+                
+            </li>
         
-        <li >
-            <a href="/contact-us/">Contact Us</a>
-            
+            <li >
+                <a href="/contact-us/">Contact Us</a>
+                
+            </li>
         
         <li class="searc">
             <span class="search__icon">search</span>
@@ -346,18 +349,19 @@
 
 
     
-  <article>
-    <div class="[ page-header ] [ bg-light-glare ]">
-	<div class="[ wrapper ] [ flow ]">
-		<h1 class="[ page-header__heading ] [ headline ]" data-highlight="primary">
-			Imprisoned Journalist Polad Aslanov Reveals Overcrowded Cells and Medical Neglect During Ombudsman Prison Visit
-		</h1>
-		
+  <main>
+    <article>
+      <header class="[ page-header ] ">
+	
+	<h1 class="[ page-header__heading ] [ headline ]" data-highlight="primary">
+		Imprisoned Journalist Polad Aslanov Reveals Overcrowded Cells and Medical Neglect During Ombudsman Prison Visit
+	</h1>
+	
 		<div class="[ page-header__summary ] [ measure-long ]">
 			
+  <p>By &#183; <div class="author">IRFS</div></p>
   <time datetime="2025-06-17T00:00:00.000Z">17th of June 2025</time>
   
-    <p class="visually-hidden" id="tags-desc">Tags that this post has been filed under.</p>
     <ul class="tags-list" aria-describedby="tags-desc">
       
         <li>
@@ -368,12 +372,12 @@
   
 
 		</div>
-		
-	</div>
-</div>
-    
-    <div class="[ page-content ] [ flow wrapper ] [ flow-space-700 gap-top-700 ]">
-      <p>Imprisoned journalist Polad Aslanov has exposed shocking conditions at Azerbaijan’s Penitentiary Institution No. 15 during a recent visit by representatives from the Ombudsman’s Office, revealing overcrowded cells where prisoners sleep on floors and systematic denial of medical care.</p>
+	
+	<div class="page-header__image"><img src="/images/cover/Polad-Aslanov-11-01-2022-1024x683-1.jpg" alt="Imprisoned Journalist Polad Aslanov Reveals Overcrowded Cells and Medical Neglect During Ombudsman Prison Visit"></div>
+</header>
+      
+      <div class="[ page-content ] [ flow wrapper ] [ flow-space-700 gap-top-700 ]">
+        <p>Imprisoned journalist Polad Aslanov has exposed shocking conditions at Azerbaijan’s Penitentiary Institution No. 15 during a recent visit by representatives from the Ombudsman’s Office, revealing overcrowded cells where prisoners sleep on floors and systematic denial of medical care.</p>
 <p>The meetings, which took place on June 14-15, only occurred after Aslanov’s wife publicly shamed officials on social media when they initially refused to meet with the detained journalist despite spending three hours at the facility.</p>
 <h2>A Case of Alleged Political Persecution</h2>
 <p>Polad Aslanov, head of the “xeberman.com” website, was arrested on June 12, 2019, on espionage charges under Article 274 of Azerbaijan’s Criminal Code for alleged treason against the state. Originally sentenced to 16 years in prison, his term was later reduced to 13 years by the Supreme Court.</p>
@@ -408,14 +412,15 @@
 <p>The case raises fundamental questions about Azerbaijan’s compliance with international human rights standards and its treatment of independent media, particularly as Aslanov’s detention continues despite the European Court’s finding that his arrest was unlawful.</p>
 <p>The Ombudsman’s Office’s response to Aslanov’s documented complaints will serve as an important test of Azerbaijan’s commitment to addressing systematic human rights violations in its prison system.</p>
 
-    </div>
-  </article>
+      </div>
+    </article>
+  </main>
 
   
 
     <footer id="footer">
     <nav aria-label="Footer navigation" class="[ nav ] [ footer__nav ]">
-        <a href="/"><img src="/images/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="footer-brand" class="brand"></a>
+        <a href="/"><img src="/images/brand/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="footer-brand" class="brand"></a>
         
         <ul class="[ nav__list ] [ footer__nav__list ]">
             <li><span>Latest</span></li>

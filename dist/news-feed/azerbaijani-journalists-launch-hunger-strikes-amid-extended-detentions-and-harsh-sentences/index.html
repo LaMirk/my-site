@@ -14,15 +14,12 @@
     }
 /* site header css */
     #site-header__brand { width: 17em; }
-    #site-header { 
-        padding: 0 9%; 
-        height: 8.5em;
-    }
+    
     .nav__list, .nav__droplist { list-style-type: none; }
     .site-header__nav__list {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         padding-inline-start: 0;
     }
     .nav__list li > a, .nav__list li > span {
@@ -39,7 +36,6 @@
         margin-top: 3.55em;
         padding: 1em;
         z-index: 1000;
-        box-shadow: 0px 0px 10px rgba(94, 94, 94, 0.5);
     }
     .nav__droplist li + li { margin-top: 1em; }
     .nav__droplist li a { color: #062963;}
@@ -83,13 +79,14 @@
         padding: 2em 5%;
         font-size: 0.9em;
     }
-    footer a { color: #f0f0f0; text-decoration: none; }
     footer a:hover { color: #dcdcdc; }
+    #footer__copyright { color: rgb(105, 135, 157); }
     .footer__nav { 
         display: flex; 
         justify-content: space-around;
         }
     .footer__nav__list > li > a { 
+        text-decoration: none;
         color: rgb(105, 135, 157); 
         font-weight: normal;
         margin-top: 1em;
@@ -101,8 +98,9 @@
         font-weight: lighter;
     }
 /* main css */
-    main { margin: 2% 5%; }
+    main { padding: 2em 10em; }
     header, footer { background-color: #062963; }
+    header { padding: 0 0;}
     header *, footer * { 
         color: white; 
         font-family: sans-serif; 
@@ -111,9 +109,9 @@
     .wrapper { 
         box-sizing: border-box;
         box-shadow: #5e5e5e 0px 0px 10px 0px;
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(3px);
         overflow: hidden;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.45);
     }
     .radius {
         border-radius: 0.5em;
@@ -291,50 +289,55 @@
   <nav class="[ nav ] [ site-header__nav ]">
     <ul class="[ nav__list ] [ site-header__nav__list ]">
         <li>
-            <a href="/"><img src="/images/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="site-header__brand" class="brand"></a>
+            <a href="/"><img src="/images/brand/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="site-header__brand" class="brand"></a>
         </li>
         
-        <li >
-            <a href="/">Home</a>
-            
+            <li >
+                <a href="/">Home</a>
+                
+            </li>
         
-        <li class="nav__sublist">
-            <a href="">Who We Are</a>
-            
-            <ul class="nav__droplist">
+            <li class="nav__sublist">
+                <a href="">Who We Are</a>
                 
-                <li><a href="NaN">VISION | MISSION | STRATEGY</a></li>
+                    <ul class="[ nav__droplist ] [ wrapper radius ]">
+                        
+                            <li><a href="NaN">VISION | MISSION | STRATEGY</a></li>
+                        
+                            <li><a href="NaN">IRFS MEMBERS</a></li>
+                        
+                    </ul>
                 
-                <li><a href="NaN">IRFS MEMBERS</a></li>
-                
-            </ul>
-            
+            </li>
         
-        <li class="nav__sublist">
-            <a href="#">What We Do</a>
-            
-            <ul class="nav__droplist">
+            <li class="nav__sublist">
+                <a href="#">What We Do</a>
                 
-                <li><a href="NaN">Promoting press freedom and journalist safety</a></li>
+                    <ul class="[ nav__droplist ] [ wrapper radius ]">
+                        
+                            <li><a href="NaN">Promoting press freedom and journalist safety</a></li>
+                        
+                            <li><a href="NaN">Promotion of youth media and ICT</a></li>
+                        
+                            <li><a href="NaN">Protection of freedom of expression</a></li>
+                        
+                            <li><a href="NaN">Safeguarding freedom of information</a></li>
+                        
+                            <li><a href="NaN">Objective TV</a></li>
+                        
+                    </ul>
                 
-                <li><a href="NaN">Promotion of youth media and ICT</a></li>
-                
-                <li><a href="NaN">Protection of freedom of expression</a></li>
-                
-                <li><a href="NaN">Safeguarding freedom of information</a></li>
-                
-                <li><a href="NaN">Objective TV</a></li>
-                
-            </ul>
-            
+            </li>
         
-        <li >
-            <a href="/news-feed/">News</a>
-            
+            <li >
+                <a href="/news-feed/">News</a>
+                
+            </li>
         
-        <li >
-            <a href="/contact-us/">Contact Us</a>
-            
+            <li >
+                <a href="/contact-us/">Contact Us</a>
+                
+            </li>
         
         <li class="searc">
             <span class="search__icon">search</span>
@@ -346,18 +349,19 @@
 
 
     
-  <article>
-    <div class="[ page-header ] [ bg-light-glare ]">
-	<div class="[ wrapper ] [ flow ]">
-		<h1 class="[ page-header__heading ] [ headline ]" data-highlight="primary">
-			Azerbaijani Journalists Launch Hunger Strikes Amid Extended Detentions and Harsh Sentences
-		</h1>
-		
+  <main>
+    <article>
+      <header class="[ page-header ] ">
+	
+	<h1 class="[ page-header__heading ] [ headline ]" data-highlight="primary">
+		Azerbaijani Journalists Launch Hunger Strikes Amid Extended Detentions and Harsh Sentences
+	</h1>
+	
 		<div class="[ page-header__summary ] [ measure-long ]">
 			
+  <p>By &#183; <div class="author">IRFS</div></p>
   <time datetime="2025-07-04T00:00:00.000Z">4th of July 2025</time>
   
-    <p class="visually-hidden" id="tags-desc">Tags that this post has been filed under.</p>
     <ul class="tags-list" aria-describedby="tags-desc">
       
         <li>
@@ -368,12 +372,12 @@
   
 
 		</div>
-		
-	</div>
-</div>
-    
-    <div class="[ page-content ] [ flow wrapper ] [ flow-space-700 gap-top-700 ]">
-      <p>Journalists affiliated with Meydan TV, currently held in custody, have initiated a hunger strike in solidarity with their colleagues from AbzasMedia, who recently received lengthy prison sentences. This act of protest underscores the escalating crackdown on independent media in Azerbaijan, where numerous journalists and civil society activists face charges widely condemned by international human rights organizations as politically motivated.</p>
+	
+	<div class="page-header__image"><img src="/images/cover/Meydan-TV.png" alt="Azerbaijani Journalists Launch Hunger Strikes Amid Extended Detentions and Harsh Sentences"></div>
+</header>
+      
+      <div class="[ page-content ] [ flow wrapper ] [ flow-space-700 gap-top-700 ]">
+        <p>Journalists affiliated with Meydan TV, currently held in custody, have initiated a hunger strike in solidarity with their colleagues from AbzasMedia, who recently received lengthy prison sentences. This act of protest underscores the escalating crackdown on independent media in Azerbaijan, where numerous journalists and civil society activists face charges widely condemned by international human rights organizations as politically motivated.</p>
 <p>The hunger strike began on July 4, 2025, with Meydan TV’s <strong>Aynur Elgunesh</strong>, <strong>Aytaj Tapdiq</strong>, <strong>Khayala Aghayeva</strong>, <strong>Aysel Umudova</strong>, and <strong>Fatima Movlamli</strong> joining the protest. This move follows similar actions by AbzasMedia journalists, including <strong>Sevinj Vagifgizi</strong>, <strong>Nargiz Absalamova</strong>, and <strong>Elnara Gasimova</strong>, who started their hunger strike on July 2 in support of AbzasMedia director <strong>Ulvi Hasanli</strong>. Hasanli himself commenced a hunger strike on June 26, protesting his transfer to the Umbakı Penitentiary Complex before his verdict had legally entered into force, and citing denial of visits with his wife and two-year-old daughter. Reports indicate Hasanli has been subjected to inhumane treatment and placed in a disciplinary cell.</p>
 <h3>Background to the Crackdown</h3>
 <p>The arrests and subsequent legal proceedings against journalists from both Meydan TV and AbzasMedia have drawn significant international attention.</p>
@@ -387,14 +391,15 @@
 <p>An AbzasMedia statement issued on July 1 called upon President Ilham Aliyev, Minister of Justice Farid Ahmadov, Prosecutor General Kamran Aliyev, and Ombudsman Sabina Aliyeva to intervene in Ulvi Hasanli’s case.</p>
 <p>Currently, nearly 30 journalists and public activists are imprisoned in Azerbaijan on similar charges. Local human rights organizations estimate that there are over 370 political prisoners in Azerbaijani jails. While government officials consistently deny that any arrests are politically motivated or related to professional activities, international human rights organizations and Western officials continue to call on the Azerbaijani government to release those unjustly detained.</p>
 
-    </div>
-  </article>
+      </div>
+    </article>
+  </main>
 
   
 
     <footer id="footer">
     <nav aria-label="Footer navigation" class="[ nav ] [ footer__nav ]">
-        <a href="/"><img src="/images/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="footer-brand" class="brand"></a>
+        <a href="/"><img src="/images/brand/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="footer-brand" class="brand"></a>
         
         <ul class="[ nav__list ] [ footer__nav__list ]">
             <li><span>Latest</span></li>

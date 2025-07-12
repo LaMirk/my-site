@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Issue 33 Blog</title>
+    <title>News</title>
     <link rel="icon" type="image/png" href="/images/cropped-Untitled-design5-192x192.png" sizes="192x192">
     <link rel="icon" type="image/png" href="/images/cropped-Untitled-design5-32x32.png" sizes="32x32">
     <style>
@@ -14,15 +14,12 @@
     }
 /* site header css */
     #site-header__brand { width: 17em; }
-    #site-header { 
-        padding: 0 9%; 
-        height: 8.5em;
-    }
+    
     .nav__list, .nav__droplist { list-style-type: none; }
     .site-header__nav__list {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         padding-inline-start: 0;
     }
     .nav__list li > a, .nav__list li > span {
@@ -39,7 +36,6 @@
         margin-top: 3.55em;
         padding: 1em;
         z-index: 1000;
-        box-shadow: 0px 0px 10px rgba(94, 94, 94, 0.5);
     }
     .nav__droplist li + li { margin-top: 1em; }
     .nav__droplist li a { color: #062963;}
@@ -83,13 +79,14 @@
         padding: 2em 5%;
         font-size: 0.9em;
     }
-    footer a { color: #f0f0f0; text-decoration: none; }
     footer a:hover { color: #dcdcdc; }
+    #footer__copyright { color: rgb(105, 135, 157); }
     .footer__nav { 
         display: flex; 
         justify-content: space-around;
         }
     .footer__nav__list > li > a { 
+        text-decoration: none;
         color: rgb(105, 135, 157); 
         font-weight: normal;
         margin-top: 1em;
@@ -101,8 +98,9 @@
         font-weight: lighter;
     }
 /* main css */
-    main { margin: 2% 5%; }
+    main { padding: 2em 10em; }
     header, footer { background-color: #062963; }
+    header { padding: 0 0;}
     header *, footer * { 
         color: white; 
         font-family: sans-serif; 
@@ -111,9 +109,9 @@
     .wrapper { 
         box-sizing: border-box;
         box-shadow: #5e5e5e 0px 0px 10px 0px;
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(3px);
         overflow: hidden;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.45);
     }
     .radius {
         border-radius: 0.5em;
@@ -291,50 +289,55 @@
   <nav class="[ nav ] [ site-header__nav ]">
     <ul class="[ nav__list ] [ site-header__nav__list ]">
         <li>
-            <a href="/"><img src="/images/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="site-header__brand" class="brand"></a>
+            <a href="/"><img src="/images/brand/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="site-header__brand" class="brand"></a>
         </li>
         
-        <li >
-            <a href="/">Home</a>
-            
+            <li >
+                <a href="/">Home</a>
+                
+            </li>
         
-        <li class="nav__sublist">
-            <a href="">Who We Are</a>
-            
-            <ul class="nav__droplist">
+            <li class="nav__sublist">
+                <a href="">Who We Are</a>
                 
-                <li><a href="NaN">VISION | MISSION | STRATEGY</a></li>
+                    <ul class="[ nav__droplist ] [ wrapper radius ]">
+                        
+                            <li><a href="NaN">VISION | MISSION | STRATEGY</a></li>
+                        
+                            <li><a href="NaN">IRFS MEMBERS</a></li>
+                        
+                    </ul>
                 
-                <li><a href="NaN">IRFS MEMBERS</a></li>
-                
-            </ul>
-            
+            </li>
         
-        <li class="nav__sublist">
-            <a href="#">What We Do</a>
-            
-            <ul class="nav__droplist">
+            <li class="nav__sublist">
+                <a href="#">What We Do</a>
                 
-                <li><a href="NaN">Promoting press freedom and journalist safety</a></li>
+                    <ul class="[ nav__droplist ] [ wrapper radius ]">
+                        
+                            <li><a href="NaN">Promoting press freedom and journalist safety</a></li>
+                        
+                            <li><a href="NaN">Promotion of youth media and ICT</a></li>
+                        
+                            <li><a href="NaN">Protection of freedom of expression</a></li>
+                        
+                            <li><a href="NaN">Safeguarding freedom of information</a></li>
+                        
+                            <li><a href="NaN">Objective TV</a></li>
+                        
+                    </ul>
                 
-                <li><a href="NaN">Promotion of youth media and ICT</a></li>
-                
-                <li><a href="NaN">Protection of freedom of expression</a></li>
-                
-                <li><a href="NaN">Safeguarding freedom of information</a></li>
-                
-                <li><a href="NaN">Objective TV</a></li>
-                
-            </ul>
-            
+            </li>
         
-        <li >
-            <a href="/news-feed/">News</a>
-            
+            <li >
+                <a href="/news-feed/">News</a>
+                
+            </li>
         
-        <li >
-            <a href="/contact-us/">Contact Us</a>
-            
+            <li >
+                <a href="/contact-us/">Contact Us</a>
+                
+            </li>
         
         <li class="searc">
             <span class="search__icon">search</span>
@@ -346,47 +349,86 @@
 
 
     
-  <article>
-    <div class="[ page-header ] [ bg-light-glare ]">
-	<div class="[ wrapper ] [ flow ]">
-		<h1 class="[ page-header__heading ] [ headline ]" data-highlight="primary">
-			The Issue 33 Blog
-		</h1>
+  <main>
+    <header class="[ page-header ] ">
+	
+	<h1 class="[ page-header__heading ] [ headline ]" data-highlight="primary">
+		News
+	</h1>
+	
+	<div class=""><img src="/" alt=""></div>
+</header>
+    <ol class="post-list">
+	
 		
-		<div class="[ page-header__summary ] [ measure-long ]">
-			<p>The latest articles from around the studio, demonstrating our design
-thinking, strategy and expertise.</p>
-
-		</div>
+		<li class="post-list__item">
+			<a href="/news-feed/bakhtiyar-hajiyev-demanded-to-exclude-falsified-documents-from-his-case/">
+				
+					<img src="/images/cover/baxtiyar-520x327.jpg" alt="
+			
+				Bakhtiyar Hajiyev demanded to exclude falsified documents from his case
+			
+		" class="post-list__item__image">
+				
+				<h2>Bakhtiyar Hajiyev demanded to exclude falsified documents from his case</h2>
+				
+					<p>The trial of Bakhtiyar Hajiyev’s case continued today in the Baku Serious Crimes Court. During the session the activist made a number of petitions.</p>
+				
+			</a>
+		</li>
+	
 		
-	</div>
-</div>
-    <div class="[ dot-shadow panel ] [ bg-secondary-glare ]" id="post-list">
-	<div class="[ wrapper ] [ flow flow-space-700 ]">
+		<li class="post-list__item">
+			<a href="/news-feed/irfs-disappointed-about-lionel-messi-legitimizing-the-oppressive-regime-of-aliyev-s-family/">
+				
+					<img src="/images/cover/5dc88d85-cdf6-4178-aa9b-69dc1c32cd4a-1024x577.jpeg" alt="
+			
+				IRFS disappointed about Lionel Messi legitimizing the oppressive regime of Aliyev’s family
+			
+		" class="post-list__item__image">
+				
+				<h2>IRFS disappointed about Lionel Messi legitimizing the oppressive regime of Aliyev’s family</h2>
+				
+					<p>While global leaders express growing concern and criticism over the intensifying human rights crackdown in Azerbaijan, which has reached an unprecedented low with 331 political prisoners, Lionel Messi—a global football star and UNICEF Goodwill Ambassador—has chosen to pay tribute to Heydar Aliyev on the anniversary of his death, the former President of Azerbaijan and father of the incumbent leader, Ilham Aliyev. He also visited Heydar Aliyev Center and met with its Director, Assistant to the President of Azerbaijan, Anar Alakbarov. By doing so, Messi has contributed to the reinforcement of the Aliyev family’s cult of personality in Azerbaijan.</p>
+				
+			</a>
+		</li>
+	
 		
-		<div>
-			<ol class="[ post-list ] [ flow ]">
+		<li class="post-list__item">
+			<a href="/news-feed/vidadi-iskenderli-dies-without-regaining-consciousness-updated/">
 				
-				<li class="[ post-list__item ] [ leading-tight measure-long ]">
-					<a href="/news-feed/bakhtiyar-hajiyev-demanded-to-exclude-falsified-documents-from-his-case/" class="post-list__link">Bakhtiyar Hajiyev demanded to exclude falsified documents from his case</a>
-				</li>
+					<img src="/images/cover/vidadi-390x520.jpg" alt="
+			
+				Vidadi Iskenderli Dies Without Regaining Consciousness (updated)
+			
+		" class="post-list__item__image">
 				
-				<li class="[ post-list__item ] [ leading-tight measure-long ]">
-					<a href="/news-feed/irfs-disappointed-about-lionel-messi-legitimizing-the-oppressive-regime-of-aliyev-s-family/" class="post-list__link">IRFS disappointed about Lionel Messi legitimizing the oppressive regime of Aliyev’s family</a>
-				</li>
+				<h2>Vidadi Iskenderli Dies Without Regaining Consciousness (updated)</h2>
 				
-				<li class="[ post-list__item ] [ leading-tight measure-long ]">
-					<a href="/news-feed/vidadi-iskenderli-dies-without-regaining-consciousness-updated/" class="post-list__link">Vidadi Iskenderli Dies Without Regaining Consciousness (updated)</a>
-				</li>
+					<p>At 13:15 Baku time, political emigrant Vidadi Iskenderli died in a hospital in the French city of Mulhouse. His brother Oktay Iskenderli told Turan about this.</p>
 				
-				<li class="[ post-list__item ] [ leading-tight measure-long ]">
-					<a href="/news-feed/the-search-at-farid-ismailov-s-apartment-has-ended/" class="post-list__link">The search at Farid Ismailov’s apartment has ended</a>
-				</li>
+			</a>
+		</li>
+	
+		
+		<li class="post-list__item">
+			<a href="/news-feed/the-search-at-farid-ismailov-s-apartment-has-ended/">
 				
-			</ol>
-		</div>
-	</div>
-</div>
+					<img src="/images/cover/farid.webp" alt="
+			
+				The search at Farid Ismailov’s apartment has ended
+			
+		" class="post-list__item__image">
+				
+				<h2>The search at Farid Ismailov’s apartment has ended</h2>
+				
+					<p>On the evening of March 6, a search was completed at the apartment of Toplum Tv employee Farid Ismailov, after which the journalist was handcuffed and taken away in an unknown direction.</p>
+				
+			</a>
+		</li>
+	
+</ol>
 
     
     
@@ -406,13 +448,11 @@ thinking, strategy and expertise.</p>
   </footer>
 
     
-  </article>
-
-  
+  </main>
 
     <footer id="footer">
     <nav aria-label="Footer navigation" class="[ nav ] [ footer__nav ]">
-        <a href="/"><img src="/images/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="footer-brand" class="brand"></a>
+        <a href="/"><img src="/images/brand/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="footer-brand" class="brand"></a>
         
         <ul class="[ nav__list ] [ footer__nav__list ]">
             <li><span>Latest</span></li>
