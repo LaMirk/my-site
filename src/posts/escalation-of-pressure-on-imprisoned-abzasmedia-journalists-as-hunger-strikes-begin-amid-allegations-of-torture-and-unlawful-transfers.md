@@ -1,0 +1,29 @@
+---
+title: 'Escalation of Pressure on Imprisoned AbzasMedia Journalists as Hunger Strikes Begin Amid Allegations of Torture and Unlawful Transfers'
+date: '2025-07-04'
+zIndex: 0.5
+author: 'IRFS'
+tags: ['editor']
+Photo: 'images/cover/1751614083218.png'
+alt: ''
+seoDescription: '**Baku, Azerbaijan** – In a significant escalation of the ongoing “AbzasMedia” case, three imprisoned female journalists – Sevinj Vagifgizi, Nargiz Absalamova, and Elnara Gasimova – have reportedly launched a hunger strike in solidarity with their director, Ulvi Hasanli, who has been on hunger strike for over a week. Their actions come amidst allegations of unlawful transfers, inhumane treatment, and torture within the penitentiary system, drawing renewed attention to the plight of independent media in Azerbaijan.'
+---
+**Baku, Azerbaijan** – In a significant escalation of the ongoing “AbzasMedia” case, three imprisoned female journalists – Sevinj Vagifgizi, Nargiz Absalamova, and Elnara Gasimova – have reportedly launched a hunger strike in solidarity with their director, Ulvi Hasanli, who has been on hunger strike for over a week. Their actions come amidst allegations of unlawful transfers, inhumane treatment, and torture within the penitentiary system, drawing renewed attention to the plight of independent media in Azerbaijan.
+
+“AbzasMedia,” known for its investigative journalism into corruption, has been at the center of a high-profile legal battle since its director and employees were first arrested in November 2023. The journalists consistently deny the charges against them, asserting that their arrests are politically motivated retaliation for their professional activities and corruption exposes.
+
+On June 20, 2025, the Baku Court for Serious Crimes, presided over by Judge Rasim Sadikhov, delivered its verdict in the “AbzasMedia case.” Ulvi Hasanli, Sevinj Vagifgizi, Hafiz Babali (investigative journalist), and Farid Mehralizade (Azadliq Radio journalist and economist) were each sentenced to 9 years in prison. Journalists Nargiz Absalamova and Elnara Gasimova received 8-year sentences, while Mahammad Kekalov, “AbzasMedia” coordinator, was sentenced to 7 years and 6 months. The charges included currency smuggling, illegal entrepreneurship, legalization of criminally obtained property, and tax evasion, though the defense maintains the investigation failed to provide compelling evidence.
+
+The current wave of hunger strikes began after Ulvi Hasanli was transferred on June 26 from the Baku Investigative Isolator to the Penitentiary Complex in Umbakı settlement. This move has been strongly contested by his legal team. Lawyer Subhan Hasanli stated there is no legal basis for the transfer, as the only valid detention order specifies the Baku Investigative Isolator as his place of detention, a decision that has not been legally altered.
+
+Ulvi Hasanli immediately launched a hunger strike in protest of this “unlawful” transfer and the conditions he faced. His wife, Rubaba Guliyeva, reported on June 30 that his voice sounded “very bad” during a phone call, and he had been on hunger strike for five days, subjected to “pressure, threats, and torture.” She added that he was denied personal belongings and the opportunity to change clothes. On July 1, his lawyer, Zibeyda Sadigova, confirmed he had been in a disciplinary cell since June 26 and that his weight had dropped from 77 kg to 71 kg due to the hunger strike. His family also reported that two correctional facility employees used violence against him, tearing his clothes and causing a leg injury, with visible marks remaining on his body. He was also reportedly told he would not be allowed family visits, citing the absence of an official marriage certificate as a reason.
+
+In a powerful act of solidarity, Sevinj Vagifgizi, Nargiz Absalamova, and Elnara Gasimova reportedly began their own hunger strike on July 2. Their relatives informed the public that this decision was made to support Ulvi Hasanli and protest his transfer.
+
+Alarmingly, their relatives claim that as soon as the female journalists started their hunger strike, they were moved to solitary cells, and their belongings were forcibly taken from them. Furthermore, it is reported that when Sevinj Vagifgizi and Elnara Gasimova attempted to inform their families about their hunger strike and the violence they were subjected to during phone calls, their connections were abruptly cut off. Information from their relatives also suggests that they faced inhumane treatment and torture at the order of Elnur Ismayilov, the head of Baku Investigative Isolator No. 1.
+
+“AbzasMedia” issued a statement on July 1, appealing to high-ranking Azerbaijani officials, including President Ilham Aliyev, Minister of Justice Farid Ahmadov, Prosecutor General Kamran Aliyev, and Ombudsman Sabina Aliyeva, to intervene and take control of the situation. The defense has also appealed to the Penitentiary Service and the Ombudsman’s Office regarding Ulvi Hasanli’s treatment.
+
+Local and international human rights organizations consistently view the arrests of “AbzasMedia” journalists as politically motivated, part of a broader crackdown that has seen over 30 journalists and public activists arrested since November 2023. These organizations call for the immediate release of the journalists, a stance that contrasts sharply with official Azerbaijani statements. Officials routinely assert that no one is arrested for their professional activities or on political grounds, claiming those detained are held criminally responsible for their actions. According to local human rights organizations, there are currently over 370 political prisoners in Azerbaijani prisons.
+
+The situation remains critical as the hunger strikes continue, highlighting the severe challenges faced by independent journalists and human rights defenders in Azerbaijan.
