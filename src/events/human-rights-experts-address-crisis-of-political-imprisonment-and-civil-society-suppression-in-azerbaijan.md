@@ -1,15 +1,14 @@
 ---
 title: 'Human Rights Experts Address Crisis of Political Imprisonment and Civil Society Suppression in Azerbaijan'
-date: '2025-06-20'
-zIndex: 0.5
-author: 'IRFS'
-tags: ['editor']
-Photo: 'images/cover/IMG_7218-1024x492.jpg'
+create: '2025-06-20'
+date: '2025-07-20'
+location: 'GENEVA, Switzerland'
+organizator: 'IRFS'
+tags: ['Human Rights']
+photo: 'images/cover/IMG_7218-1024x492.jpg'
 alt: ''
 seoDescription: 'GENEVA, Switzerland– June 20, 2025 – The Institute for Human Rights (IHR) and The Institute for Reporters’ Freedom and Safety (IRFS) hosted a critical dialogue on the escalating global crisis of political imprisonment and systematic suppression of civil society organizations during the 59th session of the UN Human Rights Council in Geneva.'
 ---
-GENEVA, Switzerland– June 20, 2025 – The Institute for Human Rights (IHR) and The Institute for Reporters’ Freedom and Safety (IRFS) hosted a critical dialogue on the escalating global crisis of political imprisonment and systematic suppression of civil society organizations during the 59th session of the UN Human Rights Council in Geneva.
-
 The panel, held at the Palais des Nations, brought together leading human rights advocates to examine the interconnected threats facing journalists, activists, and civil society organizations in Azerbaijan. The discussion explored both the immediate human cost of repressive policies and their broader implications for democratic institutions and international human rights.
 
 Emin Huseynov, Director of the Institute for Human Rights, addressed the current Azerbaijani landscape of political imprisonment and systematic persecution of dissidents, exposing how governments deploy internet shutdowns and social media blocks against critics while conducting an ongoing crackdown against civil society organizations through bans on foreign funding, travel restrictions, and other extreme limitations of fundamental human rights.

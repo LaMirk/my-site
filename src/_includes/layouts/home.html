@@ -1,10 +1,12 @@
 {% extends "layouts/base.html" %}
+
 {% block layout %}
 	{% include "styles/home-layout.css.html" %}
 {% endblock %}
+
 {% block content %}
 	<main>
-		<section class="[ flex-container ] []">
+		<section class="[ flex-container ] [ news-section ]">
 			<section id="daily-news" class="[ shadow-wrapper ]">{% set postListItems = collections.blog.slice(0, 5) %} {% include "partials/auto-slider.html" %}</section>
 			<section id="last-news" class="[ shadow-wrapper ]">{% include "partials/news-section.html" %}</section>
 		</section>
