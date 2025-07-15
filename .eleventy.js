@@ -19,6 +19,8 @@ module.exports = (config) => {
 		return [...collection.getFilteredByGlob('./src/posts/*.md')].reverse();
 	});
 
+	config.addTemplateFormats("scss");
+
 	return {
         markdownTemplateEngine: 'njk',
         dataTemplateEngine: 'njk',

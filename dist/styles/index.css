@@ -1,0 +1,124 @@
+/* body css */
+* { 
+    margin: 0; 
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+/* site header css */
+#site-header__brand { width: 17em; }
+.site-header__nav__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-inline-start: 0;
+}
+.nav__list li > a, .nav__list li > span {
+    display: block;
+}
+.nav__list * { text-decoration: none; }
+.nav__list > li > a:hover { color: rgb(171, 171, 171); }
+.nav__sublist:hover .nav__droplist { display: block; }
+.nav__droplist {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    color: #062963;
+    margin-top: 3.55em;
+    padding: 1em;
+    z-index: 1000;
+}
+.nav__droplist li + li { margin-top: 1em; }
+.nav__droplist li a { color: #062963;}
+.nav__droplist li a:hover { color: #5e5e5e; }
+
+
+
+/* searc scc */
+@font-face {
+    font-family: 'Material Symbols Outlined';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/icon/font?kit=kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1v-p_4MrImHCIJIZrDCvHOejbd5zrDAt69N5_NGV7d27Z8wyV_VY&skey=b8dc2088854b122f&v=v257) format('woff2');
+}
+.searc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.search > a { margin-left: 5em; }
+.search__icon {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2rem;
+    line-height: 0;
+    color: white;
+    letter-spacing: normal;
+    text-transform: none;
+    float: left;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+/* footer css */
+#footer-brand { width: 12em;}
+footer { 
+    padding: 2em 5%;
+    font-size: 0.9em;
+}
+footer a:hover { color: #dcdcdc; }
+#footer__copyright { color: rgb(105, 135, 157); }
+.footer__nav { 
+    display: flex; 
+    justify-content: space-around;
+    }
+.footer__nav__list > li > a { 
+    text-decoration: none;
+    color: rgb(105, 135, 157); 
+    font-weight: normal;
+    margin-top: 1em;
+}
+.footer__nav__list > li:hover > a { color: white; }
+#footer__copyright { 
+    text-align: center; 
+    margin-top: 1em;
+    font-weight: lighter;
+}
+/* main css */
+
+main { padding: 2% 10%; }
+
+header, footer { background-color: #062963; }
+
+ul, ol { list-style-type: none; }
+
+header { padding: 0 0;}
+
+header *, footer * { 
+    color: white; 
+    font-weight: bold; 
+}
+
+/* block css */
+
+.shadow-wrapper { 
+    box-sizing: border-box;
+    box-shadow: #5e5e5e 0px 0px 10px 0px;
+}
+
+.window {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(3px);
+}
+
+.radius {
+    border-radius: 0.5em;
+}
+
+.flex-container {
+    display: flex;
+    gap: 10px;
+}
