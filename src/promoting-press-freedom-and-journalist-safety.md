@@ -1,6 +1,7 @@
 ---
 title: "Promoting press freedom and journalist safety"
-layout: "layouts/promoting-press-freedom.html"
+layout: "layouts/promoting-press-freedom-and-journalist-safety.html"
+permalink: "/what-we-do/promoting-press-freedom-and-journalist-safety/"
 ---
 The organization’s reporting has been instrumental in bringing the issues of press freedom in Azerbaijan to the attention of relevant organizations and officials in the US and Europe. IRFS has been a member of the International Freedom of Expression Exchange (IFEX) since October 2007 and Global Network Initiative (GNI) since November 2012.
 

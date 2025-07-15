@@ -25,7 +25,7 @@
             "children": [
             {
                 "text": "Promoting press freedom and journalist safety",
-                "url": "/promoting-press-freedom/"
+                "url": "/what-we-do/promoting-press-freedom-and-journalist-safety/"
             },
             {
                 "text": "Promotion of youth media and ICT",
@@ -81,7 +81,7 @@
         {
             "title": "What We Do",
             "items": [
-                { "label": "Promoting press freedom and journalist safety", "href": "/press-freedom-safety/" },
+                { "label": "Promoting press freedom and journalist safety", "href": "/what-we-do/promoting-press-freedom-and-journalist-safety/" },
                 { "label": "Promotion of youth media and ICT", "href": "/youth-media-ict/" },
                 { "label": "Protection of freedom of expression", "href": "/freedom-of-expression/" },
                 { "label": "Objective TV", "href": "/objective-tv/" }
