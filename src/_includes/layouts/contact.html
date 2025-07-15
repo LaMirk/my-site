@@ -1,0 +1,17 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+    <header>{{ title }}</header>
+    <address>
+        <div class="flex-container">
+            {% for item in contactDatas.items %}
+                <div>
+                    <img src="/images/icon/{{ item.icon }}" alt="">
+                    <p>{{ item.label }}</p>
+                    <p>{{ item.data }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </address>
+    
+{% endblock %}
