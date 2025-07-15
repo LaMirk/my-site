@@ -6,9 +6,16 @@
         <div class="flex-container">
             {% for item in contactDatas.items %}
                 <div>
-                    <img src="/images/icon/{{ item.icon }}" alt="">
-                    <p>{{ item.label }}</p>
-                    <p>{{ item.data }}</p>
+                    {% if item.href %}
+                        <a href="{{ item.href }}">
+                    {% endif %}
+                            <img src="/images/icon/{{ item.icon }}" alt="">
+                            <p>{{ item.label }}</p>
+                            <p>{{ item.data }}</p>
+                    {% if item.href %}
+                        </a>
+                    {% endif %}
+                    
                 </div>
             {% endfor %}
         </div>

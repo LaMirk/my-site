@@ -3,17 +3,20 @@
         {
             "label": "adress",
             "data": "PO BOX 149, 1211 Geneva 28, Switzerland",
+            "href": false,
             "icon": "location_on_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg"
         },
         {
             "label": "phone",
             "data": "+41 78 916 25 30",
+            "href": "tel:+41 78 916 25 30",
             "icon": "phone_in_talk_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg"
 
         },
         {
             "label": "email",
             "data": "info@irfs.org",
+            "href": "mailto:info@irfs.org",
             "icon": "mail_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg"
         }
     ]
