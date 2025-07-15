@@ -1,0 +1,14 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+    <section>
+        <header><h2>{{ title }}</h2></header>
+        <hr>
+        <div class="[ flex-container ]">
+            {% for item in publications %}
+                <div><a href="/document/{{ item.href }}"><img src="/images/publications-covers/{{ item.cover }}" alt=""></a></div>
+            {% endfor %}
+        </div>
+    </section>
+    <hr>
+{% endblock %}

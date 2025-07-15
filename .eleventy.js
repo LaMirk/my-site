@@ -5,6 +5,7 @@ const w3DateFilter = require('./src/filters/w3-date-filter.js');
 module.exports = (config) => {
 	config.addPassthroughCopy('src/images');
 	config.addPassthroughCopy('src/styles');
+	config.addPassthroughCopy('src/publication')
 
 	// Add filters
 	config.addFilter('dateFilter', dateFilter);
