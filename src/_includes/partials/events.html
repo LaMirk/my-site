@@ -1,0 +1,17 @@
+{% set postListItems = collections.events.slice(0, 3) %}
+
+<section id="events" class="[ shadow-wrapper ]">
+    <header>Events</header>
+    <div>
+        <ol>
+            {% for item in postListItems %}
+                <li class="events__item">
+                    <img src="{{ item.data.Photo }}" alt="{{ item.data.alt }}" class="events__item__image">
+                    <h2 class="events__item__title">{{ item.data.title }}</h2>
+                    <time datetime="{{item.data.date | w3DateFilter }}" class="events__item__date">{{ item.data.date | dateFilter }}</time>
+                    <p class="ivents__item__description">{{ data.data.seoDescription }}</p>
+                </li>
+            {% endfor %}
+        </ol>
+    </div>
+</section>

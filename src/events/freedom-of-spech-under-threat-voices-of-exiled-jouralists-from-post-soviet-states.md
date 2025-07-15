@@ -5,7 +5,7 @@ date: '2025-06-18T11:00'
 location: 'Room XXV, Palais des Nations.'
 author: 'IRFS'
 tags: ['Human Rights']
-photo: 'images/cover/side-event-journalist-june2025-Презентация-1024x576.jpg'
+Photo: 'images/cover/side-event-journalist-june2025-Презентация-1024x576.jpg'
 alt: ''
 seoDescription: 'The Institute for Reporters’ Freedom and Safety, together with its partners, is organizing an official side event during the 59th session of the UN Human Rights Council: Freedom of Speech Under Threat: Voices of Exiled Journalists from Post-Soviet States'
 ---

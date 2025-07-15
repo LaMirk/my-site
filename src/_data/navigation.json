@@ -51,6 +51,11 @@
             "children": false
         },
         {
+            "text": "Events",
+            "url": "/events/",
+            "children": false
+        },
+        {
             "text": "Contact Us",
             "url": "/contact-us/",
             "children": false
@@ -70,7 +75,7 @@
             "items": [
                 { "label": "IRFS Members", "href": "/members/" },
                 { "label": "Vision | Mission | Strategy", "href": "/vision-mission-strategy/" },
-                { "label": "Contact Us", "href": "/contact/" }
+                { "label": "Contact Us", "href": "/contact-us/" }
             ]
         },
         {

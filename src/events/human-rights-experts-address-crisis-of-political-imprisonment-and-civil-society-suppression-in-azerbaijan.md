@@ -5,7 +5,7 @@ date: '2025-07-20'
 location: 'GENEVA, Switzerland'
 organizator: 'IRFS'
 tags: ['Human Rights']
-photo: 'images/cover/IMG_7218-1024x492.jpg'
+Photo: 'images/cover/IMG_7218-1024x492.jpg'
 alt: ''
 seoDescription: 'GENEVA, Switzerland– June 20, 2025 – The Institute for Human Rights (IHR) and The Institute for Reporters’ Freedom and Safety (IRFS) hosted a critical dialogue on the escalating global crisis of political imprisonment and systematic suppression of civil society organizations during the 59th session of the UN Human Rights Council in Geneva.'
 ---
