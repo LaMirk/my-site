@@ -93,8 +93,6 @@ main { padding: 2% 10%; }
 
 header, footer { background-color: #062963; }
 
-ul, ol { list-style-type: none; }
-
 header { padding: 0 0;}
 
 header *, footer * { 
