@@ -1,0 +1,23 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+    <section>
+        <header><h2>{{ title }}</h2></header>
+        <img src="/images/brand/IRFS-LOGO-WHITE.svg" alt="">
+        <p>{{ info }}</p>
+    </section>
+    <section>
+        <header><h2>{{subTitle}}</h2></header>
+        {% for item in members %}
+            <ul>
+                <li>
+                    <img src="/images/member/{{ item.image }}" alt="">
+                    <h3> {{ item.name }} </h3>
+                    <p>{{ item.role }}</p>
+                    <a href="{{ item.mailto}}">{{ item.mailLabel}}</a>
+                </li>
+            </ul>
+        {% endfor %}
+    </section>
+    
+{% endblock %}

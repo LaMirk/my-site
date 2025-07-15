@@ -73,7 +73,7 @@
         {
             "title": "About Us",
             "items": [
-                { "label": "IRFS Members", "href": "/members/" },
+                { "label": "IRFS Members", "href": "/irfsmembers/" },
                 { "label": "Vision | Mission | Strategy", "href": "/vision-mission-strategy/" },
                 { "label": "Contact Us", "href": "/contact-us/" }
             ]
