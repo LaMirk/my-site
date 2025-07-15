@@ -1,0 +1,9 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+    <article>
+        <header><h2>{{ title }}</h2></header>
+        {{ content | safe }}
+    </article>
+    <hr>
+{% endblock %}
