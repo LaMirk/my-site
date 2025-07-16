@@ -1,91 +1,87 @@
 {
-    "items": [
+  "items": [
+    {
+      "text": "Home",
+      "url": "/"
+    },
+    {
+      "text": "Who We Are",
+      "url": "",
+      "children": [
         {
-            "text": "Home",
-            "url": "/",
-            "children": false
+          "text": "VISION &#124; MISSION &#124; STRATEGY",
+          "url": "/vision-mission-strategy/"
         },
         {
-            "text": "Who We Are",
-            "url": "",
-            "children": [
-                {
-                    "text": "VISION | MISSION | STRATEGY",
-                    "url": "/vision-mission-strategy/"
-                },
-                {
-                    "text": "IRFS MEMBERS",
-                    "url": "/irfsmembers/"
-                }
-            ]
-        },
-        {
-            "text": "What We Do",
-            "url": "#",
-            "children": [
-            {
-                "text": "Promoting press freedom and journalist safety",
-                "url": "/what-we-do/promoting-press-freedom-and-journalist-safety/"
-            },
-            {
-                "text": "Promotion of youth media and ICT",
-                "url": "/youth-media-ict/"
-            },
-            {
-                "text": "Protection of freedom of expression",
-                "url": "/freedom-of-expression/"
-            },
-            {
-                "text": "Safeguarding freedom of information",
-                "url": "/freedom-of-information/"
-            },
-            {
-                "text": "Objective TV",
-                "url": "/objective-tv/"
-            }
-            ]
-        },
-        {
-            "text": "News",
-            "url": "/news-feed/",
-            "children": false
-        },
-        {
-            "text": "Events",
-            "url": "/events/",
-            "children": false
-        },
-        {
-            "text": "Contact Us",
-            "url": "/contact-us/",
-            "children": false
+          "text": "IRFS MEMBERS",
+          "url": "/irfsmembers/"
         }
-    ],
-    "footer": [
+      ]
+    },
+    {
+      "text": "What We Do",
+      "url": "#",
+      "children": [
         {
-            "title": "Latest",
-            "items": [
-                { "label": "News", "href": "/news/" },
-                { "label": "Statements", "href": "/statements/" },
-                { "label": "Publications", "href": "/publications/" }
-            ]
+          "text": "Promoting press freedom and journalist safety",
+          "url": "/what-we-do/promoting-press-freedom-and-journalist-safety/"
         },
         {
-            "title": "About Us",
-            "items": [
-                { "label": "IRFS Members", "href": "/irfsmembers/" },
-                { "label": "Vision | Mission | Strategy", "href": "/vision-mission-strategy/" },
-                { "label": "Contact Us", "href": "/contact-us/" }
-            ]
+          "text": "Promotion of youth media and ICT",
+          "url": "/youth-media-ict/"
         },
         {
-            "title": "What We Do",
-            "items": [
-                { "label": "Promoting press freedom and journalist safety", "href": "/what-we-do/promoting-press-freedom-and-journalist-safety/" },
-                { "label": "Promotion of youth media and ICT", "href": "/youth-media-ict/" },
-                { "label": "Protection of freedom of expression", "href": "/freedom-of-expression/" },
-                { "label": "Objective TV", "href": "/objective-tv/" }
-            ]
+          "text": "Protection of freedom of expression",
+          "url": "/freedom-of-expression/"
+        },
+        {
+          "text": "Safeguarding freedom of information",
+          "url": "/freedom-of-information/"
+        },
+        {
+          "text": "Objective TV",
+          "url": "/objective-tv/"
         }
-    ]
+      ]
+    },
+    {
+      "text": "News",
+      "url": "/news-feed/"
+    },
+    {
+      "text": "Events",
+      "url": "/events/"
+    },
+    {
+      "text": "Contact Us",
+      "url": "/contact-us/"
+    }
+  ],
+  "footer": [
+    {
+      "title": "Latest",
+      "items": [
+        { "label": "News", "href": "/news/" },
+        { "label": "Statements", "href": "/statements/" },
+        { "label": "Publications", "href": "/publications/" }
+      ]
+    },
+    {
+      "title": "About Us",
+      "items": [
+        { "label": "IRFS Members", "href": "/irfsmembers/" },
+        { "label": "VISION &#124; MISSION &#124; STRATEGY", "href": "/vision-mission-strategy/" },
+        { "label": "Contact Us", "href": "/contact-us/" }
+      ]
+    },
+    {
+      "title": "What We Do",
+      "items": [
+        { "label": "Promoting press freedom and journalist safety", "href": "/what-we-do/promoting-press-freedom-and-journalist-safety/" },
+        { "label": "Promotion of youth media and ICT", "href": "/youth-media-ict/" },
+        { "label": "Protection of freedom of expression", "href": "/freedom-of-expression/" },
+        { "label": "Objective TV", "href": "/objective-tv/" }
+      ]
+    }
+  ]
 }
