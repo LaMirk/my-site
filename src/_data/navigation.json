@@ -20,7 +20,7 @@
     },
     {
       "text": "What We Do",
-      "url": "#",
+      "url": "",
       "children": [
         {
           "text": "Promoting press freedom and journalist safety",
@@ -32,15 +32,15 @@
         },
         {
           "text": "Protection of freedom of expression",
-          "url": "/freedom-of-expression/"
+          "url": "/what-we-do/freedom-of-expression/"
         },
         {
           "text": "Safeguarding freedom of information",
-          "url": "/freedom-of-information/"
+          "url": "/what-we-do/freedom-of-information/"
         },
         {
           "text": "Objective TV",
-          "url": "/objective-tv/"
+          "url": "/what-we-do/objective-tv/"
         }
       ]
     },
@@ -61,7 +61,7 @@
     {
       "title": "Latest",
       "items": [
-        { "label": "News", "href": "/news/" },
+        { "label": "News", "href": "/news-feed/" },
         { "label": "Statements", "href": "/statements/" },
         { "label": "Publications", "href": "/publications/" }
       ]
@@ -79,8 +79,8 @@
       "items": [
         { "label": "Promoting press freedom and journalist safety", "href": "/what-we-do/promoting-press-freedom-and-journalist-safety/" },
         { "label": "Promotion of youth media and ICT", "href": "/what-we-do/promotion-of-youth-media-and-ict/" },
-        { "label": "Protection of freedom of expression", "href": "/freedom-of-expression/" },
-        { "label": "Objective TV", "href": "/objective-tv/" }
+        { "label": "Protection of freedom of expression", "href": "/what-we-do/freedom-of-expression/" },
+        { "label": "Objective TV", "href": "/what-we-do/objective-tv/" }
       ]
     }
   ]
