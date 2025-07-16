@@ -4,7 +4,7 @@ date: '2015-08-10'
 zIndex: 0.5
 author: 'IRFS'
 tags: ['Statement']
-Photo: 'images/cover/'
+Photo: 'images/cover/06f121_a16ae03cf2494f6b82aa100391c0a74f.jpg'
 alt: ''
 seoDescription: 'JOINT STATEMENT August 10, 2015 Azerbaijan: Journalist Rasim Aliyev murdered as human rights crackdown continues in aftermath of European Games The Sport for Rights coalition resolutely condemns the brutal murder of Azerbaijani journalist Rasim Aliyev, who died on 9 August in a Baku hospital, after he was severely beaten on 8 August by a group of people. Rasim Aliyev had reported receiving continuous threats and intimidation via social media networks for three weeks leading up to his death.'
 ---

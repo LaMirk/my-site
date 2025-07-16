@@ -4,7 +4,7 @@ date: '2015-12-29'
 zIndex: 0.5
 author: 'IRFS'
 tags: ['Statement', 'Rauf Mirgadirov', 'IRFS']
-Photo: '/images/brand/IRFS-LOGO-WHITE.svg'
+Photo: 'images/cover/IRFS-LOGO-blue.png'
 alt: ''
 seoDescription: 'STATEMENT: IRFS condemns the conviction of journalist Rauf Mirgadirov. Institute for Reporters’ Freedom and Safety (IRFS) resolutely condemns the sentencing of journalist Rauf Mirgadirov to a staggering six years in jail.'
 ---

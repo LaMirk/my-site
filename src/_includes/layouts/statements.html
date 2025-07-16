@@ -1,6 +1,20 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
-    <header><h2>{{ title }}</h2></header>
-    <hr>
+    <section>
+        <header><h2>{{ title }}</h2></header>
+        <hr>
+        <div>
+            <ol>
+                {% for item in collections.Statement %}
+                    <li>
+                        <a href="{{ item.url }}">
+                            <img src="/{{ item.data.Photo }}" alt="">
+                            <h3>{{ item.data.title }}</h3>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ol>
+        </div>
+    </section>    
 {% endblock %}
