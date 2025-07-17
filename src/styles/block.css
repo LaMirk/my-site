@@ -1,0 +1,25 @@
+.shadow-wrapper { 
+    box-sizing: border-box;
+    box-shadow: #5e5e5e 0px 0px 10px 0px;
+}
+
+.window {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(3px);
+}
+
+.radius {
+    border-radius: 0.5em;
+}
+
+.flex-container {
+    display: flex;
+    gap: 10px;
+}
+
+.container {
+    width: 1080px;
+    margin-right: auto;
+    margin-left: auto;
+    
+}

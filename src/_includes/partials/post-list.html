@@ -1,4 +1,4 @@
-<ol class="[ post-list ]">
+<ol class="[ post-list ] [ style-type-none ]">
 	{% for item in postListItems %}
 		{% set alt %}
 			{% if item.data.alt %}
@@ -8,7 +8,7 @@
 			{% endif %}
 		{% endset %}
 		<li class="post-list__item">
-			<a href="{{ item.url }}">
+			<a href="{{ item.url }}" class="[ sans-text-decoration ]">
 				{% if item.data.Photo and includePhoto %}
 					<img src="/{{ item.data.Photo }}" alt="{{ alt }}" class="post-list__item__image">
 				{% endif %}

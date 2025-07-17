@@ -3,7 +3,7 @@
         <div class="carousel-track" id="carouselTrack">
             {% for item in postListItems %}
                 <div class="carousel-slide">
-                    <a href="{{ item.url }}" class="slide-link">
+                    <a href="{{ item.url }}" class="[ slide-link ] [ sans-text-decoration ]">
                         <img src="/{{ item.data.Photo }}" alt="{{ item.data.alt }}" class="slide-image">
                         <div class="slide-content">
                             <div class="slide-title">{{ item.data.title }}</div>

@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
+
+    <!-- favicon -->
     <link rel="icon" type="image/png" href="/images/cropped-Untitled-design5-192x192.png" sizes="192x192">
     <link rel="icon" type="image/png" href="/images/cropped-Untitled-design5-32x32.png" sizes="32x32">
-    <link rel="stylesheet" href="/styles/auto-slider.css">
+
+    <!-- styles -->
+    <link rel="stylesheet" href="/styles/utils.css">
+    <link rel="stylesheet" href="/styles/block.css">
     <link rel="stylesheet" href="/styles/index.css">
-    {% block layout %}<script>console.log("404 error: Layout is not downloaded")</script>{% endblock %}
 </head>
 <body>
     {% include "partials/site-header.html" %}
-    <main>{% block content %}content{% endblock %}</main>
+    <main class="[ container ]">{% block content %}content{% endblock %}</main>
     {% include "partials/site-footer.html" %}
 </body>
 </html>
