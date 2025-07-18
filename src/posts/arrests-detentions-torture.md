@@ -1,7 +1,7 @@
 ---
 title: 'Arrests, Detentions, Torture…'
 date: '2025-07-04'
-zIndex: 0.5
+zIndex: 1
 author: 'IRFS'
 tags: ['editor']
 Photo: 'images/cover/Nurlan-Libre-1024x683.jpg'

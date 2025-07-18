@@ -1,0 +1,16 @@
+:root {
+    --news-section-height: 27vw;
+}
+
+.news-section { height: var(--news-section-height); }
+
+#breaking-news { max-width: 65%; }
+
+#daily-news { 
+    width: var(--news-section-height); 
+    height: 100%;
+}
+
+.daily-news__list { 
+    height: calc(var(--news-section-height) - 4.6rem);
+    overflow: scroll; }

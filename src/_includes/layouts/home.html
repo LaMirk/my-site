@@ -1,16 +1,15 @@
 {% extends "layouts/base.html" %}
 
 {% block layout %}
-	<link rel="stylesheet" href="/styles/home-layout.css">
+	<link rel="stylesheet" href="/styles/home.css">
+	<link rel="stylesheet" href="/styles/auto-slider.css">
 {% endblock %}
 
 {% block content %}
-	<main>
-		<section class="[ flex-container ] [ news-section ]">
-			<section id="daily-news" class="[ shadow-wrapper ]">{% set postListItems = collections.blog.slice(0, 5) %} {% include "partials/auto-slider.html" %}</section>
-			<section id="last-news" class="[ shadow-wrapper ]">{% include "partials/daily-news.html" %}</section>
-		</section>
-		<section id="events" class="[ shadow-wrapper ]"><p>events</p></section>
-		<section id="latest-news" class="[ shadow-wrapper ]"><p>Latest news</p></section>
-	</main>
+	<section class="[ news-section ] [ flex-container gap-3 ]">
+		{% include "partials/breaking-news-slider.html" %}
+		{% include "partials/daily-news.html" %}
+	</section>
+	<section id="events" class="[ shadow-wrapper ]"><p>events</p></section>
+	<section id="latest-news" class="[ shadow-wrapper ]"><p>Latest news</p></section>
 {% endblock %}

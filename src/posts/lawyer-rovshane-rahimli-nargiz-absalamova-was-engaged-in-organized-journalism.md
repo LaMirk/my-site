@@ -1,7 +1,7 @@
 ---
 title: 'Lawyer Rovshane Rahimli: “Nargiz Absalamova was engaged in organized journalism”'
 date: '2025-06-19'
-zIndex: 0.5
+zIndex: 1
 author: 'IRFS'
 tags: ['editor']
 Photo: 'images/cover/Nargiz_Absalamova.jpg'

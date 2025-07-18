@@ -1,12 +1,12 @@
-<div class="carousel-container">
+<div class="[ carousel-container ] [ flex-container ]">
     <div class="carousel-wrapper">
-        <div class="carousel-track" id="carouselTrack">
+        <div class="[ carousel-track ] [ flex-container ]" id="carouselTrack">
             {% for item in postListItems %}
-                <div class="carousel-slide">
+                <div class="[ carousel-slide ] [ flex-container ]">
                     <a href="{{ item.url }}" class="[ slide-link ] [ sans-text-decoration ]">
                         <img src="/{{ item.data.Photo }}" alt="{{ item.data.alt }}" class="slide-image">
                         <div class="slide-content">
-                            <div class="slide-title">{{ item.data.title }}</div>
+                            <div class="[ slide-title ] [ fs-8 bold ] [ mt-3 ]">{{ item.data.title }}</div>
                             <div class="slide-subtitle" style="display: none;">{{ item.data.seoDescription }}</div>
                         </div>
                     </a>
@@ -20,7 +20,7 @@
     
     <button class="play-pause" onclick="toggleAutoplay()" id="playPauseBtn">⏸</button>
     
-    <div class="carousel-indicators" id="indicators"></div>
+    <div class="[ carousel-indicators ] [ flex-container gap-3 ]" id="indicators"></div>
 </div>
  
 <script>

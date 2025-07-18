@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/styles/utils.css">
     <link rel="stylesheet" href="/styles/block.css">
     <link rel="stylesheet" href="/styles/index.css">
+    {% block layout %}<script> console.log("404 error: styles not finded"); </script>{% endblock %}
 </head>
 <body>
     {% include "partials/site-header.html" %}

@@ -1,7 +1,7 @@
 ---
 title: 'AbzasMedia Director Ulvi Hasanli Alleges Torture, Continues Hunger Strike in Prison Amidst Deteriorating Health'
 date: '2025-07-03'
-zIndex: 0.5
+zIndex: 1
 author: 'IRFS'
 tags: ['editor']
 Photo: 'images/cover/Ulvi-Hasanli.avif'
