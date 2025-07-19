@@ -9,11 +9,9 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "dependencies": {
-    "@11ty/eleventy": "^3.1.2",
-    "moment": "^2.30.1"
-  },
   "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "moment": "^2.30.1",
     "sass": "^1.89.2"
   }
 }
