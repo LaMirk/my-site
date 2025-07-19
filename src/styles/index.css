@@ -32,6 +32,8 @@ header *, footer * { color: aliceblue; }
 /* main */
 main { padding-top: var(--site-header-height); }
 
+.post-list__item time { color: brown; }
+
 /* .site-header__nav, ul.flex-container, .site-header__nav__list, #site-header__brand { height: 100%; } */
 #site-header__brand img { 
     width: auto;

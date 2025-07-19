@@ -7,12 +7,12 @@
 				{{ item.data.title }}
 			{% endif %}
 		{% endset %}
-		<li class="post-list__item">
+		<li class="[ post-list__item ] [ mt-2 ]">
 			<a href="{{ item.url }}" class="[ sans-text-decoration ]">
-				{% if item.data.Photo and includePhoto %}
+				{% if item.data.Photo and includeCover %}
 					<img src="/{{ item.data.Photo }}" alt="{{ alt }}" class="post-list__item__image">
 				{% endif %}
-				<h2>{{ item.data.title }}</h2>
+				<h2 class="[ fs-5 ]">{{ item.data.title | safe }}</h2>
 				{% if item.data.seoDescription and includeDescription %}
 					<p>{{ item.data.seoDescription }}</p>
 				{% endif %}
