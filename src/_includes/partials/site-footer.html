@@ -1,14 +1,18 @@
 <footer id="footer">
-    <nav aria-label="Footer navigation" class="[ nav ] [ footer__nav ]">
-        <a href="/"><img src="/images/brand/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="footer-brand" class="brand"></a>
-        {% for navList in navigation.footer %}
-        <ul class="[ nav__list ] [ footer__nav__list ] [ style-type-none ]">
-            <li><span>{{ navList.title }}</span></li>
-            {% for navItem in navList.items %}
-                <li><a href="{{ navItem.href }}" class="[ sans-text-decoration ]"> {{ navItem.label | safe }}</a></li>
-            {% endfor %}
-        </ul>
-        {% endfor %}
-    </nav>
-    <p id="footer__copyright">&#169; 2025 &#8226; IRFS</p>
+    <div class="[ pt-6 pb-6 ] [ container ]">
+        <nav aria-label="Footer navigation" class="[ nav ] [ footer__nav ]">
+            <div class="[ flex-container ]">
+                <a href="/"><img src="/images/brand/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="footer-brand" class="brand"></a>
+                {% for navList in navigation.footer %}
+                <ul class="[ nav__list ] [ footer__nav__list ] [ style-type-none ]">
+                    <li><span>{{ navList.title }}</span></li>
+                    {% for navItem in navList.items %}
+                        <li class="[ mt-4 ]"><a href="{{ navItem.href }}" class="[ sans-text-decoration ]"> {{ navItem.label | safe }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endfor %}
+            </div>
+        </nav>
+        <p id="footer__copyright" class="[ mt-6 ]">&#169; 2025 &#8226; IRFS</p>
+    </div>
 </footer>

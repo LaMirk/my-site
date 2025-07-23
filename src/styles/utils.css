@@ -67,7 +67,7 @@
 .bw-8 { border-width: var(--eight); } 
 
 .br-1 { border-radius: 25%; }
-.br-2 { border-radius: 5%; }
+.br-2 { border-radius: 50%; }
 .br-3 { border-radius: 75%; }
 .br-4 { border-radius: 100%; }
 
@@ -109,6 +109,9 @@
 
 .sans-text-decoration { text-decoration: none; }
 
+/* flex or grid container */
+.flex-container { display: flex; }
+
 /* flex utilits */
 .full-height { height: 100%; }
 
@@ -133,9 +136,6 @@
 .inline { 
     display: inline-block;
 }
-
-/* flex or grid container */
-.flex-container { display: flex; }
 
 .gap-1 { gap: var(--one); }
 .gap-2 { gap: var(--two); }
