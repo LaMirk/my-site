@@ -14,3 +14,25 @@
     margin-left: auto;
     
 }
+
+.upk-title a {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    text-transform: inherit;
+    font-style: inherit;
+    text-decoration: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    word-spacing: inherit;
+}
+
+.title-animation-underline {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(currentColor), to(currentColor));
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-size: 0% 0.125rem;
+    -webkit-transition: background-size 0.3s;
+    transition: background-size 0.3s;
+    display: inline;
+}

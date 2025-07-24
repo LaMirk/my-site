@@ -1,14 +1,31 @@
 :root {
-    --news-section-height: 27vw;
+    --news-section-height: 28.5vw;
 }
 
 .news-section { height: var(--news-section-height); }
 
 #breaking-news { max-width: 65%; }
 
+#breaking-news img { 
+    height: auto;
+    object-fit: cover;
+    overflow: hidden;
+}
+
 #daily-news { 
     width: var(--news-section-height); 
     height: 100%;
+}
+
+@keyframes itemColorChange {
+    from { color: black; }
+    to { color: red; }
+}
+
+.post-list__item:hover h2 { 
+    animation-name: itemColorChange;
+    animation-duration: 0.05s;
+    animation-fill-mode: forwards;
 }
 
 .daily-news__list { 

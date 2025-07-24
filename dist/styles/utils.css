@@ -147,3 +147,7 @@
 .gap-8 { gap: var(--eight); }
 
 .radius { border-radius: var(--two); }
+
+.title-animation-underline:hover { background-size: 100% 0.125rem; }
+
+.title-animation-underline { background-position: 0% 100%; } 

@@ -5,9 +5,9 @@
                 <a href="/"><img src="/images/brand/IRFS-LOGO-WHITE.png" alt="IRFS Brand" id="footer-brand" class="brand"></a>
                 {% for navList in navigation.footer %}
                 <ul class="[ nav__list ] [ footer__nav__list ] [ style-type-none ]">
-                    <li><span>{{ navList.title }}</span></li>
+                    <li class="[ bold ]"><span>{{ navList.title }}</span></li>
                     {% for navItem in navList.items %}
-                        <li class="[ mt-4 ]"><a href="{{ navItem.href }}" class="[ sans-text-decoration ]"> {{ navItem.label | safe }}</a></li>
+                        <li class="[ mt-4 ] [ bold ]"><a href="{{ navItem.href }}" class="[ sans-text-decoration ]"> {{ navItem.label | safe }}</a></li>
                     {% endfor %}
                 </ul>
                 {% endfor %}

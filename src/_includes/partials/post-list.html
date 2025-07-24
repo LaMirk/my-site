@@ -12,7 +12,7 @@
 				{% if item.data.Photo and includeCover %}
 					<img src="/{{ item.data.Photo }}" alt="{{ alt }}" class="post-list__item__image">
 				{% endif %}
-				<h2 class="[ fs-5 ]">{{ item.data.title | safe }}</h2>
+				<h2 class="[ fs-5 ] [ title-animation-underline upk-title ]">{{ item.data.title | safe }}</h2>
 				{% if item.data.seoDescription and includeDescription %}
 					<p>{{ item.data.seoDescription }}</p>
 				{% endif %}
