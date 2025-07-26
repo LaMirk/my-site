@@ -1,0 +1,35 @@
+.flex-container {
+    align-items: center;
+}
+
+.page-header {
+    background-color: white;
+}
+
+h1 { 
+    font-size: 2rem; 
+}
+
+.post-meta-data {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+h1, p, time, .author {
+    color: black; 
+}
+
+.author {
+    font-weight: bold;
+}
+
+.tags-list {
+    background-color: var(--main-color);
+    list-style: none;
+}
+
+.page-header__image {
+    width: var(--site-width);
+    height: auto;
+    object-fit: cover;
+}

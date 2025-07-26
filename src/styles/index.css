@@ -2,6 +2,7 @@
 :root {
     --site-header-height: 7em;
     --site-width: 70vw;
+    --main-color: #062963;
 }
 /* all tags */
 * { 
@@ -23,7 +24,7 @@ body {
     display: flex;
     flex-direction: column;
 }
-main > section { margin: 2% 0; }
+main > section, article { margin: 2% 0; }
 
 /* header and footer */
 header, footer { background-color: #062963; }
@@ -46,6 +47,12 @@ main {
 .post-list__item time, .events__item time { 
     color: brown; 
     display: block;
+}
+
+/* text */
+p, h3 { 
+    line-height: 1.5; 
+    margin-bottom: 1.5rem; 
 }
 
 /* .site-header__nav, ul.flex-container, .site-header__nav__list, #site-header__brand { height: 100%; } */

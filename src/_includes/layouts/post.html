@@ -1,42 +1,37 @@
 {% extends "layouts/base.html" %}
+{% block layout %}
+  <link rel="stylesheet" href="/styles/post.css">
+{% endblock %}
 
+{% set title = title | default("Post") %}
+{% set author = author | default("IRFS") %}
+{% set date = date | default("Unknown Date") %}
+{% set cover = Photo | default("") %}
+{% if Photo %} {% set coverAlt = alt | default(title) %} {% endif %}
 {% set pageHeaderTitle = title %}
 
-{% if Photo %}
-  {% set pageHeaderImage = Photo %}
-  {% set pageHeaderImageclass = "page-header__image" %}
-{% else %}
-  {% set pageHeaderImage = "/images/brand/IRFS-LOGO-WHITE.png" %}
-  {% set pageHeaderImageclass = "empty-image" %}
-{% endif %}
-
-{% if alt %}
-  {% set pageHeaderAltImage = alt %}
-{% else %}
-  {% set pageHeaderAltImage = title%}
-{% endif %}
-
 {% set img %}
-  <img src="{{ pageHeaderImage }}" alt="{{ pageHeaderAltImage }}" class="{{ pageHeaderImageclass }}">
+  <img src="{{ cover }}" alt="{{ coverAlt }}" class="[ page-header__image ] [ mb-8 ]">
 {% endset %}
 
 {# Render post date and any tags that this post has been filed under #}
 {% set pageHeaderSummary %}
-  <p>By &#183; <div class="author">{{ author }}</div></p>
-  <time datetime="{{ date | w3DateFilter }}">{{ date | dateFilter }}</time>
-  {% if tags %}
-    <ul class="tags-list" aria-describedby="tags-desc">
-      {% for tag in tags %}
-        <li>
-          <a href="/tag/{{ tag | slugify }}/">#{{ tag | title | replace(' ', '') }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
+  <div class="[ post-meta-data ] [ flex-container gap-2 ] [ mb-4 ml-4 ]">
+    <p class="[ mb-1 ]">By &#183;<div class="author">{{ author }}</div></p>
+    <time datetime="{{ date | w3DateFilter }}">{{ date | dateFilter }}</time>
+    {% if tags %}
+      <ul class="[ tags-list ] [ type-style-none] [ pt-2 pr-3 pb-2 pl-2 ] [ radius ]" aria-describedby="tags-desc">
+        {% for tag in tags %}
+          <li>
+            <a href="/tag/{{ tag | slugify }}/">#{{ tag | title | replace(' ', '') }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
 {% endset %}
 
 {% block content %}
-  <main>
     <article>
       {% include "partials/page-header.html" %}
       
@@ -44,7 +39,4 @@
         {{ content | safe }}
       </div>
     </article>
-  </main>
-
-  {% include "partials/cta.html" %}
 {% endblock %}
