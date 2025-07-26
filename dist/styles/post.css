@@ -23,7 +23,7 @@ h1, p, time, .author {
     font-weight: bold;
 }
 
-.tags-list {
+.tags-list li {
     background-color: var(--main-color);
     list-style: none;
 }

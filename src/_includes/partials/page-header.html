@@ -1,12 +1,8 @@
 <header class="[ page-header ] ">
-	
 	<h1 class="[ page-header__heading ] [ headline ]" data-highlight="primary">
 		{{ pageHeaderTitle }}
 	</h1>
 	{% if pageHeaderSummary %}
-		<div class="[ page-header__summary ] [ measure-long ]">
-			{{ pageHeaderSummary | safe }}
-		</div>
+		{{ pageHeaderSummary | safe }}
 	{% endif %}
-	<div class="{{ pageHeaderImageclass }}"><img src="/{{ pageHeaderImage }}" alt="{{ pageHeaderAltImage }}"></div>
 </header>

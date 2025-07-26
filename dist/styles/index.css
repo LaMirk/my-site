@@ -147,6 +147,7 @@ header > h1, header > h2 {
 
 #footer__copyright {
     text-align: center;
+    color: white;
 }
 
 #footer-brand { width: 12em;}
