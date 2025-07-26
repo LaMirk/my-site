@@ -148,6 +148,11 @@
 
 .radius { border-radius: var(--two); }
 
+.title-animation-underline { background-position: 0% 100%; } 
+
 .title-animation-underline:hover { background-size: 100% 0.125rem; }
 
-.title-animation-underline { background-position: 0% 100%; } 
+.emergence-animation:hover .emergence-element { 
+    opacity: 100%; 
+    transform: translateY(0);
+}

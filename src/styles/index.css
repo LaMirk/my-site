@@ -31,20 +31,22 @@ header, footer { background-color: #062963; }
 header *, footer * { color: aliceblue; }
 
 /* site header */
- #site-header { 
+#site-header { 
     height: var(--site-header-height);
     position: fixed;
     width: 100vw;
 }
 
- #site-header img { color: white; }
 /* main */
 main { 
     padding-top: var(--site-header-height); 
     flex: 1;
 }
 
-.post-list__item time { color: brown; }
+.post-list__item time { 
+    color: brown; 
+    display: block;
+}
 
 /* .site-header__nav, ul.flex-container, .site-header__nav__list, #site-header__brand { height: 100%; } */
 #site-header__brand img { 

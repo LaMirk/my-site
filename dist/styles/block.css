@@ -36,3 +36,10 @@
     transition: background-size 0.3s;
     display: inline;
 }
+
+.emergence-animation .emergence-element {
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0%;
+    transform: translateY(10px);
+}
