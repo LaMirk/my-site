@@ -43,7 +43,7 @@ main {
     flex: 1;
 }
 
-.post-list__item time { 
+.post-list__item time, .events__item time { 
     color: brown; 
     display: block;
 }

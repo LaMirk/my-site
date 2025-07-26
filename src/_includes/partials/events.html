@@ -1,15 +1,24 @@
 {% set postListItems = collections.events.slice(0, 3) %}
 
 <section id="events" class="[ shadow-wrapper ]">
-    <header>Events</header>
-    <div>
-        <ol>
+    <header><h2>Events</h2></header>
+    <div class="[ mt-4 mr-1 mb-4 ml-1 ]">
+        <ol class="[ events__list ] [ flex-container gap-3 ]">
+            {% if postListItems | length == 0 %}
+                <p class="events__empty">No events found.</p>
+            {% endif %}
             {% for item in postListItems %}
-                <li class="events__item">
-                    <img src="{{ item.data.Photo }}" alt="{{ item.data.alt }}" class="events__item__image">
-                    <h2 class="events__item__title">{{ item.data.title }}</h2>
-                    <time datetime="{{item.data.date | w3DateFilter }}" class="events__item__date">{{ item.data.date | dateFilter }}</time>
-                    <p class="ivents__item__description">{{ data.data.seoDescription }}</p>
+                <li class="[ events__item ] [ flex-container gap-2 ]">
+                    <a href="{{ item.url }}" class="[ events__item__link ] [ sans-text-decoration ]">
+                        {% if item.data.Photo %}
+                            <div class="events__item__photo">
+                                <img src="{{ item.data.Photo }}" alt="{{ item.data.alt }}" class="events__item__image">
+                            </div>
+                        {% endif %}
+                        <h2 class="[ events__item__title ] [ title-animation-underline ]">{{ item.data.title }}</h2>
+                        <time datetime="{{item.data.date | w3DateFilter }}" class="events__item__date">{{ item.data.date | dateFilter }}</time>
+                        <p class="ivents__item__description">{{ data.data.seoDescription }}</p>
+                    </a>
                 </li>
             {% endfor %}
         </ol>
